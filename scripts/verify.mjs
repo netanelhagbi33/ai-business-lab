@@ -120,7 +120,18 @@ for (const q of QUERIES) {
 }
 check('build guide step titles', B.guides.build, A.guides.build);
 check('live guide step titles', B.guides.live, A.guides.live);
-check('highlight overlay geometry', B.overlays, A.overlays);
+// Every overlay the original shipped must still be pixel-identical: that is
+// the guarantee that the per-screenshot calibration has not drifted.
+// Deliberate additions are allowed, and named, so a new one cannot slip in
+// unnoticed.
+const ADDED_OVERLAYS = [
+  ['Press + to see all features', '18.406%', '86.028%', '3.163%', '5.427%'],
+];
+const carriedOver = B.overlays.filter(o =>
+  !ADDED_OVERLAYS.some(a => JSON.stringify(a) === JSON.stringify(o)));
+check('original overlay geometry unchanged', carriedOver, A.overlays);
+check('only the declared overlays were added',
+      B.overlays.length - carriedOver.length, ADDED_OVERLAYS.length);
 check('rebuilt has no page errors', B.errors, []);
 
 console.log('\n=== THE FIXED BUG: arguments never ride inside an attribute');

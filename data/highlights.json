@@ -98,6 +98,13 @@
    "label": "Choose the action you need",
    "tone": "blue",
    "noBadge": true
+  },
+  {
+   "x": 18.406,
+   "y": 86.028,
+   "w": 3.163,
+   "h": 5.427,
+   "label": "Press + to see all features"
   }
  ],
  "2a0a5fac-d860-45c8-95c2-770b5087c2b1.png": [

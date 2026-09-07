@@ -35,6 +35,12 @@ base is fetched only when someone opens Support Center; screenshots are lazy.
 
 ## Things that will bite you
 
+**`scripts/extract.mjs` is destructive and no longer safe to re-run.** It
+regenerates `data/` and `img/` from the original single-file build, which would
+throw away everything edited since: the guide copy, the highlight on the
+Dashboard message-box `+`, and `data/categories.json`, which the original does
+not contain at all. It is kept for provenance.
+
 **Do not resize, crop or re-encode anything in `img/`.** `data/highlights.json`
 positions the "CLICK HERE" overlay boxes as percentages calibrated per
 screenshot to three decimals. Change an image's aspect ratio and every marker on
@@ -195,7 +201,13 @@ node scripts/verify-bug.mjs    # demonstrates the bug the original shipped with
 
 `verify.mjs` drives the **original** file and the rebuilt one side by side and
 compares category counts, ranked search results for ten queries, guide step
-titles and overlay geometry — the rebuild has to produce identical output. It
+titles and overlay geometry — the rebuild has to produce identical output.
+
+Overlays are the exception that proves the rule: every marker the original
+shipped must still be pixel-identical, which is what proves the per-screenshot
+calibration has not drifted. Deliberate additions are listed in
+`ADDED_OVERLAYS` at the top of that check, so a new marker cannot appear
+without someone naming it. It
 writes screenshots for every view at 1440 / 1024 / 390 px plus dark mode to
 `verify-shots/`.
 

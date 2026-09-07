@@ -1,3 +1,14 @@
+/* ============================================================
+   ONE-TIME EXTRACTION FROM THE ORIGINAL SINGLE-FILE BUILD.
+
+   DESTRUCTIVE: this overwrites everything in data/ and img/ with
+   the contents of `index (28).html`. data/steps.json and
+   data/highlights.json have been edited since (new guide copy, a
+   highlight on the message-box +), and data/categories.json does
+   not exist in the original at all. Re-running this throws those
+   away. Kept for provenance, not for routine use.
+   ============================================================ */
+
 import fs from 'fs';
 const SRC='C:/Users/Netan/Downloads/index (28).html';
 const OUT=process.cwd();  // run from the project root
