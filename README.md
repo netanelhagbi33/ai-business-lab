@@ -165,6 +165,21 @@ The states are toggled with the `hidden` property. `css/base.css` carries
 `display:none` at user-agent weight — any class with its own `display` beats it
 silently.
 
+### The "Popular:" chips
+
+`POPULAR_QUESTIONS` in `js/qa.js` are not decoration — each one runs a real
+search. If a chip's wording stops matching (an article is reworded, the
+scoring changes), it lands on the wrong answer or on nothing at all. And "nothing
+at all" now offers a support ticket immediately, so a broken chip becomes the
+shortest path to the agent you were trying to avoid.
+
+`scripts/verify-popular.mjs` pins each chip to the article it must surface.
+**Run it after editing the chip list, `kb.json`, or the scoring function.**
+
+The two refund chips are deliberate: they are among the most-asked questions,
+and answering them in one click is deflection — nobody opens a ticket to ask
+something they just read. They sit last so the hero does not lead with refunds.
+
 ## Verification
 
 Start the server first, then:
@@ -172,6 +187,7 @@ Start the server first, then:
 ```
 node scripts/verify.mjs           # 58 checks: parity, sidebar, Support Center states, screenshots
 node scripts/verify-deflection.mjs  # 32 checks: the whole ticket funnel
+node scripts/verify-popular.mjs     # 10 checks: every Popular chip lands on its article
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast
 node scripts/verify-overflow.mjs  # 30 checks: no view scrolls sideways at 5 widths
 node scripts/verify-bug.mjs    # demonstrates the bug the original shipped with

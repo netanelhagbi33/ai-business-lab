@@ -29,6 +29,15 @@ export const QA_FILTERS = [
   'Purchases & Billing', 'Support', 'Refunds', 'Account & Security',
 ];
 
+/**
+ * Chips run a real search, so each one must rank its intended article first.
+ * Verified by scripts/verify-popular.mjs — add nothing here without running it.
+ *
+ * The two refund entries are among the most-asked questions. Answering them
+ * up front IS deflection: someone who can read the 200% terms in one click
+ * does not open a ticket to ask. They sit last so the hero does not lead
+ * with refunds.
+ */
 const POPULAR_QUESTIONS = [
   'I am new. What should I do first?',
   'What exactly did I buy?',
@@ -36,6 +45,8 @@ const POPULAR_QUESTIONS = [
   'How do withdrawals and payouts work?',
   'What is the Free Traffic Boost?',
   'When will my Success Manager contact me?',
+  'How do I request a refund?',
+  'How does the 200% refund work?',
 ];
 
 const SYNONYMS = {
