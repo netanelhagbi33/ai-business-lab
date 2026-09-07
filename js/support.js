@@ -1,92 +1,128 @@
 /* ============================================================
-   Support — the escalation gate, the ticket modal, ticket list.
+   Support tickets — the deflection gate, the ticket form, the
+   ticket list.
 
-   The gate is deliberate: a general ticket only unlocks after
-   the Support Center has failed twice. Refund requests bypass it.
+   The point of this module is to make a ticket the last step
+   rather than the first. There is no "Open a ticket" button
+   anywhere in the navigation. The only way to reach the form is
+   from inside an article, after telling us that two different
+   articles did not solve the problem — or after a search that
+   returned nothing at all, which means no article could have.
+
+   Refund requests deliberately bypass all of it: delaying a
+   refund request is a legal problem, not just a bad experience.
    ============================================================ */
 
-import { esc, byId, registerActions } from './dom.js';
+import { esc, byId, registerActions, $$ } from './dom.js';
 import { showView } from './router.js';
 import { openModal, closeModal } from './highlights.js';
 import {
   getFailedAnswers, setFailedAnswers, setLastQuestion, getLastQuestion,
+  getUnhelpful, addUnhelpful, getNoResults, setNoResults, resetDeflection,
   getTickets, saveTickets,
 } from './store.js';
 
-let failedAnswers = getFailedAnswers();
-let appendSmartAnswer = () => {};
+/** Distinct unhelpful articles required before the form opens. */
+export const REQUIRED_ATTEMPTS = 2;
 
-/* --- Escalation counter ---------------------------------- */
+let unhelpful = getUnhelpful();
+let noResults = getNoResults();
 
-export function solved() {
-  failedAnswers = 0;
+/* ============================================================
+   The gate
+   ============================================================ */
+
+/**
+ * Legacy: before this model, `abl_help_failed` counted clicks and two of
+ * them unlocked a ticket. Anyone already past that stays past it rather
+ * than being sent back through the funnel.
+ *
+ * The key is read, never written by the new counter — mirroring the new
+ * count into it destroyed exactly the signal it exists to carry. It is
+ * cleared only by resetDeflection() and markHelpful(), both of which mean
+ * the escalation is genuinely over.
+ */
+const legacyUnlocked = () => getFailedAnswers() >= REQUIRED_ATTEMPTS;
+
+export function attemptsMade() {
+  return unhelpful.size;
+}
+
+/** Has this article already been marked unhelpful? */
+export function isUnhelpful(question) {
+  return unhelpful.has(question);
+}
+
+export function canOpenTicket() {
+  return noResults || unhelpful.size >= REQUIRED_ATTEMPTS || legacyUnlocked();
+}
+
+export function attemptsRemaining() {
+  return Math.max(0, REQUIRED_ATTEMPTS - unhelpful.size);
+}
+
+/** A search came back with nothing — no article could have helped. */
+export function markNoResults(query) {
+  noResults = true;
+  setNoResults(true);
+  setLastQuestion(query, 'No matching answer');
+}
+
+/** The user says this article did not solve their problem. */
+export function markUnhelpful(question, query) {
+  unhelpful = addUnhelpful(question);
+  // `query` is empty when browsing a topic rather than searching. Record it
+  // as-is: falling back to the article title made the prefilled ticket say
+  // "I searched for: <article the user never typed>".
+  setLastQuestion(query || '', question);
+  return canOpenTicket();
+}
+
+export function markHelpful() {
+  // Solving it is the outcome we want; it does not clear the record of
+  // what already failed, but it is the natural end of the flow.
   setFailedAnswers(0);
-  byId('smartAnswer').innerHTML =
-    `<div class="answer-card">`
-    + `<h3>Great — you’re all set.</h3>`
-    + `<p>If another question comes up, search here again.</p>`
-    + `</div>`;
 }
 
-export function notSolved(q, answer) {
-  failedAnswers += 1;
-  setFailedAnswers(failedAnswers);
-  setLastQuestion(q, answer);
+/* ============================================================
+   Ticket form
+   ============================================================ */
 
-  appendSmartAnswer(failedAnswers >= 2
-    ? `<div class="answer-card">`
-      + `<h3>Let’s send this to Support.</h3>`
-      + `<p>You tried the Support Center and still need help. `
-      + `You can now open a general Support ticket.</p>`
-      + `<button class="btn green" type="button" data-action="open-ticket">`
-        + `Open Support Ticket</button>`
-      + `</div>`
-    : `<div class="answer-card">`
-      + `<h3>Try one more time</h3>`
-      + `<p>Ask the question in a different way or open one of the related `
-      + `answers below. If it still does not help, Support will unlock.</p>`
-      + `</div>`);
-}
-
-/* --- Tickets --------------------------------------------- */
-
-export function renderTickets() {
-  const tickets = getTickets();
-  const el = byId('tickets');
-
-  el.innerHTML = tickets.length
-    ? tickets.map(t =>
-        `<div class="ticket">`
-        + `<div>`
-          + `<strong>${esc(t.title)}</strong>`
-          + `<div class="ticket-meta">${esc(t.created)} · ${esc(t.type)}</div>`
-          + `<div class="ticket-body">${esc(t.message)}</div>`
-        + `</div>`
-        + `<span class="status">${esc(t.status)}</span>`
-        + `</div>`
-      ).join('')
-    : '<div class="tickets-empty">No tickets in this demo yet.</div>';
-}
-
-export function openGeneralTicket() {
-  const q = getLastQuestion();
-  const unlocked = failedAnswers >= 2 || !q;
-
-  if (!unlocked) {
-    showView('qa');
-    byId('smartAnswer').innerHTML =
-      `<div class="answer-card">`
-      + `<h3>Let the Support Center try first</h3>`
-      + `<p>Search for your question. If the answer does not solve it after `
-      + `two attempts, the general ticket form will open.</p>`
-      + `</div>`;
+export function openTicketFromArticle(question) {
+  if (!canOpenTicket()) {
+    console.warn('[support] ticket blocked: %d of %d attempts',
+                 unhelpful.size, REQUIRED_ATTEMPTS);
     return;
   }
-  openTicketModal('General Support', q);
+  openTicketModal('General Support', buildPrefill(question));
 }
 
 export function openRefund() {
   openTicketModal('Refund Request', '');
+}
+
+/**
+ * Give the agent what the customer already tried, so the ticket does not
+ * start with "did you search the help centre?".
+ */
+function buildPrefill(question) {
+  const lastQ = getLastQuestion();
+  const lines = [];
+
+  if (lastQ) lines.push(`I searched for: ${lastQ}`);
+  else if (unhelpful.size) lines.push('I looked through the Support Center.');
+  if (unhelpful.size) {
+    lines.push('', 'These articles did not solve it:');
+    [...unhelpful].forEach(q => lines.push(`  • ${q}`));
+  } else if (noResults) {
+    lines.push('', 'The Support Center returned no matching articles.');
+  }
+  if (question && !unhelpful.has(question)) {
+    lines.push('', `Reading: ${question}`);
+  }
+  lines.push('', 'What I still need help with:', '');
+
+  return lines.join('\n');
 }
 
 export function openTicketModal(type, prefill) {
@@ -120,7 +156,9 @@ export function openTicketModal(type, prefill) {
     + `</div></div>`;
 
   openModal();
-  byId('tSubject').focus();
+  const box = byId('tMessage');
+  box.focus();
+  box.setSelectionRange(box.value.length, box.value.length);
 }
 
 export function submitTicket(type) {
@@ -144,24 +182,69 @@ export function submitTicket(type) {
   });
   saveTickets(tickets);
 
+  // The next ticket earns its way through the articles again.
+  resetDeflection();
+  unhelpful = new Set();
+  noResults = false;
+
   closeModal();
+  refreshTicketsNav();
   showView('support');
   renderTickets();
 }
 
-/* --- Wiring ---------------------------------------------- */
+/* ============================================================
+   Ticket list + the sidebar entry
+   ============================================================ */
 
-export function initSupport(appendFn) {
-  appendSmartAnswer = appendFn;
+export function renderTickets() {
+  const tickets = getTickets();
+  const el = byId('tickets');
 
-  registerActions({
-    'open-ticket':   () => openGeneralTicket(),
-    'open-refund':   () => openRefund(),
-    'submit-ticket': el => submitTicket(el.dataset.type),
+  el.innerHTML = tickets.length
+    ? tickets.map(t =>
+        `<div class="ticket">`
+        + `<div>`
+          + `<strong>${esc(t.title)}</strong>`
+          + `<div class="ticket-meta">${esc(t.created)} · ${esc(t.type)}</div>`
+          + `<div class="ticket-body">${esc(t.message)}</div>`
+        + `</div>`
+        + `<span class="status">${esc(t.status)}</span>`
+        + `</div>`
+      ).join('')
+    : '<div class="tickets-empty">You have no support tickets.</div>';
+}
+
+/**
+ * The Support Tickets entry does not exist until the user has a ticket.
+ * Once they do it stays, so they can find the history again.
+ */
+export function refreshTicketsNav() {
+  const open = getTickets().filter(t => t.status === 'OPEN').length;
+  const total = getTickets().length;
+
+  $$('.nav[data-view="support"]').forEach(btn => {
+    btn.hidden = total === 0;
+    const badge = btn.querySelector('.navplus');
+    if (badge) {
+      badge.hidden = open === 0;
+      badge.textContent = open;
+    }
   });
 }
 
-/** Called by the router when the Support view opens. */
+/* --- Wiring ---------------------------------------------- */
+
+export function initSupport() {
+  registerActions({
+    'open-refund':   () => openRefund(),
+    'submit-ticket': el => submitTicket(el.dataset.type),
+    'open-ticket':   el => openTicketFromArticle(el.dataset.question || ''),
+  });
+  refreshTicketsNav();
+}
+
+/** Called by the router when the Support Tickets view opens. */
 export function onSupportShown(viewId) {
   if (viewId === 'support') renderTickets();
 }

@@ -346,3 +346,73 @@
   .help-contact { flex-direction: column; align-items: stretch; }
   .help-contact-actions .btn { width: 100%; }
 }
+
+/* ============================================================
+   Article feedback — the only route to a support ticket.
+
+   Every answer ends with "Did this solve your problem?". Saying
+   No on two different articles is what reveals the ticket
+   button; there is no such button anywhere in the navigation.
+   ============================================================ */
+.article-feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+}
+
+.article-feedback-q {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-bold);
+  color: var(--text);
+}
+
+.article-feedback-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+
+.btn-sm {
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-2);
+}
+
+/* The outcome panel replaces the buttons once an answer is given. */
+.article-outcome { flex: 1 0 100%; }
+
+.article-outcome-box {
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  background: var(--surface);
+  padding: var(--sp-4);
+}
+.article-outcome-box strong {
+  display: block;
+  font-size: var(--fs-4);
+  margin-bottom: var(--sp-1);
+}
+.article-outcome-box p {
+  font-size: var(--fs-3);
+  color: var(--text-muted);
+  line-height: var(--lh-normal);
+  max-width: 66ch;
+}
+.article-outcome-box .btn { margin-top: var(--sp-3); }
+
+.article-outcome-box.solved {
+  border-color: var(--brand-border);
+  background: var(--brand-wash);
+}
+.article-outcome-box.solved strong { color: var(--brand-strong); }
+
+/* Two failed articles: a person takes it from here. */
+.article-outcome-box.unlocked {
+  border-color: var(--warn-border);
+  background: var(--warn-subtle);
+}
+.article-outcome-box.unlocked strong { color: var(--warn-strong); }
+
+@media (max-width: 700px) {
+  .article-feedback { flex-direction: column; align-items: stretch; }
+  .article-feedback-actions .btn { flex: 1; }
+}

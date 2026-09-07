@@ -12,8 +12,8 @@ import { initDelegation, registerActions, byId, loadJSON, renderError } from './
 import { showView, initNav, onViewChange } from './router.js';
 import { setHighlights, setImageSizes, initModal } from './highlights.js';
 import { initJourneys, openGuideStep, onGuideShown } from './journey.js';
-import { initQA, ensureLoaded, appendToSmartAnswer } from './qa.js';
-import { initSupport, solved, notSolved, onSupportShown } from './support.js';
+import { initQA, ensureLoaded } from './qa.js';
+import { initSupport, onSupportShown } from './support.js';
 
 /* --- Actions that belong to no single module -------------- */
 registerActions({
@@ -23,8 +23,8 @@ registerActions({
 initDelegation();
 initModal();
 
-initSupport(appendToSmartAnswer);
-initQA({ solved, notSolved });
+initSupport();
+initQA();
 
 initNav();
 

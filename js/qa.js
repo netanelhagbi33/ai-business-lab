@@ -15,6 +15,10 @@
    ============================================================ */
 
 import { esc, byId, registerActions, loadJSON, renderError } from './dom.js';
+import {
+  markUnhelpful, markHelpful, markNoResults, isUnhelpful,
+  canOpenTicket, attemptsRemaining, REQUIRED_ATTEMPTS,
+} from './support.js';
 
 const PAGE_SIZE = 18;
 
@@ -52,7 +56,6 @@ let activeCat = 'All';
 let qaLimit = PAGE_SIZE;
 let loaded = false;
 let loading = null;
-let onEscalate = { solved() {}, notSolved() {} };
 
 /* ============================================================
    Scoring — unchanged behaviour
@@ -171,6 +174,69 @@ function showSearchState(query) {
 
 const answerHtml = a => `<div class="answer-full">${esc(a)}</div>`;
 
+/**
+ * Every answer ends with this. It is the only route to a support ticket:
+ * saying "No" on two different articles is what opens the form.
+ */
+function feedbackMarkup(question) {
+  // An article the user already rejected renders in its answered state, so
+  // re-opening it (or meeting it again in another search) shows what they
+  // said rather than asking again as if nothing happened.
+  const answered = isUnhelpful(question);
+
+  return `<div class="article-feedback">`
+    + `<span class="article-feedback-q">`
+      + (answered ? 'You said this did not solve it.' : 'Did this solve your problem?')
+    + `</span>`
+    + `<span class="article-feedback-actions"${answered ? ' hidden' : ''}>`
+      + `<button class="btn soft btn-sm" type="button" data-action="article-yes">`
+        + `Yes, thanks</button>`
+      + `<button class="btn soft btn-sm" type="button" data-action="article-no" `
+        + `data-question="${esc(question)}">No, I still need help</button>`
+    + `</span>`
+    + `<div class="article-outcome"${answered ? '' : ' hidden'}>`
+      + (answered ? outcomeMarkup(question) : '')
+    + `</div>`
+    + `</div>`;
+}
+
+/**
+ * Swap a feedback block into its answered state. The label has to change
+ * with the buttons, or an article answered in place would disagree with
+ * the same article after the list re-renders.
+ */
+function answerFeedback(el, label, html) {
+  const box = el.closest('.article-feedback');
+  box.querySelector('.article-feedback-q').textContent = label;
+  box.querySelector('.article-feedback-actions').hidden = true;
+  const out = box.querySelector('.article-outcome');
+  out.hidden = false;
+  out.innerHTML = html;
+}
+
+/** What the user sees after saying an article did not help. */
+function outcomeMarkup(question) {
+  if (canOpenTicket()) {
+    return `<div class="article-outcome-box unlocked">`
+      + `<strong>We could not answer this one.</strong>`
+      + `<p>You have tried ${REQUIRED_ATTEMPTS} articles without getting an `
+      + `answer, so a person should take it from here.</p>`
+      + `<button class="btn green" type="button" data-action="open-ticket" `
+        + `data-question="${esc(question)}">Open a support ticket</button>`
+      + `</div>`;
+  }
+
+  const left = attemptsRemaining();
+  return `<div class="article-outcome-box">`
+    + `<strong>Noted — let's try one more.</strong>`
+    + `<p>Most questions are answered somewhere in the Support Center. `
+    + `Open ${left} more article that looks close to your problem. `
+    + `If it does not help either, you will be able to open a support ticket.</p>`
+    + `<button class="btn soft" type="button" data-action="qa-home">`
+      + `Browse all topics</button>`
+    + `</div>`;
+}
+
 function renderTopicGrid() {
   byId('topicGrid').innerHTML = CATEGORIES.map(c => {
     const n = catCount(c.name);
@@ -216,7 +282,11 @@ function renderResults(items) {
       + `${esc(x.question)}</span>`
       + `<span class="qa-chev" aria-hidden="true">⌄</span>`
     + `</button>`
-    + `<div class="a"><div class="answer-label">FULL ANSWER</div>${answerHtml(x.answer)}</div>`
+    + `<div class="a">`
+      + `<div class="answer-label">FULL ANSWER</div>`
+      + answerHtml(x.answer)
+      + feedbackMarkup(x.question)
+    + `</div>`
     + `</article>`
   ).join('');
 }
@@ -266,13 +336,8 @@ export function searchKB() {
       + `<div class="answer-label">BEST MATCH</div>`
       + `<h3>${esc(top.question)}</h3>`
       + answerHtml(top.answer)
-      + `<div class="answer-actions">`
-        + `<button class="btn green" type="button" data-action="qa-solved">`
-          + `Yes, this solved it</button>`
-        + `<button class="btn soft" type="button" data-action="qa-not-solved" `
-          + `data-q="${esc(q)}" data-answer="${esc(top.question)}">`
-          + `No, I still need help</button>`
-      + `</div></div>`;
+      + feedbackMarkup(top.question)
+      + `</div>`;
 
     renderResults(items.slice(1, Math.min(qaLimit, items.length)));
     byId('qaMeta').innerHTML =
@@ -285,28 +350,28 @@ export function searchKB() {
         + `Show ${Math.min(PAGE_SIZE, remaining)} more</button>`
       : '';
   } else {
+    // No article matched, so no article could have solved it. Sending this
+    // user back through the funnel would just be an obstacle course.
+    markNoResults(q);
+
     smart.innerHTML =
       `<div class="answer-card">`
       + `<div class="answer-label">NO CLOSE MATCH</div>`
-      + `<h3>I could not find a close answer</h3>`
-      + `<p>Try a shorter question or browse the topics. If the Support Center `
-      + `still cannot solve it, the Support path remains available.</p>`
+      + `<h3>Nothing in the Support Center matches that</h3>`
+      + `<p>Try shorter words or a different topic first — the answer may be `
+      + `filed under wording you did not expect. If it really is not here, `
+      + `open a ticket and a person will pick it up.</p>`
       + `<div class="answer-actions">`
-        + `<button class="btn soft" type="button" data-action="qa-not-solved" `
-          + `data-q="${esc(q)}" data-answer="No matching answer">`
-          + `Open support path</button>`
         + `<button class="btn soft" type="button" data-action="qa-home">`
           + `Browse all topics</button>`
+        + `<button class="btn green" type="button" data-action="open-ticket" `
+          + `data-question="">Open a support ticket</button>`
       + `</div></div>`;
 
     renderResults([]);
     byId('qaMeta').textContent = '0 results';
     byId('qaMoreWrap').innerHTML = '';
   }
-}
-
-export function appendToSmartAnswer(html) {
-  byId('smartAnswer').innerHTML += html;
 }
 
 /* ============================================================
@@ -343,9 +408,7 @@ export function ensureLoaded() {
    Wiring
    ============================================================ */
 
-export function initQA(escalateHandler) {
-  onEscalate = escalateHandler;
-
+export function initQA() {
   registerActions({
     'qa-home':  () => showBrowse(),
     'qa-topic': el => showTopic(el.dataset.category),
@@ -360,8 +423,19 @@ export function initQA(escalateHandler) {
       const open = card.classList.toggle('open');
       el.setAttribute('aria-expanded', String(open));
     },
-    'qa-solved': () => onEscalate.solved(),
-    'qa-not-solved': el => onEscalate.notSolved(el.dataset.q, el.dataset.answer),
+    'article-yes': el => {
+      markHelpful();
+      answerFeedback(el, 'You said this solved it.',
+        `<div class="article-outcome-box solved">`
+        + `<strong>Glad that helped.</strong>`
+        + `<p>If something else comes up, search here again.</p></div>`);
+    },
+
+    'article-no': el => {
+      const question = el.dataset.question;
+      markUnhelpful(question, byId('qSearch').value.trim());
+      answerFeedback(el, 'You said this did not solve it.', outcomeMarkup(question));
+    },
   });
 
   byId('qSearch').addEventListener('keydown', e => {

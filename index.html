@@ -37,7 +37,9 @@
       <button class="nav active" type="button" data-view="home"><span class="ico" aria-hidden="true">🏠</span>Start Here</button>
       <button class="nav" type="button" data-view="guide-live"><span class="ico" aria-hidden="true">📊</span>Dashboard guide</button>
       <button class="nav" type="button" data-view="qa"><span class="ico" aria-hidden="true">❓</span>Support Center</button>
-      <button class="nav" type="button" data-view="support"><span class="ico" aria-hidden="true">💬</span>Support</button>
+      <!-- Hidden until the user actually has a ticket; support.js
+           reveals it and keeps the open-ticket count in the badge. -->
+      <button class="nav" type="button" data-view="support" hidden><span class="ico" aria-hidden="true">🎫</span>Support Tickets<span class="navplus" hidden>0</span></button>
 
       <!-- Areas of the main AI Business Lab product. They are shown so the
            sidebar still reads like the real system, but this page cannot
@@ -321,42 +323,36 @@
         <div class="help-contact">
           <div>
             <h3>Still need help?</h3>
-            <p>If the Support Center did not answer it, open a ticket and a person will pick it up.</p>
+            <p>Open an article and tell us whether it solved your problem. If two articles do not help, you will be able to open a support ticket from inside the article.</p>
           </div>
           <div class="help-contact-actions">
-            <button class="btn green" type="button" data-action="open-ticket">Open Support Ticket</button>
             <button class="btn red" type="button" data-action="open-refund">Request a Refund</button>
           </div>
         </div>
       </section>
 
-      <!-- ---------- Support ---------- -->
-      <section id="support" class="view" aria-label="Support">
+      <!-- ---------- Support Tickets ---------- -->
+      <section id="support" class="view" aria-label="Support tickets">
         <div class="head">
           <div class="title">
-            <div class="round" aria-hidden="true">💬</div>
+            <div class="round" aria-hidden="true">🎫</div>
             <div>
-              <h1>Support</h1>
-              <p>View your requests or open a new one when the Support Center could not solve the issue.</p>
+              <h1>Support Tickets</h1>
+              <p>Requests you have opened and where they stand.</p>
             </div>
           </div>
           <button class="btn red" type="button" data-action="open-refund">Request a Refund</button>
         </div>
 
+        <div id="tickets" class="tickets"></div>
+
         <div class="question-path">
           <div>
-            <h3>General question?</h3>
-            <p>For normal questions, check the Q&amp;A first. If the answer does not solve it, the ticket option will unlock.</p>
+            <h3>Something else?</h3>
+            <p>Search the Support Center first. New tickets are opened from inside an article, once two of them have failed to answer your question.</p>
           </div>
-          <button class="btn green" type="button" data-action="view" data-view="qa">Ask the Support Center</button>
+          <button class="btn green" type="button" data-action="view" data-view="qa">Go to the Support Center</button>
         </div>
-
-        <div class="tickets-head">
-          <h2>My Tickets</h2>
-          <button id="generalTicketBtn" class="btn soft" type="button" data-action="open-ticket">Open Support Ticket</button>
-        </div>
-
-        <div id="tickets" class="tickets"></div>
       </section>
 
     </div>

@@ -18,6 +18,12 @@ const KEYS = {
   lastAnswer:  'abl_help_last_answer',
   index:  path => `abl_v21_${path}_index`,
   done:   path => `abl_v21_${path}_done`,
+
+  // Ticket deflection. `failed` counted clicks, so clicking "No" twice on
+  // one article unlocked a ticket. These track which distinct articles were
+  // marked unhelpful, and whether a search came back empty.
+  unhelpful:  'abl_help_unhelpful',
+  noResults:  'abl_help_no_results',
 };
 
 function read(key) {
@@ -70,6 +76,39 @@ export function setLastQuestion(q, answer) {
 
 export function getLastQuestion() {
   return read(KEYS.lastQ) || '';
+}
+
+/* --- Ticket deflection ----------------------------------- */
+
+/** Questions the user marked "this did not solve my problem". */
+export function getUnhelpful() {
+  const arr = readJSON(KEYS.unhelpful, []);
+  return new Set(Array.isArray(arr) ? arr : []);
+}
+
+export function addUnhelpful(question) {
+  const set = getUnhelpful();
+  set.add(question);
+  write(KEYS.unhelpful, JSON.stringify([...set]));
+  return set;
+}
+
+export function getNoResults() {
+  return read(KEYS.noResults) === '1';
+}
+
+export function setNoResults(v) {
+  write(KEYS.noResults, v ? '1' : '0');
+}
+
+/**
+ * Cleared when a ticket is submitted, so the next ticket has to earn its
+ * way through the articles again rather than the gate staying open forever.
+ */
+export function resetDeflection() {
+  write(KEYS.unhelpful, '[]');
+  write(KEYS.noResults, '0');
+  write(KEYS.failed, '0');
 }
 
 /* --- Tickets -------------------------------------------- */

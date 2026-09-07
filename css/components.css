@@ -170,7 +170,8 @@
 .form input:hover,
 .form textarea:hover,
 .form select:hover { border-color: var(--brand-border); }
-.form textarea { min-height: 125px; resize: vertical; }
+/* Tall enough to show a prefilled summary without scrolling. */
+.form textarea { min-height: 200px; resize: vertical; line-height: var(--lh-normal); }
 
 .ticket-modal { padding: var(--sp-5); min-width: min(720px, 88vw); }
 .ticket-modal h2 { font-size: var(--fs-7); margin-bottom: var(--sp-1); }

@@ -1,8 +1,10 @@
 # AI Business Lab — Start Here
 
-Customer onboarding and Support Center. Six views: Start Here, two step-by-step
-guides, What Happens Next, the Support Center (232 articles across 10 topics), and
-Support.
+Customer onboarding and self-service support. Six views: Start Here, two
+step-by-step guides, What Happens Next, the Support Center (232 articles across
+10 topics), and Support Tickets.
+
+The Support Center is built to deflect tickets, not collect them — see below.
 
 Rebuilt from a single 4.1 MB `index.html` into static files. No framework, no
 build step — upload the folder and serve it.
@@ -61,6 +63,53 @@ hard-code a hex value. Solid fills that carry small text use the
 `--*-solid-bg` / `--*-solid-fg` pairs — plain `--brand` is only 3.07:1 against
 white and fails AA below 24px.
 
+## Ticket deflection
+
+The goal is to stop customers opening tickets for questions the articles
+already answer. **There is no "Open a ticket" button anywhere in the
+navigation.** The only routes to the form are:
+
+| Route | Condition |
+|---|---|
+| Inside an article | After **2 different** articles were marked "did not solve it" |
+| The no-match card | A search returned zero articles, so none could have helped |
+| Request a Refund | Always — deliberately ungated |
+
+Every answer ends with "Did this solve your problem? / Yes / No". Saying No
+records that article and shows either *"let's try one more"* or, on the second
+distinct article, the ticket button. The count is a **set of article
+questions**, not a click counter, so answering No twice on the same article
+does not unlock anything. An article already marked unhelpful re-renders in
+its answered state, in the list and after any re-render.
+
+Submitting a ticket calls `resetDeflection()`, so the next ticket has to earn
+its way through two more articles rather than the gate staying open forever.
+
+The ticket body is prefilled with the search query and the titles of the
+articles that failed, so an agent does not open with "did you search the help
+centre?".
+
+**Support Tickets** is hidden from the sidebar until the user has a ticket;
+after that it stays, with a badge counting open ones.
+
+Refunds bypass all of it. Delaying a refund request is a legal problem, not
+just a bad experience.
+
+### What the old model got wrong
+
+```js
+const unlocked = failedAnswers >= 2 || !q;   // removed
+```
+
+`!q` is true when the user has never searched, so a brand-new customer going
+straight to Support got the form on the first click — the gate only applied to
+people who had already tried. There were also four separate buttons that
+opened a ticket. All are gone.
+
+`abl_help_failed` survives as a **read-only migration signal**: anyone already
+past the old gate stays past it. Writing the new count into that key destroyed
+exactly the signal it carries, which cost a round of debugging — don't.
+
 ## The sidebar is two groups
 
 The top four entries — Start Here, Dashboard guide, Support Center, Support —
@@ -115,7 +164,8 @@ silently.
 Start the server first, then:
 
 ```
-node scripts/verify.mjs        # 55 checks: parity, sidebar, Support Center states, screenshots
+node scripts/verify.mjs           # 54 checks: parity, sidebar, Support Center states, screenshots
+node scripts/verify-deflection.mjs  # 32 checks: the whole ticket funnel
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast
 node scripts/verify-overflow.mjs  # 30 checks: no view scrolls sideways at 5 widths
 node scripts/verify-bug.mjs    # demonstrates the bug the original shipped with

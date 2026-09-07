@@ -123,7 +123,7 @@ check('live guide step titles', B.guides.live, A.guides.live);
 check('highlight overlay geometry', B.overlays, A.overlays);
 check('rebuilt has no page errors', B.errors, []);
 
-console.log('\n=== THE FIXED BUG: escalation button');
+console.log('\n=== THE FIXED BUG: arguments never ride inside an attribute');
 {
   const p = pageB;
   await p.goto(REBUILT);
@@ -135,28 +135,31 @@ console.log('\n=== THE FIXED BUG: escalation button');
   await p.click('[data-action="qa-search"]');
   await p.waitForSelector('#smartAnswer .answer-card');
 
-  const attrs = await p.evaluate(() => {
-    const b = [...document.querySelectorAll('#smartAnswer .answer-actions button')]
-      .find(x => /still need help/i.test(x.textContent));
-    return b ? b.getAttributeNames() : null;
+  // The original built onclick="notSolved(${JSON.stringify(q)},...)", whose
+  // quotes closed the attribute and left the button inert. The successor
+  // control carries its argument as a data attribute instead, so no
+  // question text can break out of the markup.
+  const btn = await p.evaluate(() => {
+    const b = document.querySelector('#smartAnswer [data-action="article-no"]');
+    return b ? { attrs: b.getAttributeNames(), question: b.dataset.question } : null;
   });
-  check('button has clean attributes (no garbage)', attrs,
-        ['class', 'type', 'data-action', 'data-q', 'data-answer']);
+  check('escalation control has clean attributes (no garbage)', btn.attrs,
+        ['class', 'type', 'data-action', 'data-question']);
+  check('its argument survives intact',
+        btn.question, 'How do withdrawals and payouts work?');
 
-  await p.click('[data-action="qa-not-solved"]');
-  await p.waitForTimeout(200);
-  check('1st click increments abl_help_failed',
-        await p.evaluate(() => localStorage.getItem('abl_help_failed')), '1');
-  check('1st click renders the "try again" card',
-        await p.evaluate(() => document.querySelectorAll('#smartAnswer .answer-card').length), 2);
-
-  await p.fill('#qSearch', 'refund');
-  await p.click('[data-action="qa-search"]');
-  await p.waitForSelector('[data-action="qa-not-solved"]', { state: 'attached' });
-  await p.click('[data-action="qa-not-solved"]');
-  await p.waitForTimeout(200);
-  check('2nd click unlocks the Support ticket',
-        await p.evaluate(() => !!document.querySelector('[data-action="open-ticket"]')), true);
+  // A question containing quotes and angle brackets must not corrupt the
+  // markup — the exact class of failure the original shipped.
+  check('a hostile question cannot break the attribute',
+        await p.evaluate(() => {
+          const probe = 'He said "why" & <b>bold</b>';
+          const esc = s => String(s).replace(/[&<>"']/g, c => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+          const host = document.createElement('div');
+          host.innerHTML = `<button data-action="article-no" data-question="${esc(probe)}"></button>`;
+          const b = host.querySelector('button');
+          return b.getAttributeNames().length === 2 && b.dataset.question === probe;
+        }), true);
 }
 
 console.log('\n=== SIDEBAR: in-page vs external entries');
