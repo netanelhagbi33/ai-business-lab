@@ -76,6 +76,12 @@ console.log('\n=== ONE UNHELPFUL ARTICLE IS NOT ENOUGH');
   check('the user is told to try one more',
         await p.evaluate(() =>
           /one more/i.test(document.querySelector('.article-outcome-box').textContent)), true);
+  // Publishing "one more and you get a ticket" turns the gate into a
+  // two-click formality.
+  check('but the unlock rule is not spelled out',
+        await p.evaluate(() =>
+          /will be able to open|two articles|open a support ticket/i
+            .test(document.querySelector('.article-outcome-box').textContent)), false);
   check('one attempt recorded',
         await p.evaluate(() => JSON.parse(localStorage.getItem('abl_help_unhelpful')).length), 1);
 

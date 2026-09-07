@@ -231,6 +231,50 @@ console.log('\n=== SIDEBAR: in-page vs external entries');
 }
 
 
+
+console.log('\n=== "Request a Refund" exists in exactly one place');
+{
+  const p = pageB;
+  await p.goto(REBUILT);
+  await p.evaluate(() => localStorage.clear());
+  await p.reload();
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+  await p.click('.nav[data-view="qa"]');
+  await p.waitForSelector('.topic-card', { state: 'attached' });
+
+  // Across the whole document, every view included — not just the visible one.
+  check('one refund control in the entire app',
+        await p.evaluate(() =>
+          [...document.querySelectorAll('[data-action="open-refund"]')].map(b => ({
+            text: b.textContent.trim(),
+            inRefundBox: !!b.closest('.help-refund'),
+            view: b.closest('.view')?.id ?? null,
+          }))),
+        [{ text: 'Request a Refund', inRefundBox: true, view: 'qa' }]);
+
+  // It must survive into the ticket view too — i.e. not reappear there.
+  await p.evaluate(() => {
+    document.querySelectorAll('.view').forEach(x => x.classList.remove('active'));
+    document.getElementById('support').classList.add('active');
+  });
+  await p.waitForTimeout(150);
+  check('the Support Tickets header offers no refund button',
+        await p.evaluate(() =>
+          !!document.querySelector('#support [data-action="open-refund"]')), false);
+
+  // And nothing rendered at runtime adds one.
+  await p.evaluate(() => {
+    document.querySelectorAll('.view').forEach(x => x.classList.remove('active'));
+    document.getElementById('qa').classList.add('active');
+  });
+  await p.fill('#qSearch', 'refund');
+  await p.click('[data-action="qa-search"]');
+  await p.waitForTimeout(300);
+  check('a refund search does not render extra refund buttons',
+        await p.evaluate(() =>
+          document.querySelectorAll('[data-action="open-refund"]').length), 1);
+}
+
 console.log('\n=== SUPPORT CENTER STATES (browse / topic / search)');
 {
   const p = pageB;
@@ -361,11 +405,13 @@ console.log('\n=== PERSISTENCE (localStorage keys must be unchanged)');
 console.log('\n=== TICKETS');
 {
   const p = pageB;
+  // The refund form is reached from the Support Center's refund box —
+  // the only place the control exists.
   await p.evaluate(() => {
     document.querySelectorAll('.view').forEach(x => x.classList.remove('active'));
-    document.getElementById('support').classList.add('active');
+    document.getElementById('qa').classList.add('active');
   });
-  await p.click('#support [data-action="open-refund"]');
+  await p.click('.help-refund [data-action="open-refund"]');
   await p.waitForSelector('#tSubject');
   await p.fill('#tMessage', 'Verification ticket');
   await p.click('#modal [data-action="submit-ticket"]');

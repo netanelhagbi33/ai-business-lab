@@ -17,7 +17,7 @@
 import { esc, byId, registerActions, loadJSON, renderError } from './dom.js';
 import {
   markUnhelpful, markHelpful, markNoResults, isUnhelpful,
-  canOpenTicket, attemptsRemaining, REQUIRED_ATTEMPTS,
+  canOpenTicket, REQUIRED_ATTEMPTS,
 } from './support.js';
 
 const PAGE_SIZE = 18;
@@ -234,12 +234,14 @@ function outcomeMarkup(question) {
       + `</div>`;
   }
 
-  const left = attemptsRemaining();
+  // Deliberately does not state the rule. Telling someone "one more and you
+  // get a ticket" turns the gate into a two-click formality; the unlock is
+  // better as a surprise once they have genuinely tried.
   return `<div class="article-outcome-box">`
     + `<strong>Noted — let's try one more.</strong>`
     + `<p>Most questions are answered somewhere in the Support Center. `
-    + `Open ${left} more article that looks close to your problem. `
-    + `If it does not help either, you will be able to open a support ticket.</p>`
+    + `Open another article that looks close to your problem, or search using `
+    + `different words.</p>`
     + `<button class="btn soft" type="button" data-action="qa-home">`
       + `Browse all topics</button>`
     + `</div>`;

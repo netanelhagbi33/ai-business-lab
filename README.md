@@ -99,7 +99,16 @@ centre?".
 after that it stays, with a badge counting open ones.
 
 Refunds bypass all of it. Delaying a refund request is a legal problem, not
-just a bad experience.
+just a bad experience. **"Request a Refund" exists in exactly one place** —
+the "Looking for a refund?" box at the foot of the Support Center — and
+verify.mjs fails if a second one appears anywhere in the app.
+
+**No customer-facing copy states the rule.** Not "if two articles do not
+help", not "you will be able to open a ticket". A published gate is a gate
+people click through twice on purpose; the unlock should land only after
+someone has genuinely tried. The one place the threshold is mentioned is the
+panel shown *after* it opens, where it is describing what happened rather
+than advertising a shortcut.
 
 ### What the old model got wrong
 
