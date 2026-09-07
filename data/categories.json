@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Getting Started",
+  "icon": "🧭",
+  "blurb": "What you bought, how the system works, and what to do first."
+ },
+ {
+  "name": "Building My Site",
+  "icon": "🚀",
+  "blurb": "Launching your website: niche, business name, design and logo."
+ },
+ {
+  "name": "Dashboard & Access",
+  "icon": "📊",
+  "blurb": "Logging in, finding your way around, and what each button does."
+ },
+ {
+  "name": "Website & Content",
+  "icon": "📝",
+  "blurb": "Articles, products, keywords and everything that appears on your site."
+ },
+ {
+  "name": "Traffic & Boosters",
+  "icon": "🔥",
+  "blurb": "Free and paid boosts, visitors, and how traffic turns into results."
+ },
+ {
+  "name": "Earnings & Payouts",
+  "icon": "💰",
+  "blurb": "Revenue, your wallet, withdrawals and payment methods."
+ },
+ {
+  "name": "Purchases & Billing",
+  "icon": "💳",
+  "blurb": "What you paid for, invoices, and managing your purchases."
+ },
+ {
+  "name": "Support",
+  "icon": "🎧",
+  "blurb": "Opening tickets, response times, and reaching a person."
+ },
+ {
+  "name": "Refunds",
+  "icon": "↩️",
+  "blurb": "Cancellation, refund eligibility, and how to request one."
+ },
+ {
+  "name": "Account & Security",
+  "icon": "🔒",
+  "blurb": "Passwords, account access, and keeping your account safe."
+ }
+]

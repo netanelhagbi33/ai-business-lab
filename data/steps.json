@@ -1,0 +1,155 @@
+{
+ "build": [
+  {
+   "n": 1,
+   "title": "Start the launch",
+   "simple": "If your site is not live yet, start here. Press Launch My Business. The system will ask you for four quick choices.",
+   "tip": "You do not need technical knowledge. The system gives you buttons to choose from.",
+   "images": [
+    "19517bc1-3ec9-4018-bbc2-62b0ae1a9ea5.png"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Choose your niche",
+   "simple": "Pick the topic you want your website to focus on. Your niche guides the products and articles that the AI creates for your site.",
+   "tip": "Choose the topic that feels most natural to you. You can simply click one of the options shown on screen.",
+   "images": [
+    "78cdb2de-fc15-4b7d-bb4a-1ab57a910f97.png"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Choose your business name",
+   "simple": "After the niche is selected, the system suggests business names. Pick the name you like. It becomes your brand and part of your website address.",
+   "tip": "You do not need to invent a name yourself unless the system offers that option. Pick one of the suggestions and continue.",
+   "images": [
+    "0623e3db-44e8-48f7-810c-34db237382c3.png"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Choose the look of your site",
+   "simple": "First choose a design family. Then choose one theme inside that family. This controls the colors, style, and overall look of the website.",
+   "tip": "There is no ‘correct’ design. Pick the style you like best.",
+   "images": [
+    "68d5f58c-cd0a-43a5-ad80-7fcc22e91234.png",
+    "5348c875-4676-4380-9f1d-75bcb62aec34.png"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Create your logo",
+   "simple": "At the last setup step, choose Generate a Logo. The system creates logo options for the business name you selected.",
+   "tip": "Click the logo you prefer. You can review it before the website goes live.",
+   "images": [
+    "f886fd7a-9517-48e4-9e72-6782c1666ecf.png",
+    "6b4d64d7-ad02-497d-b24f-17c32eee716a.png"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Review and launch",
+   "simple": "Before launch, check the summary: niche, business name, website address, design, and logo. If everything looks right, press Launch My Business.",
+   "tip": "If you want to change something, use Change answer / Start over before launching.",
+   "images": [
+    "2c45cea8-b9d2-42a7-b1be-ba3bd573bd87.png"
+   ]
+  }
+ ],
+ "live": [
+  {
+   "n": 1,
+   "title": "Your Dashboard — your home screen",
+   "simple": "After your site is live, the Dashboard is your starting point. It gives you quick ways to visit the website, check results, add a payout method, view billing, boost traffic, and see upgrades.",
+   "tip": "You can also type a normal question to the AI Assistant. You do not have to memorize commands.",
+   "images": [
+    "bf0ba8f7-455a-4e05-9305-8108a2e1f021.png",
+    "45699c67-7f1e-4f03-8af0-ee6d8c42923a.png",
+    "733825dd-c2dd-4fcb-b37f-5bbe40608116.png"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Stats — understand what is happening",
+   "simple": "Stats show the activity on your website. Impressions are views, Clicks are recorded clicks, and Revenue is the earnings calculated for the selected period.",
+   "tip": "Estimated Website Value is not the same as withdrawable money. Your wallet and payout status are shown separately.",
+   "images": [
+    "f7f5c088-2093-43f2-8fa1-cb37dd0dcf9e.png",
+    "c13fcc1b-99f5-462d-b9c5-b58e8a88e3ca.png"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Payment method — tell us where to send payouts",
+   "simple": "Add a payout method before you want to withdraw earnings. The current screen lets you choose PayPal, Wise, or Bank transfer.",
+   "tip": "Enter the details carefully. You can update your payout method later if needed.",
+   "images": [
+    "2a0a5fac-d860-45c8-95c2-770b5087c2b1.png",
+    "360bf85d-40c9-49db-9dc9-6a102695056a.png"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Billing & Wallet — earnings and available balance",
+   "simple": "This area shows estimated revenue, your available balance, monthly breakdown, and money that is still in hold. It also gives access to daily earnings, past withdrawals, and payment method settings.",
+   "tip": "Money can appear in your earnings before it becomes available to withdraw. Follow the payout timing and minimum threshold shown in the help information.",
+   "images": [
+    "95baa76a-3b18-4f2b-8afc-dd44c262a6c9.png",
+    "60a3b2b2-23d1-48f9-8b43-85cac7568f60.png",
+    "ecc2bd4f-fa94-40e4-849a-9d59235be3f2.png",
+    "418c940f-9b43-4bd3-8d55-a2398a7f60ca.png",
+    "761eebbe-f0b4-47cb-8fd8-64db35160156.png"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Free Traffic Boost — add a 24-hour traffic push",
+   "simple": "The Free Traffic Boost lets you activate a 24-hour visitor boost. Press Boost for the website you want to boost. When the timer ends, you can activate the available boost again.",
+   "tip": "The free 24-hour boost is different from paid 7-day, 14-day, or 30-day Traffic Boost packages.",
+   "images": [
+    "2f8bcf44-38db-4811-bbae-3fa957361dc4.png",
+    "c13fcc1b-99f5-462d-b9c5-b58e8a88e3ca.png"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Article Generator — add more content",
+   "simple": "Your website starts with AI-generated comparison content. The Article Generator is the place where you can expand the site with additional articles when you choose to do so.",
+   "tip": "More content gives the site more topics and pages to work with, but traffic or rankings are never guaranteed.",
+   "images": [
+    "55844d79-4232-455d-b23e-94ae65073074.png"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Paid Boosters & Upgrades — optional growth tools",
+   "simple": "The Boosters and Upgrades areas show optional paid products such as traffic packages and article packs. These are separate from the free daily boost.",
+   "tip": "You do not need to buy an upgrade just to keep your existing website live.",
+   "images": [
+    "5298a960-90a2-4048-a7a4-a204e4cbbb6f.png",
+    "48659151-96d6-4ab9-85d1-2b1c54ef2fa9.png",
+    "35980f19-2659-4cb1-b421-6bb9fa9b2334.png"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Purchase Billing — see what you bought",
+   "simple": "The Billing page in the left menu shows invoices for add-ons you purchased and their status. This is different from your earnings wallet.",
+   "tip": "Think of it this way: Purchase Billing = money you paid. Billing & Wallet in the assistant = money your website generated.",
+   "images": [
+    "f85384c5-e95e-4649-9fcb-819ce381be92.png"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Support — view and manage tickets",
+   "simple": "Open Support to see your requests and the team’s replies. You can see whether a ticket is in progress or closed and open a new request when needed.",
+   "tip": "Refund requests always stay available as a direct Support request so they can be tracked from the beginning.",
+   "images": [
+    "8d0c15eb-3148-4b54-a5b5-b226aa5ec463.png",
+    "35980f19-2659-4cb1-b421-6bb9fa9b2334.png"
+   ]
+  }
+ ]
+}

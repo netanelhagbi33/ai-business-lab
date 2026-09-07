@@ -1,0 +1,219 @@
+{
+ "19517bc1-3ec9-4018-bbc2-62b0ae1a9ea5.png": [
+  {
+   "x": 23.106,
+   "y": 52.27,
+   "w": 59.343,
+   "h": 7.42,
+   "label": "Press Launch My Business"
+  }
+ ],
+ "78cdb2de-fc15-4b7d-bb4a-1ab57a910f97.png": [
+  {
+   "x": 22.37,
+   "y": 25.33,
+   "w": 59.632,
+   "h": 53.084,
+   "label": "Choose one niche",
+   "tone": "blue",
+   "noBadge": true
+  }
+ ],
+ "0623e3db-44e8-48f7-810c-34db237382c3.png": [
+  {
+   "x": 22.845,
+   "y": 54.939,
+   "w": 59.22,
+   "h": 15.427,
+   "label": "Choose a business name",
+   "tone": "blue",
+   "noBadge": true
+  }
+ ],
+ "68d5f58c-cd0a-43a5-ad80-7fcc22e91234.png": [
+  {
+   "x": 22.893,
+   "y": 51.211,
+   "w": 59.182,
+   "h": 18.392,
+   "label": "Choose a design family",
+   "tone": "blue",
+   "noBadge": true
+  }
+ ],
+ "5348c875-4676-4380-9f1d-75bcb62aec34.png": [
+  {
+   "x": 22.922,
+   "y": 30.522,
+   "w": 59.257,
+   "h": 39.956,
+   "label": "Choose one theme",
+   "tone": "blue",
+   "noBadge": true
+  }
+ ],
+ "f886fd7a-9517-48e4-9e72-6782c1666ecf.png": [
+  {
+   "x": 22.208,
+   "y": 70.366,
+   "w": 59.708,
+   "h": 7.658,
+   "label": "Press Generate a Logo"
+  }
+ ],
+ "6b4d64d7-ad02-497d-b24f-17c32eee716a.png": [
+  {
+   "x": 22.532,
+   "y": 64.469,
+   "w": 29.557,
+   "h": 21.006,
+   "label": "Choose the logo you like",
+   "tone": "blue"
+  },
+  {
+   "x": 52.658,
+   "y": 64.469,
+   "w": 29.494,
+   "h": 21.006,
+   "label": "Choose the logo you like",
+   "tone": "blue",
+   "noBadge": true
+  }
+ ],
+ "2c45cea8-b9d2-42a7-b1be-ba3bd573bd87.png": [
+  {
+   "x": 22.765,
+   "y": 70.667,
+   "w": 29.867,
+   "h": 7.667,
+   "label": "Press Launch My Business"
+  }
+ ],
+ "bf0ba8f7-455a-4e05-9305-8108a2e1f021.png": [
+  {
+   "x": 23.087,
+   "y": 48.961,
+   "w": 59.583,
+   "h": 16.051,
+   "label": "Choose the action you need",
+   "tone": "blue",
+   "noBadge": true
+  }
+ ],
+ "2a0a5fac-d860-45c8-95c2-770b5087c2b1.png": [
+  {
+   "x": 22.965,
+   "y": 68.894,
+   "w": 59.369,
+   "h": 8.065,
+   "label": "Press Add method"
+  }
+ ],
+ "360bf85d-40c9-49db-9dc9-6a102695056a.png": [
+  {
+   "x": 39.557,
+   "y": 64.965,
+   "w": 16.392,
+   "h": 6.961,
+   "label": "Press Save method"
+  }
+ ],
+ "2f8bcf44-38db-4811-bbae-3fa957361dc4.png": [
+  {
+   "x": 60.9,
+   "y": 52.526,
+   "w": 8.365,
+   "h": 6.228,
+   "label": "Press Boost",
+   "tone": "orange",
+   "edgeRight": true
+  },
+  {
+   "x": 60.9,
+   "y": 67.215,
+   "w": 8.365,
+   "h": 6.228,
+   "label": "Press Boost",
+   "tone": "orange",
+   "noBadge": true,
+   "edgeRight": true
+  }
+ ],
+ "55844d79-4232-455d-b23e-94ae65073074.png": [
+  {
+   "x": 36.745,
+   "y": 75.994,
+   "w": 29.258,
+   "h": 7.218,
+   "label": "Press Generate 5 New Articles"
+  }
+ ],
+ "5298a960-90a2-4048-a7a4-a204e4cbbb6f.png": [
+  {
+   "x": 27.317,
+   "y": 78.783,
+   "w": 23.029,
+   "h": 4.03,
+   "label": "Press Activate",
+   "tone": "orange"
+  },
+  {
+   "x": 53.665,
+   "y": 78.783,
+   "w": 23.029,
+   "h": 4.03,
+   "label": "Press Activate",
+   "tone": "orange",
+   "noBadge": true
+  }
+ ],
+ "48659151-96d6-4ab9-85d1-2b1c54ef2fa9.png": [
+  {
+   "x": 68.817,
+   "y": 49.121,
+   "w": 6.958,
+   "h": 4.924,
+   "label": "Press Request",
+   "edgeRight": true
+  },
+  {
+   "x": 68.817,
+   "y": 65.533,
+   "w": 6.958,
+   "h": 4.807,
+   "label": "Press Request",
+   "noBadge": true,
+   "edgeRight": true
+  }
+ ],
+ "35980f19-2659-4cb1-b421-6bb9fa9b2334.png": [
+  {
+   "x": 88.135,
+   "y": 89.082,
+   "w": 10.343,
+   "h": 7.782,
+   "label": "1. Press Support",
+   "edgeRight": true
+  },
+  {
+   "x": 73.033,
+   "y": 75.261,
+   "w": 25.444,
+   "h": 12.776,
+   "label": "2. Choose My Tickets",
+   "tone": "blue",
+   "edgeRight": true
+  }
+ ],
+ "8d0c15eb-3148-4b54-a5b5-b226aa5ec463.png": [
+  {
+   "x": 88.363,
+   "y": 1.789,
+   "w": 10.217,
+   "h": 3.496,
+   "label": "Press Open a ticket",
+   "edgeRight": true,
+   "labelBelow": true
+  }
+ ]
+}

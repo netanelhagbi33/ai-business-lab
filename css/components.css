@@ -1,0 +1,184 @@
+/* ============================================================
+   Components — buttons, chips, forms, modal, tickets.
+   Shared across views.
+   ============================================================ */
+
+/* --- Buttons -------------------------------------------- */
+.btn {
+  border: 1px solid transparent;
+  border-radius: var(--r-1);
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              opacity var(--dur-fast) var(--ease);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn.green      { background: var(--brand-solid-bg); color: var(--brand-solid-fg); }
+.btn.green:hover{ background: var(--brand-solid-hover); }
+
+.btn.blue       { background: var(--info-solid-bg); color: var(--info-solid-fg); }
+.btn.blue:hover { background: var(--info-solid-hover); }
+
+.btn.soft       { background: var(--surface); border-color: var(--border-strong); color: var(--text-secondary); }
+.btn.soft:hover { background: var(--surface-sunken); border-color: var(--brand-border); }
+
+.btn.red        { background: var(--danger-subtle); border-color: var(--danger-border); color: var(--danger-strong); }
+.btn.red:hover  { border-color: var(--danger); }
+
+.btn.orange     { background: var(--warn); color: #fff; }
+
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn:disabled:active { transform: none; }
+
+/* --- Chips / pills -------------------------------------- */
+.chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--r-pill);
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.chip:hover { border-color: var(--brand-border); }
+
+/* --- Question path banner (home + support) -------------- */
+.question-path {
+  margin-top: var(--sp-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-3);
+  padding: var(--sp-5);
+  background: var(--surface);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-5);
+}
+.question-path h3 { font-size: var(--fs-5); margin-bottom: var(--sp-1); }
+.question-path p  { color: var(--text-muted); font-size: var(--fs-3); }
+
+/* --- Tickets -------------------------------------------- */
+.tickets { display: grid; gap: var(--sp-3); }
+
+.ticket {
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  background: var(--surface);
+  padding: var(--sp-4);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+.ticket-meta { font-size: var(--fs-2); color: var(--text-muted); margin-top: var(--sp-1); }
+.ticket-body { font-size: var(--fs-3); margin-top: var(--sp-2); color: var(--text-secondary); white-space: pre-line; }
+
+.status {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  border-radius: var(--r-pill);
+  padding: var(--sp-1) var(--sp-2);
+  background: var(--info-subtle);
+  color: var(--info-strong);
+  white-space: nowrap;
+  height: max-content;
+}
+
+.tickets-empty {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--r-2);
+  padding: var(--sp-5);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.tickets-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-4);
+  margin: var(--sp-5) 0 var(--sp-3);
+}
+.tickets-head h2 { font-size: var(--fs-6); }
+
+/* --- Modal ---------------------------------------------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 18, 22, .78);
+  z-index: var(--z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+}
+.modal.show { display: flex; }
+
+.modal-inner {
+  position: relative;
+  max-width: 96vw;
+  max-height: 93vh;
+  background: var(--surface);
+  border-radius: var(--r-3);
+  overflow: auto;
+  box-shadow: var(--sh-4);
+}
+.modal-inner img {
+  display: block;
+  width: auto; height: auto;      /* let max-* drive; keeps the ratio the
+                                     width/height attributes declare */
+  max-width: 92vw; max-height: 88vh;
+}
+
+.close {
+  position: fixed;
+  top: var(--sp-5); right: var(--sp-5);
+  background: var(--surface);
+  border: 0;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  font-size: var(--fs-6);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--sh-2);
+}
+
+/* --- Forms ---------------------------------------------- */
+.form { display: grid; gap: var(--sp-3); max-width: 760px; }
+.form label { font-weight: var(--fw-bold); font-size: var(--fs-3); display: grid; gap: var(--sp-2); }
+
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-1);
+  padding: var(--sp-3);
+  font: inherit;
+  font-size: var(--fs-4);
+  font-weight: var(--fw-normal);
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.form input:hover,
+.form textarea:hover,
+.form select:hover { border-color: var(--brand-border); }
+.form textarea { min-height: 125px; resize: vertical; }
+
+.ticket-modal { padding: var(--sp-5); min-width: min(720px, 88vw); }
+.ticket-modal h2 { font-size: var(--fs-7); margin-bottom: var(--sp-1); }
+.ticket-modal > p { color: var(--text-muted); margin-bottom: var(--sp-4); font-size: var(--fs-3); }
+
+@media (max-width: 700px) {
+  .question-path { flex-direction: column; align-items: stretch; }
+  .question-path .btn { width: 100%; }
+  .ticket { flex-direction: column; }
+  .close { top: var(--sp-3); right: var(--sp-3); }
+}

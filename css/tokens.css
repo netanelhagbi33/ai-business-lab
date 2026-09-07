@@ -1,0 +1,238 @@
+/* ============================================================
+   Design tokens — the single source of truth.
+   Replaces 176 hard-coded hex colors, 24 font sizes and
+   16 radii from the original file.
+   Semantic names, not literal ones: a theme swap touches
+   only this file.
+   ============================================================ */
+
+:root {
+  /* --- Brand (green) ------------------------------------- */
+  --brand:            #0aa77c;
+  --brand-hover:      #078764;
+  --brand-strong:     #076e55;  /* text on light green tints; darkened
+                                   from #087d61, which measured 4.1:1 on
+                                   --brand-border and missed AA */
+  --brand-subtle:     #e8f7f2;
+  --brand-wash:       #f4fbf9;  /* faintest tint, card grounds */
+  --brand-border:     #cbeee3;
+  /* Solid fills that carry small white text. --brand itself is only
+     4.5:1 against white at large sizes; at 14px it measures 3.07,
+     below AA. These are the accessible pair. */
+  --brand-solid-bg:   #077a58;
+  --brand-solid-fg:   #ffffff;
+  --brand-solid-hover:#066c4e;
+
+  /* --- Info (blue) --------------------------------------- */
+  --info:             #367be8;
+  --info-strong:      #215fb0;  /* was #2367bd: 4.42:1 on --info-border, just under AA */
+  --info-subtle:      #eef6ff;
+  --info-wash:        #f3f8ff;
+  --info-border:      #d5e6fb;
+  --info-solid-bg:    #2b62c4;
+  --info-solid-fg:    #ffffff;
+  --info-solid-hover: #24549f;
+
+  /* --- Warning (orange) ---------------------------------- */
+  --warn:             #f39a11;
+  --warn-strong:      #a86200;
+  --warn-subtle:      #fff8ea;
+  --warn-border:      #f5d791;
+
+  /* --- Danger (red) -------------------------------------- */
+  --danger:           #d92d42;
+  --danger-strong:    #b42334;
+  --danger-subtle:    #fff1f2;
+  --danger-border:    #ffc7cf;
+
+  /* --- Surfaces ------------------------------------------ */
+  --surface:          #ffffff;
+  --surface-sunken:   #fbfcfc;
+  --surface-shell:    #fbfbfb;  /* sidebar */
+  --surface-page:     #ffffff;
+
+  /* --- Text ---------------------------------------------- */
+  --text:             #17191b;
+  --text-secondary:   #4b545a;
+  --text-muted:       #616a70;
+  --text-inverse:     #ffffff;
+
+  /* --- Borders ------------------------------------------- */
+  --border:           #e2e6e8;
+  --border-strong:    #d3d9db;
+  --border-subtle:    #edf0ef;
+
+  /* --- Type scale (8 steps, was 24 sizes) ---------------- */
+  --fs-1: 12px;
+  --fs-2: 13px;
+  --fs-3: 14px;
+  --fs-4: 16px;
+  --fs-5: 18px;
+  --fs-6: 22px;
+  --fs-7: 28px;
+  --fs-8: 34px;
+
+  --lh-tight:  1.2;
+  --lh-snug:   1.35;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.7;   /* long-form answer bodies */
+
+  --fw-normal: 400;
+  --fw-medium: 600;
+  --fw-bold:   700;
+
+  /* --- Spacing scale (6 steps) --------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  /* --- Radius (5, was 16) -------------------------------- */
+  --r-1: 8px;
+  --r-2: 12px;
+  --r-3: 16px;
+  --r-4: 20px;
+  --r-pill: 999px;
+
+  /* --- Elevation ----------------------------------------- */
+  --sh-1: 0 1px 2px rgba(22, 45, 38, .05);
+  --sh-2: 0 3px 12px rgba(22, 45, 38, .06);
+  --sh-3: 0 8px 26px rgba(27, 42, 52, .08);
+  --sh-4: 0 25px 90px rgba(0, 0, 0, .35);
+
+  /* --- Focus --------------------------------------------- */
+  --focus-ring: 0 0 0 3px rgba(10, 167, 124, .35);
+
+  /* --- Layout -------------------------------------------- */
+  --sidebar-w: 260px;
+  --topline-h: 42px;
+  --content-max: 1420px;
+
+  /* --- Motion -------------------------------------------- */
+  --ease: cubic-bezier(.4, 0, .2, 1);
+  --dur-fast: .15s;
+  --dur:      .2s;
+
+  --z-topline: 20;
+  --z-sidebar: 30;
+  --z-modal:  100;
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   Dark theme. Only tokens are redefined — no component rule
+   below this file needs to know dark mode exists.
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand:          #2fc79a;
+    --brand-hover:    #45d3a9;
+    --brand-strong:   #6fdcbb;
+    --brand-subtle:   #16302a;
+    --brand-wash:     #14231f;
+    --brand-border:   #22463c;
+    --brand-solid-bg:   #2fc79a;
+    --brand-solid-fg:   #0d1a16;
+    --brand-solid-hover:#45d3a9;
+
+    --info:           #5c9bff;
+    --info-strong:    #8fbaff;
+    --info-subtle:    #16233a;
+    --info-wash:      #141d2c;
+    --info-border:    #26385a;
+    --info-solid-bg:    #5c9bff;
+    --info-solid-fg:    #0b1220;
+    --info-solid-hover: #8fbaff;
+
+    --warn:           #f0a92e;
+    --warn-strong:    #f5c67a;
+    --warn-subtle:    #2e2413;
+    --warn-border:    #4d3d1c;
+
+    --danger:         #ef5f70;
+    --danger-strong:  #f79aa5;
+    --danger-subtle:  #33191d;
+    --danger-border:  #55272e;
+
+    --surface:        #191d1f;
+    --surface-sunken: #15191b;
+    --surface-shell:  #131719;
+    --surface-page:   #101416;
+
+    --text:           #e8eceb;
+    --text-secondary: #b3bcb9;
+    --text-muted:     #8f9a97;
+    --text-inverse:   #101416;
+
+    --border:         #2c3335;
+    --border-strong:  #3b4447;
+    --border-subtle:  #232a2c;
+
+    --sh-1: 0 1px 2px rgba(0, 0, 0, .4);
+    --sh-2: 0 3px 12px rgba(0, 0, 0, .45);
+    --sh-3: 0 8px 26px rgba(0, 0, 0, .5);
+    --sh-4: 0 25px 90px rgba(0, 0, 0, .7);
+
+    --focus-ring: 0 0 0 3px rgba(47, 199, 154, .45);
+
+    color-scheme: dark;
+  }
+}
+
+/* Explicit override wins in both directions. */
+:root[data-theme="dark"] {
+  --brand:          #2fc79a;
+  --brand-hover:    #45d3a9;
+  --brand-strong:   #6fdcbb;
+  --brand-subtle:   #16302a;
+  --brand-wash:     #14231f;
+  --brand-border:   #22463c;
+  --brand-solid-bg:   #2fc79a;
+  --brand-solid-fg:   #0d1a16;
+  --brand-solid-hover:#45d3a9;
+
+  --info:           #5c9bff;
+  --info-strong:    #8fbaff;
+  --info-subtle:    #16233a;
+  --info-wash:      #141d2c;
+  --info-border:    #26385a;
+  --info-solid-bg:    #5c9bff;
+  --info-solid-fg:    #0b1220;
+  --info-solid-hover: #8fbaff;
+
+  --warn:           #f0a92e;
+  --warn-strong:    #f5c67a;
+  --warn-subtle:    #2e2413;
+  --warn-border:    #4d3d1c;
+
+  --danger:         #ef5f70;
+  --danger-strong:  #f79aa5;
+  --danger-subtle:  #33191d;
+  --danger-border:  #55272e;
+
+  --surface:        #191d1f;
+  --surface-sunken: #15191b;
+  --surface-shell:  #131719;
+  --surface-page:   #101416;
+
+  --text:           #e8eceb;
+  --text-secondary: #b3bcb9;
+  --text-muted:     #8f9a97;
+  --text-inverse:   #101416;
+
+  --border:         #2c3335;
+  --border-strong:  #3b4447;
+  --border-subtle:  #232a2c;
+
+  --sh-1: 0 1px 2px rgba(0, 0, 0, .4);
+  --sh-2: 0 3px 12px rgba(0, 0, 0, .45);
+  --sh-3: 0 8px 26px rgba(0, 0, 0, .5);
+  --sh-4: 0 25px 90px rgba(0, 0, 0, .7);
+
+  --focus-ring: 0 0 0 3px rgba(47, 199, 154, .45);
+
+  color-scheme: dark;
+}

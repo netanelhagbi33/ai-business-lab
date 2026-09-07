@@ -1,0 +1,255 @@
+/* ============================================================
+   Layout — app shell, sidebar, main column, view switching.
+   Breakpoints: 1050px (tablet) and 700px (mobile).
+   The original used five (650/700/900/1000/1050).
+   ============================================================ */
+
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* --- Sidebar -------------------------------------------- */
+.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--surface-shell);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: var(--z-sidebar);
+}
+
+.brand {
+  height: 66px;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.brand strong { font-size: var(--fs-5); }
+
+.mark {
+  width: 38px; height: 38px;
+  border-radius: var(--r-1);
+  background: var(--brand);
+  color: var(--text-inverse);
+  display: grid; place-items: center;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-bold);
+  flex: 0 0 auto;
+}
+
+.side { padding: var(--sp-4) var(--sp-3); overflow: auto; flex: 1; }
+
+.side-label {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  color: var(--text-muted);
+  letter-spacing: .07em;
+  margin: var(--sp-1) var(--sp-1) var(--sp-2);
+}
+
+.site-card {
+  background: var(--brand-subtle);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--r-2);
+  padding: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.site-card small {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  color: var(--text-muted);
+  letter-spacing: .06em;
+}
+.site-card b {
+  display: block;
+  color: var(--brand-strong);
+  font-size: var(--fs-3);
+  margin-top: var(--sp-1);
+  word-break: break-all;
+}
+.site-card span {
+  display: block;
+  color: var(--text-muted);
+  font-size: var(--fs-1);
+  margin-top: var(--sp-1);
+}
+
+.nav {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-3);
+  border-radius: var(--r-1);
+  color: var(--text-secondary);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-normal);
+  cursor: pointer;
+  text-align: left;
+  margin: 1px 0;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.nav:hover { background: var(--brand-wash); }
+.nav.active {
+  background: var(--brand-subtle);
+  color: var(--brand-strong);
+  font-weight: var(--fw-bold);
+}
+.nav:active { transform: translateY(1px); }
+
+.ico { width: 24px; text-align: center; flex: 0 0 auto; }
+
+.navplus {
+  margin-left: auto;
+  background: var(--brand-border);
+  color: var(--brand-strong);
+  border-radius: var(--r-1);
+  min-width: 27px; height: 25px;
+  display: grid; place-items: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-2);
+}
+
+.side-foot { border-top: 1px solid var(--border-subtle); padding: var(--sp-3); }
+
+/* --- Main column ---------------------------------------- */
+.main { grid-column: 2; min-width: 0; }
+
+.topline {
+  height: var(--topline-h);
+  background: var(--brand-wash);
+  border-bottom: 1px solid var(--brand-border);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--sp-5);
+  color: var(--text-muted);
+  font-size: var(--fs-3);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-topline);
+}
+.topline b { color: var(--brand-strong); margin-left: var(--sp-1); }
+
+.content {
+  max-width: var(--content-max);
+  margin: auto;
+  padding: var(--sp-6) 40px 64px;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+
+/* --- Page head ------------------------------------------ */
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+.title { display: flex; gap: var(--sp-4); align-items: flex-start; }
+
+.round {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--text-inverse);
+  display: grid; place-items: center;
+  font-size: var(--fs-7);
+  flex: 0 0 auto;
+}
+
+.head h1 {
+  font-size: var(--fs-8);
+  line-height: var(--lh-tight);
+  letter-spacing: -.02em;
+  margin-bottom: var(--sp-2);
+}
+.head p { color: var(--text-muted); font-size: var(--fs-4); }
+
+/* The action button in a page head must not wrap onto two lines. */
+.head > .btn { flex: 0 0 auto; white-space: nowrap; }
+
+.footer-note {
+  margin-top: var(--sp-6);
+  color: var(--text-muted);
+  font-size: var(--fs-2);
+  text-align: center;
+}
+
+/* ============================================================
+   Tablet and below — the sidebar becomes a top bar.
+
+   The original simply set `.sidebar { display: none }` here,
+   which left narrow screens with no navigation at all: from a
+   guide you could only get back via the breadcrumb. Same
+   markup, laid out horizontally, so nothing is duplicated.
+   ============================================================ */
+@media (max-width: 1050px) {
+  .app { grid-template-columns: 1fr; }
+  .main { grid-column: 1; }
+  .content { padding: var(--sp-5) var(--sp-4) 48px; }
+  .head h1 { font-size: var(--fs-7); }
+
+  .sidebar {
+    position: sticky;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: auto;
+    /* Grid items default to min-width:auto, so the nowrap nav row would
+       widen the whole column past the viewport and scroll the page
+       sideways. This confines the overflow to .side. */
+    min-width: 0;
+    flex-direction: column;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand { height: 56px; }
+
+  /* Nav items scroll horizontally instead of stacking. */
+  .side {
+    display: flex;
+    gap: var(--sp-2);
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: var(--sp-2) var(--sp-3);
+    flex: 0 0 auto;
+    scrollbar-width: thin;
+  }
+  .nav {
+    width: auto;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .navplus { margin-left: var(--sp-2); }
+
+  /* Sidebar-only furniture that has no place in a bar. */
+  .side-label,
+  .site-card,
+  .side-foot { display: none; }
+
+  /* Only one sticky element at the top, or they overlap. */
+  .topline { position: static; }
+}
+
+/* ============================================================
+   Mobile. Folds the original 650px rules.
+   ============================================================ */
+@media (max-width: 700px) {
+  .content { padding: var(--sp-4) var(--sp-3) 40px; }
+  .head { flex-direction: column; gap: var(--sp-3); }
+  .head .btn { width: 100%; }
+  .round { width: 44px; height: 44px; font-size: var(--fs-6); }
+  .topline { padding: 0 var(--sp-4); font-size: var(--fs-2); }
+}

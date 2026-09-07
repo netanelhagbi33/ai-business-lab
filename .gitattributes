@@ -1,0 +1,10 @@
+# Normalise line endings in the repo; check out native on each machine.
+* text=auto
+
+# Explicitly binary — never touch these.
+*.png binary
+
+# Generated. Collapse in diffs so a regenerated file does not bury a review.
+data/kb.json         linguist-generated=true
+data/image-sizes.json linguist-generated=true
+package-lock.json    linguist-generated=true

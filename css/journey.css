@@ -1,0 +1,371 @@
+/* ============================================================
+   Journey — the two step-by-step guides (Build / Live):
+   progress card, step nav, lesson card, screenshot gallery
+   and the calibrated in-image action highlights.
+
+   The highlight geometry (percentages) is load-bearing: it is
+   calibrated per screenshot in data/highlights.json. Do not
+   change image dimensions or the box model of .shot-stage.
+   ============================================================ */
+
+/* --- Progress card -------------------------------------- */
+.journey-progress-card {
+  display: grid;
+  grid-template-columns: 155px 1fr 58px;
+  gap: var(--sp-3);
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--r-2);
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-4);
+  box-shadow: var(--sh-2);
+}
+.journey-progress-card > div:first-child { display: flex; flex-direction: column; }
+.journey-progress-card b { font-size: var(--fs-3); }
+.journey-progress-card span { font-size: var(--fs-1); color: var(--text-muted); }
+.journey-progress-card > strong {
+  text-align: right;
+  color: var(--brand-strong);
+  font-size: var(--fs-3);
+}
+
+.journey-progress {
+  height: 8px;
+  background: var(--border-subtle);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+.journey-progress > div {
+  height: 100%;
+  width: 0;
+  background: var(--brand);
+  border-radius: var(--r-pill);
+  transition: width var(--dur) var(--ease);
+}
+
+/* --- Shell: step nav + lesson --------------------------- */
+.journey-shell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+.journey-nav {
+  position: sticky;
+  top: calc(var(--topline-h) + var(--sp-4));
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  background: var(--surface);
+  padding: var(--sp-2);
+  box-shadow: var(--sh-1);
+}
+
+.journey-step {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--sp-3);
+  align-items: center;
+  text-align: left;
+  padding: var(--sp-3) var(--sp-2);
+  border-radius: var(--r-1);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background var(--dur-fast) var(--ease);
+}
+.journey-step:hover { background: var(--brand-wash); }
+.journey-step.active { background: var(--brand-subtle); color: var(--brand-strong); }
+
+.journey-step > span {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--border-subtle);
+  color: var(--text-muted);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+}
+.journey-step.active > span { background: var(--brand-solid-bg); color: var(--brand-solid-fg); }
+.journey-step.done > span   { background: var(--brand-border); color: var(--brand-strong); }
+
+.journey-step b { display: block; font-size: var(--fs-3); line-height: var(--lh-tight); }
+.journey-step small {
+  display: block;
+  font-size: var(--fs-1);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.journey-step.active small { color: var(--brand-strong); }
+
+/* --- Lesson card ---------------------------------------- */
+.journey-lesson { min-width: 0; }
+
+.lesson-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  box-shadow: var(--sh-2);
+}
+
+.lesson-kicker {
+  padding: var(--sp-4) var(--sp-5) 0;
+  color: var(--brand-strong);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  letter-spacing: .08em;
+}
+
+.lesson-title-row {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  padding: var(--sp-2) var(--sp-5) var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.lesson-step-number {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--brand-border);
+  color: var(--brand-strong);
+  display: grid; place-items: center;
+  font-size: var(--fs-5);
+  font-weight: var(--fw-bold);
+  flex: 0 0 auto;
+}
+.lesson-title-row h2 { font-size: var(--fs-6); line-height: var(--lh-tight); margin-bottom: var(--sp-1); }
+.lesson-title-row p  { color: var(--text-muted); font-size: var(--fs-3); }
+
+.lesson-explain {
+  display: grid;
+  grid-template-columns: 1.3fr .9fr;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--surface-sunken);
+}
+.what-card,
+.remember-card {
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  padding: var(--sp-4);
+  background: var(--surface);
+}
+.remember-card { background: var(--info-wash); border-color: var(--info-border); }
+
+.what-card > span,
+.remember-card > span {
+  display: block;
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  letter-spacing: .08em;
+  color: var(--brand-strong);
+  margin-bottom: var(--sp-1);
+}
+.remember-card > span { color: var(--info-strong); }
+
+.what-card p,
+.remember-card p {
+  font-size: var(--fs-3);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+}
+
+/* --- Screenshot gallery --------------------------------- */
+.journey-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-3);
+  padding: 0 var(--sp-5) var(--sp-4);
+  background: var(--surface-sunken);
+}
+.journey-gallery.one { grid-template-columns: 1fr; }
+
+.journey-shot {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  overflow: hidden;
+  background: var(--surface);
+}
+.journey-shot img { width: 100%; height: auto; display: block; cursor: zoom-in; }
+.journey-shot figcaption {
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-1);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+}
+.journey-shot.has-action {
+  overflow: visible;
+  border-color: var(--brand-border);
+  box-shadow: var(--sh-2);
+}
+.journey-shot.has-action figcaption { background: var(--brand-wash); }
+
+.shot-action-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  background: var(--brand-subtle);
+  border-bottom: 1px solid var(--brand-border);
+  font-size: var(--fs-2);
+  color: var(--text-secondary);
+}
+.shot-action-hint b { color: var(--brand-strong); }
+.shot-action-hint .hint-dot {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--brand-solid-bg);
+  color: var(--brand-solid-fg);
+  display: grid; place-items: center;
+  font-size: var(--fs-1);
+  flex: 0 0 auto;
+}
+
+/* --- Lesson footer actions ------------------------------ */
+.lesson-actions {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--sp-3);
+  align-items: center;
+  padding: var(--sp-3) var(--sp-5);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface);
+  position: sticky;
+  bottom: 0;
+}
+.lesson-actions .btn:first-child { justify-self: start; }
+.lesson-actions .btn:last-child  { justify-self: end; }
+.start-btn {
+  background: var(--surface-sunken);
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   Calibrated in-image action highlights.
+   Percent-positioned over .shot-stage, which must stay the
+   image's exact box.
+   ============================================================ */
+.shot-stage { position: relative; overflow: visible; background: var(--surface); }
+.shot-stage > img { position: relative; z-index: 1; }
+
+.action-highlight {
+  position: absolute;
+  z-index: 3;
+  border: 3px solid var(--brand);
+  border-radius: var(--r-2);
+  background: rgba(10, 164, 122, .04);
+  box-shadow: 0 0 0 4px rgba(10, 164, 122, .10), 0 0 16px rgba(10, 164, 122, .16);
+  pointer-events: none;
+  animation: actionGlow 2.4s ease-in-out infinite;
+}
+.action-highlight.orange {
+  border-color: var(--warn);
+  background: rgba(243, 154, 17, .035);
+  box-shadow: 0 0 0 4px rgba(243, 154, 17, .11), 0 0 16px rgba(210, 125, 0, .14);
+  animation-name: actionGlowOrange;
+}
+.action-highlight.blue {
+  border-color: var(--info);
+  background: rgba(43, 125, 233, .025);
+  box-shadow: 0 0 0 4px rgba(43, 125, 233, .10), 0 0 16px rgba(43, 125, 233, .14);
+  animation-name: actionGlowBlue;
+}
+
+/* Small inline badge keeps the target visible instead of covering the real button. */
+.shot-stage .action-highlight::after {
+  content: "CLICK HERE";
+  position: absolute;
+  left: var(--sp-2);
+  top: -27px;
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--r-1);
+  background: var(--brand-hover);
+  color: #fff;
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: .06em;
+  white-space: nowrap;
+}
+.shot-stage .action-highlight.orange::after { background: #d87f00; }
+.shot-stage .action-highlight.blue::after   { background: #2367bd; }
+.shot-stage .action-highlight.no-badge::after { display: none; }
+.action-highlight.label-below::after { top: calc(100% + 7px); }
+.action-highlight.edge-right::after  { left: auto; right: var(--sp-2); }
+
+/* In the enlarged view show the full action name, anchored to the exact target. */
+.modal-frame { position: relative; display: inline-block; line-height: 0; }
+.modal-frame img { position: relative; z-index: 1; }
+.modal-frame .action-highlight::after {
+  content: attr(data-label);
+  position: absolute;
+  left: var(--sp-2);
+  top: -36px;
+  display: block;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-1);
+  background: var(--brand-hover);
+  color: #fff;
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.modal-frame .action-highlight.orange::after { background: #d87f00; }
+.modal-frame .action-highlight.blue::after   { background: #2367bd; }
+.modal-frame .action-highlight.label-below::after { top: calc(100% + 8px); }
+.modal-frame .action-highlight.edge-right::after  { left: auto; right: var(--sp-2); }
+
+@keyframes actionGlow {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(10, 164, 122, .10), 0 0 16px rgba(10, 164, 122, .16); }
+  50%      { box-shadow: 0 0 0 7px rgba(10, 164, 122, .16), 0 0 22px rgba(10, 164, 122, .24); }
+}
+@keyframes actionGlowOrange {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(243, 154, 17, .11), 0 0 16px rgba(210, 125, 0, .14); }
+  50%      { box-shadow: 0 0 0 7px rgba(243, 154, 17, .18), 0 0 22px rgba(210, 125, 0, .22); }
+}
+@keyframes actionGlowBlue {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(43, 125, 233, .10), 0 0 16px rgba(43, 125, 233, .14); }
+  50%      { box-shadow: 0 0 0 7px rgba(43, 125, 233, .17), 0 0 22px rgba(43, 125, 233, .22); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .action-highlight { animation: none; }
+}
+
+/* --- Journey skeletons ---------------------------------- */
+.journey-skeleton { display: grid; gap: var(--sp-3); }
+.journey-skeleton .skeleton:nth-child(1) { height: 120px; }
+.journey-skeleton .skeleton:nth-child(2) { height: 280px; }
+
+@media (max-width: 1050px) {
+  .journey-shell { grid-template-columns: 1fr; }
+  .journey-nav {
+    position: static;
+    display: flex;
+    gap: var(--sp-2);
+    overflow-x: auto;
+  }
+  .journey-step { min-width: 190px; }
+  .journey-progress-card { grid-template-columns: 130px 1fr 50px; }
+  .lesson-explain { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .journey-progress-card { grid-template-columns: 1fr; }
+  .journey-progress-card > strong { text-align: left; }
+  .journey-gallery { grid-template-columns: 1fr; padding: 0 var(--sp-3) var(--sp-3); }
+  .lesson-explain { padding: var(--sp-3); }
+  .lesson-title-row { padding: var(--sp-2) var(--sp-3) var(--sp-3); }
+  .lesson-kicker { padding: var(--sp-3) var(--sp-3) 0; }
+  .lesson-actions { grid-template-columns: 1fr 1fr; padding: var(--sp-3); }
+  .lesson-actions .start-btn { grid-column: 1 / -1; grid-row: 2; }
+  .lesson-title-row h2 { font-size: var(--fs-5); }
+  .action-highlight { border-width: 2px; }
+  .shot-stage .action-highlight::after { font-size: 9px; top: -21px; padding: 2px 5px; }
+}
