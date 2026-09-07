@@ -125,6 +125,24 @@ opened a ticket. All are gone.
 past the old gate stays past it. Writing the new count into that key destroyed
 exactly the signal it carries, which cost a round of debugging — don't.
 
+## The Start Here spotlight
+
+Customers were missing the Start Here tab, so on a first visit it wears a gold
+ring that breathes and a sheen that sweeps across it. **One click retires it
+permanently** (`abl_start_here_seen`) — a marker that keeps coming back stops
+being a signal and becomes decoration people learn to ignore. Visiting other
+tabs does not retire it; only clicking Start Here does.
+
+Two things the effect must not cost:
+
+- Under `prefers-reduced-motion` the movement stops and the sheen is removed,
+  but the gold ring stays, so the hint itself is not lost.
+- The label colour is `#9a5c00`, not the brighter gold it looks like it should
+  be: brighter measured 4.14:1 on the tint and missed AA. The gold people
+  actually see is the ring and the sheen, which carry no text.
+
+`scripts/verify-spotlight.mjs` covers all of it, contrast included.
+
 ## The sidebar is two groups
 
 The top four entries — Start Here, Dashboard guide, Support Center, Support —
@@ -210,6 +228,7 @@ Start the server first, then:
 node scripts/verify.mjs           # 58 checks: parity, sidebar, Support Center states, screenshots
 node scripts/verify-deflection.mjs  # 32 checks: the whole ticket funnel
 node scripts/verify-popular.mjs     # 10 checks: every Popular chip lands on its article
+node scripts/verify-spotlight.mjs   # 18 checks: the one-time Start Here marker
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast
 node scripts/verify-overflow.mjs  # 30 checks: no view scrolls sideways at 5 widths
 node scripts/verify-bug.mjs    # demonstrates the bug the original shipped with

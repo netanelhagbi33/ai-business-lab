@@ -24,6 +24,9 @@ const KEYS = {
   // marked unhelpful, and whether a search came back empty.
   unhelpful:  'abl_help_unhelpful',
   noResults:  'abl_help_no_results',
+
+  // One-time "look here" marker on the Start Here tab.
+  spotlight:  'abl_start_here_seen',
 };
 
 function read(key) {
@@ -109,6 +112,16 @@ export function resetDeflection() {
   write(KEYS.unhelpful, '[]');
   write(KEYS.noResults, '0');
   write(KEYS.failed, '0');
+}
+
+/* --- One-time UI hints ----------------------------------- */
+
+export function getSpotlightSeen() {
+  return read(KEYS.spotlight) === '1';
+}
+
+export function setSpotlightSeen() {
+  write(KEYS.spotlight, '1');
 }
 
 /* --- Tickets -------------------------------------------- */

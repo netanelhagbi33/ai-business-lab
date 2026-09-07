@@ -276,3 +276,59 @@
   .round { width: 44px; height: 44px; font-size: var(--fs-6); }
   .topline { padding: 0 var(--sp-4); font-size: var(--fs-2); }
 }
+
+/* ============================================================
+   Spotlight — the one-time marker on Start Here.
+
+   Two motions: a gold ring that breathes, and a sheen that
+   sweeps across the button. Shown until the customer clicks
+   the tab once, then never again (js/spotlight.js).
+   ============================================================ */
+.nav-spotlight {
+  position: relative;
+  overflow: hidden;
+  background: var(--spotlight-tint);
+  color: var(--spotlight);
+  font-weight: var(--fw-bold);
+  box-shadow: 0 0 0 2px var(--spotlight-edge), 0 0 0 6px var(--spotlight-glow);
+  animation: spotlightRing 2.4s var(--ease) infinite;
+}
+
+/* Keep the marker's own colours while it is up, active state or not. */
+.nav-spotlight:hover,
+.nav-spotlight.active {
+  background: var(--spotlight-tint);
+  color: var(--spotlight);
+}
+
+/* The travelling sheen. */
+.nav-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    var(--spotlight-sheen) 50%,
+    transparent 65%);
+  transform: translateX(-130%);
+  animation: spotlightSweep 2.4s var(--ease) infinite;
+  pointer-events: none;
+}
+
+@keyframes spotlightRing {
+  0%, 100% { box-shadow: 0 0 0 2px var(--spotlight-edge), 0 0 0 5px var(--spotlight-glow); }
+  50%      { box-shadow: 0 0 0 2px var(--spotlight-edge), 0 0 0 9px transparent; }
+}
+
+@keyframes spotlightSweep {
+  0%        { transform: translateX(-130%); }
+  55%, 100% { transform: translateX(130%); }
+}
+
+/* Motion is the whole point, but not at the cost of making someone ill.
+   The gold ring stays; only the movement stops. */
+@media (prefers-reduced-motion: reduce) {
+  .nav-spotlight { animation: none; box-shadow: 0 0 0 2px var(--spotlight-edge), 0 0 0 5px var(--spotlight-glow); }
+  .nav-spotlight::after { display: none; }
+}

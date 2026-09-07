@@ -14,6 +14,7 @@ import { setHighlights, setImageSizes, initModal } from './highlights.js';
 import { initJourneys, openGuideStep, onGuideShown } from './journey.js';
 import { initQA, ensureLoaded, showBrowse } from './qa.js';
 import { initSupport, onSupportShown } from './support.js';
+import { initSpotlight } from './spotlight.js';
 
 /* --- Actions that belong to no single module -------------- */
 registerActions({
@@ -27,6 +28,7 @@ initSupport();
 initQA();
 
 initNav();
+initSpotlight();
 
 /* --- View-change side effects ----------------------------- */
 onViewChange(id => {

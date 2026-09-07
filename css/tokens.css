@@ -45,6 +45,15 @@
   --danger-subtle:    #fff1f2;
   --danger-border:    #ffc7cf;
 
+  /* --- Spotlight: the one-time "look here" marker --------- */
+  --spotlight:        #9a5c00;   /* label colour. #b36b00 measured 4.14:1 on the
+                                    tint and missed AA; the gold people see is
+                                    the ring and the sheen, not the text. */
+  --spotlight-edge:   #e8a317;
+  --spotlight-tint:   #fff6e3;
+  --spotlight-glow:   rgba(232, 163, 23, .45);
+  --spotlight-sheen:  rgba(255, 205, 90, .55);
+
   /* --- Surfaces ------------------------------------------ */
   --surface:          #ffffff;
   --surface-sunken:   #fbfcfc;
@@ -157,6 +166,12 @@
     --danger-subtle:  #33191d;
     --danger-border:  #55272e;
 
+    --spotlight:      #f5c46a;
+    --spotlight-edge: #d99a1f;
+    --spotlight-tint: #33280f;
+    --spotlight-glow: rgba(245, 196, 106, .32);
+    --spotlight-sheen: rgba(255, 214, 120, .30);
+
     --surface:        #191d1f;
     --surface-sunken: #15191b;
     --surface-shell:  #131719;
@@ -212,6 +227,12 @@
   --danger-strong:  #f79aa5;
   --danger-subtle:  #33191d;
   --danger-border:  #55272e;
+
+  --spotlight:      #f5c46a;
+  --spotlight-edge: #d99a1f;
+  --spotlight-tint: #33280f;
+  --spotlight-glow: rgba(245, 196, 106, .32);
+  --spotlight-sheen: rgba(255, 214, 120, .30);
 
   --surface:        #191d1f;
   --surface-sunken: #15191b;
