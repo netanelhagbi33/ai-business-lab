@@ -341,7 +341,15 @@
   padding: var(--sp-5);
   margin-top: var(--sp-5);
 }
+.help-contact + .help-contact { margin-top: var(--sp-3); }
 .help-contact h3 { font-size: var(--fs-5); margin-bottom: var(--sp-1); }
+
+/* Refunds are a different kind of request, and look like one. */
+.help-refund {
+  border-color: var(--danger-border);
+  background: var(--danger-subtle);
+}
+.help-refund h3 { color: var(--danger-strong); }
 .help-contact p  { color: var(--text-muted); font-size: var(--fs-3); }
 .help-contact-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; flex: 0 0 auto; }
 
