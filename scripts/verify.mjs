@@ -275,6 +275,70 @@ console.log('\n=== "Request a Refund" exists in exactly one place');
           document.querySelectorAll('[data-action="open-refund"]').length), 1);
 }
 
+
+console.log('\n=== ARRIVING AT THE SUPPORT CENTER ALWAYS LANDS ON THE GRID');
+{
+  const p = pageB;
+  await p.goto(REBUILT);
+  await p.evaluate(() => localStorage.clear());
+  await p.reload();
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+
+  const state = () => p.evaluate(() => ({
+    grid: getComputedStyle(document.getElementById('topicGrid')).display !== 'none',
+    title: document.getElementById('qaTitle').textContent.trim(),
+  }));
+
+  // Every route in, after having drilled into a topic each time.
+  const routes = [
+    ['sidebar entry',            '.nav[data-view="qa"]'],
+    ['Home "Support Center →"',  '#home .question-path [data-view="qa"]'],
+    ['Home "How to get help"',   '#home .learn[data-view="qa"]'],
+    ['Next Steps button',        '#next-steps [data-view="qa"]'],
+  ];
+
+  for (const [label, selector] of routes) {
+    // land in a topic first
+    await p.click('.nav[data-view="qa"]');
+    await p.waitForSelector('.topic-card', { state: 'attached' });
+    await p.click('.topic-card[data-category="Earnings & Payouts"]');
+    await p.waitForTimeout(250);
+    check(`(setup) inside a topic before "${label}"`, (await state()).title,
+          '💰Earnings & Payouts');
+
+    // leave, then come back by this route
+    await p.click('.nav[data-view="home"]');
+    await p.waitForTimeout(200);
+    if (selector.startsWith('#next-steps')) {
+      await p.click('#home .next-stage-card');
+      await p.waitForTimeout(300);
+    }
+    await p.click(selector);
+    await p.waitForTimeout(350);
+    check(`"${label}" lands on the topic grid`, await state(),
+          { grid: true, title: 'How can we help?' });
+  }
+
+  // A search must be cleared too, not just a topic.
+  await p.click('.nav[data-view="qa"]');
+  await p.waitForSelector('.topic-card', { state: 'attached' });
+  await p.fill('#qSearch', 'refund');
+  await p.click('[data-action="qa-search"]');
+  await p.waitForTimeout(300);
+  check('(setup) in search results', (await state()).title, 'Search results');
+
+  await p.click('.nav[data-view="home"]');
+  await p.waitForTimeout(200);
+  await p.click('.nav[data-view="qa"]');
+  await p.waitForTimeout(350);
+  check('returning also clears the search box',
+        await p.evaluate(() => ({
+          box: document.getElementById('qSearch').value,
+          title: document.getElementById('qaTitle').textContent.trim(),
+        })),
+        { box: '', title: 'How can we help?' });
+}
+
 console.log('\n=== SUPPORT CENTER STATES (browse / topic / search)');
 {
   const p = pageB;
@@ -425,35 +489,40 @@ console.log('\n=== TICKETS');
 
 console.log('\n=== IMAGES RESOLVE (no 404s)');
 {
-  const p = pageB;
+  // Its own page: earlier blocks leave scroll position and smooth-scroll
+  // animations in flight, which made this block intermittently see zero
+  // loaded images.
+  const p = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const bad = [];
   p.on('response', r => { if (r.status() >= 400) bad.push(r.url()); });
   await p.goto(REBUILT);
-  await p.waitForSelector('#buildSteps img', { state: 'attached' });
-  await p.evaluate(async () => {
+  await p.waitForSelector('#liveSteps .journey-shot img', { state: 'attached' });
+
+  await p.evaluate(() => {
     document.querySelectorAll('.view').forEach(x => x.classList.remove('active'));
     document.getElementById('guide-live').classList.add('active');
-    window.scrollTo(0, document.body.scrollHeight);
-    await new Promise(r => setTimeout(r, 800));
   });
-  check('no failed requests', bad, []);
-  // Only images inside the ACTIVE view are expected to load: lazy images
-  // in a display:none section are deliberately never fetched.
-  const imgState = await p.evaluate(() => {
-    const active = document.querySelector('.view.active');
-    const imgs = [...active.querySelectorAll('.journey-shot img')];
-    return {
-      total: imgs.length,
-      loaded: imgs.filter(i => i.complete && i.naturalWidth > 0).length,
-      lazy: imgs.every(i => i.getAttribute('loading') === 'lazy'),
-    };
-  });
-  check('every visible lesson image loaded', imgState.loaded, imgState.total);
-  check('lesson images are lazy', imgState.lazy, true);
-  check('the live guide rendered images at all', imgState.total > 0, true);
 
-  // Lazy loading must actually defer: on a fresh load of Home, the guide
-  // screenshots must NOT have been fetched yet.
+  // Lazy images fetch only as they approach the viewport, and with explicit
+  // width/height the lesson is far taller than the screen — so scrolling to
+  // the bottom leaves the top ones unfetched. Walk each into view and wait,
+  // which is what a reader does anyway.
+  const imgs = await p.$$('#liveSteps .journey-shot img');
+  check('the live guide rendered images at all', imgs.length > 0, true);
+
+  for (const img of imgs) {
+    await img.scrollIntoViewIfNeeded();
+    await p.waitForFunction(el => el.complete && el.naturalWidth > 0, img, { timeout: 15000 });
+  }
+  check('every lesson image loads when scrolled to', true, true);
+  check('no failed requests', bad, []);
+
+  check('lesson images are lazy',
+        await p.evaluate(() =>
+          [...document.querySelectorAll('#liveSteps .journey-shot img')]
+            .every(i => i.getAttribute('loading') === 'lazy')), true);
+
+  // Deferral must be real: a fresh load of Home fetches no screenshots.
   const fresh = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   let imgRequests = 0;
   fresh.on('request', r => { if (r.resourceType() === 'image') imgRequests++; });
@@ -462,8 +531,8 @@ console.log('\n=== IMAGES RESOLVE (no 404s)');
   await fresh.waitForTimeout(1200);
   check('no screenshots fetched on the Home view', imgRequests, 0);
   await fresh.close();
+  await p.close();
 }
-
 console.log('\n=== SCREENSHOTS');
 const VIEWS = ['home', 'guide-build', 'guide-live', 'next-steps', 'qa', 'support'];
 for (const [w, h, tag] of [[1440, 900, 'desktop'], [1024, 900, 'tablet'], [390, 844, 'mobile']]) {

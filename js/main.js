@@ -12,7 +12,7 @@ import { initDelegation, registerActions, byId, loadJSON, renderError } from './
 import { showView, initNav, onViewChange } from './router.js';
 import { setHighlights, setImageSizes, initModal } from './highlights.js';
 import { initJourneys, openGuideStep, onGuideShown } from './journey.js';
-import { initQA, ensureLoaded } from './qa.js';
+import { initQA, ensureLoaded, showBrowse } from './qa.js';
 import { initSupport, onSupportShown } from './support.js';
 
 /* --- Actions that belong to no single module -------------- */
@@ -32,7 +32,12 @@ initNav();
 onViewChange(id => {
   onGuideShown(id);
   onSupportShown(id);
-  if (id === 'qa') ensureLoaded().catch(() => {});
+  // Arriving at the Support Center always lands on the topic grid. The
+  // module keeps its own topic/search state, so without this you would come
+  // back from another view into whatever topic you last opened — which reads
+  // as the app having ignored the click. Navigation inside the Support
+  // Center never routes through showView, so this cannot reset a drill-down.
+  if (id === 'qa') ensureLoaded().then(showBrowse).catch(() => {});
 });
 
 /* --- Data the guides need up front ------------------------ */

@@ -165,6 +165,13 @@ picks it up.
 | `topic` | One topic's articles, reached from a card |
 | `search` | Ranked results for a query, from either state |
 
+**Arriving from anywhere else always lands on `browse`.** The module keeps its
+own topic/search state, so without the reset in `main.js` you would leave the
+Support Center, come back, and find yourself inside whatever topic you last
+opened — which reads as the app having ignored the click. Navigation *inside*
+the Support Center never routes through `showView`, so the reset cannot
+clobber a drill-down.
+
 Leaving a topic goes through **two** `data-action="qa-home"` buttons: one above
 the topic title, one after the article list. Both are needed — "Website &
 Content" runs to 43 articles, so the header is long gone by the time you have
