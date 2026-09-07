@@ -293,11 +293,14 @@
         <!-- One header for all three states. It collapses to a compact
              bar once you are inside a topic or looking at results. -->
         <div class="help-header" id="qaHeader">
-          <nav class="help-crumb" id="qaCrumb" aria-label="Breadcrumb" hidden>
-            <button type="button" data-action="qa-home">Support Center</button>
-            <span aria-hidden="true">›</span>
-            <b id="qaCrumbLabel"></b>
-          </nav>
+          <!-- The way out of a topic. This was a text breadcrumb that read
+               as a heading rather than a control, and people could not find
+               it. It is now a real button. -->
+          <div class="help-back-row" id="qaCrumb" hidden>
+            <button class="btn soft help-back" type="button" data-action="qa-home">
+              <span class="help-back-arrow" aria-hidden="true">←</span>All topics
+            </button>
+          </div>
 
           <h1 id="qaTitle">How can we help?</h1>
           <p id="qaSubtitle">Search the Support Center, or choose a topic below.</p>
@@ -318,6 +321,11 @@
           <div id="smartAnswer"></div>
           <div id="results" class="results"></div>
           <div id="qaMoreWrap" class="qa-more-wrap"></div>
+          <div class="help-back-foot">
+            <button class="btn soft help-back" type="button" data-action="qa-home">
+              <span class="help-back-arrow" aria-hidden="true">←</span>Back to all topics
+            </button>
+          </div>
         </div>
 
         <div class="help-contact">

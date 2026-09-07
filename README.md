@@ -147,8 +147,14 @@ picks it up.
 | State | What it shows |
 |---|---|
 | `browse` | Hero search, popular questions, and a grid of 10 topic cards |
-| `topic` | One topic's articles, reached from a card; breadcrumb back |
+| `topic` | One topic's articles, reached from a card |
 | `search` | Ranked results for a query, from either state |
+
+Leaving a topic goes through **two** `data-action="qa-home"` buttons: one above
+the topic title, one after the article list. Both are needed — "Website &
+Content" runs to 43 articles, so the header is long gone by the time you have
+read to the bottom. This replaced a text breadcrumb that read as a heading
+rather than a control; people could not find their way back out of a topic.
 
 `data/categories.json` supplies each topic's icon and one-line description —
 it is presentation metadata, not content. Its `name` values must match the
@@ -164,7 +170,7 @@ silently.
 Start the server first, then:
 
 ```
-node scripts/verify.mjs           # 54 checks: parity, sidebar, Support Center states, screenshots
+node scripts/verify.mjs           # 58 checks: parity, sidebar, Support Center states, screenshots
 node scripts/verify-deflection.mjs  # 32 checks: the whole ticket funnel
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast
 node scripts/verify-overflow.mjs  # 30 checks: no view scrolls sideways at 5 widths

@@ -268,8 +268,39 @@ console.log('\n=== SUPPORT CENTER STATES (browse / topic / search)');
 
   await p.click('#qaCrumb button');
   await p.waitForTimeout(250);
-  check('breadcrumb returns to browse', (await vis()).grid, true);
+  check('the back button returns to browse', (await vis()).grid, true);
 
+
+  // The way back used to be a text breadcrumb that read as a heading.
+  await p.click('.topic-card[data-category="Getting Started"]');
+  await p.waitForTimeout(250);
+  check('a topic shows two real back buttons (top and end of list)',
+        await p.evaluate(() =>
+          [...document.querySelectorAll('[data-action="qa-home"]')]
+            .filter(b => b.offsetParent !== null)
+            .map(b => ({ text: b.textContent.trim().replace(/\s+/g, ' '),
+                         isButton: b.classList.contains('btn') }))),
+        // no space in the text: the arrow is a separate span and the gap
+        // comes from flex, not from markup whitespace
+        [{ text: '←All topics', isButton: true },
+         { text: '←Back to all topics', isButton: true }]);
+
+  check('the top back button has a visible border, not link styling',
+        await p.evaluate(() => {
+          const cs = getComputedStyle(document.querySelector('.help-back-row .help-back'));
+          return cs.borderTopWidth !== '0px' && cs.backgroundColor !== 'rgba(0, 0, 0, 0)';
+        }), true);
+
+  await p.click('.help-back-foot [data-action="qa-home"]');
+  await p.waitForTimeout(250);
+  check('the button at the end of the list returns to the grid',
+        (await vis()).grid, true);
+
+  await p.click('.topic-card[data-category="Getting Started"]');
+  await p.waitForTimeout(250);
+  await p.click('.help-back-row [data-action="qa-home"]');
+  await p.waitForTimeout(250);
+  check('the button at the top returns to the grid', (await vis()).grid, true);
   await p.fill('#qSearch', 'refund');
   await p.click('[data-action="qa-search"]');
   await p.waitForTimeout(250);

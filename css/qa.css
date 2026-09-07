@@ -39,25 +39,36 @@
 
 .topic-title-icon { margin-right: var(--sp-3); }
 
-/* --- Breadcrumb ----------------------------------------- */
-.help-crumb {
-  display: flex;
+/* --- Back to the topic grid ------------------------------ */
+.help-back-row { margin-bottom: var(--sp-4); }
+
+.help-back {
+  display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
   font-size: var(--fs-3);
-  color: var(--text-muted);
-  margin-bottom: var(--sp-3);
 }
-.help-crumb button {
-  border: 0;
-  background: transparent;
+.help-back:hover {
+  border-color: var(--brand);
   color: var(--brand-strong);
-  font-weight: var(--fw-bold);
-  padding: 0;
-  cursor: pointer;
+  background: var(--brand-wash);
 }
-.help-crumb button:hover { text-decoration: underline; }
-.help-crumb b { color: var(--text-secondary); }
+.help-back-arrow {
+  font-size: var(--fs-5);
+  line-height: 1;
+  transition: transform var(--dur-fast) var(--ease);
+}
+.help-back:hover .help-back-arrow { transform: translateX(-3px); }
+
+/* Long topics run to 43 articles, so the header is far off-screen by the
+   time you have read to the bottom. */
+.help-back-foot {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--sp-4);
+  margin-top: var(--sp-4);
+  border-top: 1px solid var(--border-subtle);
+}
 
 /* --- Search --------------------------------------------- */
 .search {
@@ -335,6 +346,7 @@
 .help-contact-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; flex: 0 0 auto; }
 
 @media (max-width: 700px) {
+  .help-back, .help-back-foot .btn { width: 100%; justify-content: center; }
   .help-header { padding: var(--sp-5) var(--sp-4); }
   .help-header h1 { font-size: var(--fs-7); }
   .help-header.compact h1 { font-size: var(--fs-6); }

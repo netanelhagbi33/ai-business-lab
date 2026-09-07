@@ -152,7 +152,6 @@ export function showTopic(cat) {
   byId('qaTitle').innerHTML =
     `<span class="topic-title-icon" aria-hidden="true">${meta.icon}</span>${esc(cat)}`;
   byId('qaSubtitle').textContent = meta.blurb;
-  byId('qaCrumbLabel').textContent = cat;
 
   applyState();
   renderQA();
@@ -163,8 +162,6 @@ function showSearchState(query) {
   state = 'search';
   byId('qaTitle').textContent = 'Search results';
   byId('qaSubtitle').textContent = `Showing matches for “${query}”.`;
-  byId('qaCrumbLabel').textContent =
-    activeCat === 'All' ? 'Search' : `${activeCat} · Search`;
   applyState();
 }
 
