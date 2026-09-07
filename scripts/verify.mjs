@@ -487,6 +487,47 @@ console.log('\n=== TICKETS');
   check('ticket status OPEN', t[0] && t[0].status, 'OPEN');
 }
 
+
+console.log('\n=== PER-STEP RULES PANEL');
+{
+  const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  await p.goto(REBUILT);
+  await p.evaluate(() => { localStorage.clear(); localStorage.setItem('abl_v21_live_index', '2'); });
+  await p.reload();
+  await p.waitForSelector('#liveSteps .lesson-card', { state: 'attached' });
+
+  const panel = await p.evaluate(() => {
+    const el = document.querySelector('#liveSteps .lesson-rules');
+    if (!el) return null;
+    return {
+      title: el.querySelector('.lesson-rules-title').textContent,
+      rules: [...el.querySelectorAll('.lesson-rules-list li')].map(li => li.textContent),
+      hasExample: !!el.querySelector('.lesson-rules-example'),
+    };
+  });
+
+  check('the payout step states the withdrawal conditions',
+        panel && panel.title, 'WHEN YOU CAN ACTUALLY WITHDRAW');
+  check('all four conditions are listed', panel && panel.rules.length, 4);
+  check('the $100 threshold is stated',
+        panel && panel.rules.some(r => /\$100/.test(r)), true);
+  check('NET-45 is explained, not just named',
+        panel && panel.rules.some(r => /45 days counted from the last day of the month/.test(r)), true);
+  check('the 1st-14th request window is stated',
+        panel && panel.rules.some(r => /1st and the 14th/.test(r)), true);
+  check('a worked example follows', panel && panel.hasExample, true);
+
+  // The panel is opt-in per step, not boilerplate on every one.
+  // Scoped to #liveSteps: the build guide's Next button comes first in the
+  // document, so an unscoped query advances the wrong journey.
+  await p.evaluate(() =>
+    document.querySelector('#liveSteps [data-action="journey-next"]').click());
+  await p.waitForTimeout(300);
+  check('steps without rules render no panel',
+        await p.evaluate(() => !!document.querySelector('#liveSteps .lesson-rules')), false);
+  await p.close();
+}
+
 console.log('\n=== IMAGES RESOLVE (no 404s)');
 {
   // Its own page: earlier blocks leave scroll position and smooth-scroll

@@ -87,7 +87,18 @@
    "images": [
     "2a0a5fac-d860-45c8-95c2-770b5087c2b1.png",
     "360bf85d-40c9-49db-9dc9-6a102695056a.png"
-   ]
+   ],
+   "rules": {
+    "title": "WHEN YOU CAN ACTUALLY WITHDRAW",
+    "lead": "Adding a method is only step one. All four of these must be true before a withdrawal goes through:",
+    "items": [
+     "A valid payout method is saved — PayPal, Wise or Bank Transfer.",
+     "You have at least $100 in eligible earnings.",
+     "Those earnings have cleared NET-45: 45 days counted from the last day of the month they were earned in, not from the day itself.",
+     "You submit the request between the 1st and the 14th of the month."
+    ],
+    "example": "Earn $150 by 30 September → it clears NET-45 in mid-November → request between 1–14 November → approved payouts are sent on the 15th or 16th. Miss the window and it waits for the next cycle."
+   }
   },
   {
    "n": 4,

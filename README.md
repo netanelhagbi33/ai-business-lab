@@ -54,6 +54,22 @@ lands. Regenerate after adding or replacing an image:
 node scripts/image-sizes.mjs
 ```
 
+**Guide steps can carry a `rules` panel.** An optional `rules` object on any
+step in `data/steps.json` renders an amber panel between the explanation cards
+and the screenshots:
+
+```json
+"rules": { "title": "...", "lead": "...", "items": ["..."], "example": "..." }
+```
+
+It exists so a step can answer the question customers would otherwise leave to
+go and search for. The payout step uses it to state the withdrawal conditions.
+Steps without the field render nothing, and a check enforces that so it does
+not drift into boilerplate on every step.
+
+Everything in that panel is quoted from `kb.json`, not authored fresh — if the
+rules change, the articles are the source of truth and the panel has to follow.
+
 **localStorage keys are frozen**, including the misleading `abl_v21_` prefix.
 They hold real users' guide progress and tickets. Renaming one discards it
 silently. All access goes through `js/store.js`.

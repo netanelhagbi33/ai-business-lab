@@ -369,3 +369,63 @@
   .action-highlight { border-width: 2px; }
   .shot-stage .action-highlight::after { font-size: 9px; top: -21px; padding: 2px 5px; }
 }
+
+/* ============================================================
+   Per-step rules panel.
+
+   Used where a step raises a question customers would otherwise
+   go and search for — the payout step states the withdrawal
+   conditions instead of leaving people to hunt for them.
+   ============================================================ */
+.lesson-rules {
+  margin: 0 var(--sp-5) var(--sp-4);
+  border: 1px solid var(--warn-border);
+  border-radius: var(--r-2);
+  background: var(--warn-subtle);
+  padding: var(--sp-4);
+}
+
+.lesson-rules-title {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  letter-spacing: .08em;
+  color: var(--warn-strong);
+  margin-bottom: var(--sp-2);
+}
+
+.lesson-rules-lead {
+  font-size: var(--fs-3);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--sp-3);
+}
+
+.lesson-rules-list {
+  margin: 0;
+  padding-left: var(--sp-5);
+  display: grid;
+  gap: var(--sp-2);
+}
+.lesson-rules-list li {
+  font-size: var(--fs-3);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+}
+.lesson-rules-list li::marker {
+  color: var(--warn-strong);
+  font-weight: var(--fw-bold);
+}
+
+.lesson-rules-example {
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--warn-border);
+  font-size: var(--fs-3);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+}
+.lesson-rules-example strong { color: var(--warn-strong); }
+
+@media (max-width: 700px) {
+  .lesson-rules { margin: 0 var(--sp-3) var(--sp-3); padding: var(--sp-3); }
+}

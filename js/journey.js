@@ -91,6 +91,27 @@ export function renderJourney(path) {
   save(path);
 }
 
+/**
+ * Optional per-step rules panel. Exists so a step can answer the question
+ * customers would otherwise go and search for — the payout step states the
+ * withdrawal conditions rather than leaving people to find them.
+ */
+function rulesMarkup(step) {
+  const r = step.rules;
+  if (!r) return '';
+
+  return `<section class="lesson-rules">`
+    + `<h3 class="lesson-rules-title">${esc(r.title)}</h3>`
+    + (r.lead ? `<p class="lesson-rules-lead">${esc(r.lead)}</p>` : '')
+    + `<ol class="lesson-rules-list">`
+      + r.items.map(i => `<li>${esc(i)}</li>`).join('')
+    + `</ol>`
+    + (r.example
+        ? `<p class="lesson-rules-example"><strong>For example:</strong> ${esc(r.example)}</p>`
+        : '')
+    + `</section>`;
+}
+
 function lessonMarkup(path, j, step, _pct) {
   const steps = j.steps;
   const images = step.images.map((file, idx) => {
@@ -129,6 +150,7 @@ function lessonMarkup(path, j, step, _pct) {
       + `<div class="what-card"><span>WHAT TO DO</span><p>${esc(step.simple)}</p></div>`
       + `<div class="remember-card"><span>KEEP IN MIND</span><p>${esc(step.tip)}</p></div>`
     + `</div>`
+    + rulesMarkup(step)
     + `<div class="journey-gallery ${step.images.length === 1 ? 'one' : ''}">${images}</div>`
     + `<div class="lesson-actions">`
       + `<button class="btn soft" type="button" data-action="journey-prev" `
