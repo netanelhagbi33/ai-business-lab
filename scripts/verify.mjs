@@ -159,6 +159,64 @@ console.log('\n=== THE FIXED BUG: escalation button');
         await p.evaluate(() => !!document.querySelector('[data-action="open-ticket"]')), true);
 }
 
+console.log('\n=== SIDEBAR: in-page vs external entries');
+{
+  const p = pageB;
+  await p.goto(REBUILT);
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+
+  const nav = await p.evaluate(() =>
+    [...document.querySelectorAll('.nav')].map(n => ({
+      label: n.textContent.trim(),
+      view: n.dataset.view || null,
+      external: n.classList.contains('nav-external'),
+      disabled: n.disabled,
+    })));
+
+  check('external entries are inert (no data-view, disabled)',
+        nav.filter(n => n.external).map(n => [n.label, n.view, n.disabled]),
+        [['📝Article Generator+', null, true],
+         ['🚀Boosters+', null, true],
+         ['💳Billing›', null, true],
+         ['↪Log Out', null, true]]);
+
+  check('in-page entries all navigate',
+        nav.filter(n => !n.external).map(n => n.view),
+        ['home', 'guide-live', 'qa', 'support']);
+
+  // The original gave four buttons data-view="qa", so opening the Help
+  // Center lit up Article Generator, Boosters and Billing too.
+  await p.click('.nav[data-view="qa"]');
+  await p.waitForTimeout(300);
+  check('opening Find an Answer highlights exactly one entry',
+        await p.evaluate(() =>
+          [...document.querySelectorAll('.nav.active')].map(n => n.textContent.trim())),
+        ['❓Find an Answer']);
+
+  // Inert entries must not be keyboard-reachable either. A disabled
+  // button still reports tabIndex 0, so tab through and see where focus
+  // actually lands rather than trusting the property.
+  await p.evaluate(() => document.body.focus());
+  const focused = [];
+  for (let i = 0; i < 25; i++) {
+    await p.keyboard.press('Tab');
+    const hit = await p.evaluate(() => {
+      const el = document.activeElement;
+      return el && el.classList.contains('nav-external') ? el.textContent.trim() : null;
+    });
+    if (hit) focused.push(hit);
+  }
+  check('Tab never reaches an external entry', focused, []);
+
+  // Clicking one must change nothing at all.
+  const before = await p.evaluate(() => document.querySelector('.view.active').id);
+  await p.evaluate(() => document.querySelector('.nav-external').click());
+  await p.waitForTimeout(200);
+  check('clicking an external entry changes no view',
+        await p.evaluate(() => document.querySelector('.view.active').id), before);
+}
+
+
 console.log('\n=== HELP CENTER STATES (browse / topic / search)');
 {
   const p = pageB;

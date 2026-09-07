@@ -61,6 +61,24 @@ hard-code a hex value. Solid fills that carry small text use the
 `--*-solid-bg` / `--*-solid-fg` pairs — plain `--brand` is only 3.07:1 against
 white and fails AA below 24px.
 
+## The sidebar is two groups
+
+The top four entries — Start Here, Dashboard guide, Find an Answer, Support —
+are views inside this file and carry `data-view`.
+
+Below the `IN YOUR DASHBOARD` divider, **Article Generator, Boosters, Billing**
+and **Log Out** are areas of the main AI Business Lab product. This page cannot
+navigate to them, so they are `disabled` and muted: present for continuity with
+the real system, out of the tab order, and inert on click.
+
+They previously carried `data-view="qa"` with a pre-filled `data-query`, so
+clicking Boosters dropped you into the Help Center searching for "boost", and
+opening Find an Answer lit up all four buttons at once — `showView` marks every
+`.nav[data-view="qa"]` active.
+
+If this page is ever mounted inside the product, give each one an `href` (or a
+`data-view`) and drop the `disabled` attribute and the `nav-external` class.
+
 ## The Help Center
 
 `#qa` is one view with three states, driven by `js/qa.js`:
@@ -85,7 +103,7 @@ silently.
 Start the server first, then:
 
 ```
-node scripts/verify.mjs        # 50 checks: parity against the original, states, screenshots
+node scripts/verify.mjs        # 55 checks: parity, sidebar, Help Center states, screenshots
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast
 node scripts/verify-overflow.mjs  # 30 checks: no view scrolls sideways at 5 widths
 node scripts/verify-bug.mjs    # demonstrates the bug the original shipped with

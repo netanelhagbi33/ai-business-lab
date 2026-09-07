@@ -12,7 +12,7 @@ import { initDelegation, registerActions, byId, loadJSON, renderError } from './
 import { showView, initNav, onViewChange } from './router.js';
 import { setHighlights, setImageSizes, initModal } from './highlights.js';
 import { initJourneys, openGuideStep, onGuideShown } from './journey.js';
-import { initQA, ensureLoaded, askQuestion, appendToSmartAnswer } from './qa.js';
+import { initQA, ensureLoaded, appendToSmartAnswer } from './qa.js';
 import { initSupport, solved, notSolved, onSupportShown } from './support.js';
 
 /* --- Actions that belong to no single module -------------- */
@@ -26,7 +26,7 @@ initModal();
 initSupport(appendToSmartAnswer);
 initQA({ solved, notSolved });
 
-initNav(query => askQuestion(query));
+initNav();
 
 /* --- View-change side effects ----------------------------- */
 onViewChange(id => {

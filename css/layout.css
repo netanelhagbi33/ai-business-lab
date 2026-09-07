@@ -105,6 +105,25 @@
 }
 .nav:active { transform: translateY(1px); }
 
+/* Areas that live in the main product, not in this page. Present so the
+   sidebar still reads like the real system, but genuinely inert: removed
+   from the tab order and announced as unavailable, rather than looking
+   clickable and silently doing nothing. */
+.nav-external {
+  color: var(--text-muted);
+  opacity: .6;
+  cursor: default;
+}
+.nav-external:hover  { background: transparent; }
+.nav-external:active { transform: none; }
+.nav-external .navplus { background: var(--border-subtle); color: var(--text-muted); }
+
+.side-label-group {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
 .ico { width: 24px; text-align: center; flex: 0 0 auto; }
 
 .navplus {
@@ -238,6 +257,10 @@
   .side-label,
   .site-card,
   .side-foot { display: none; }
+
+  /* The group divider is vertical furniture; in a horizontal bar the
+     muted styling alone carries the distinction. */
+  .side-label-group { display: none; }
 
   /* Only one sticky element at the top, or they overlap. */
   .topline { position: static; }

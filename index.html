@@ -33,17 +33,24 @@
         <span>Your AI business hub</span>
       </div>
 
+      <!-- Pages this file actually contains. -->
       <button class="nav active" type="button" data-view="home"><span class="ico" aria-hidden="true">🏠</span>Start Here</button>
       <button class="nav" type="button" data-view="guide-live"><span class="ico" aria-hidden="true">📊</span>Dashboard guide</button>
       <button class="nav" type="button" data-view="qa"><span class="ico" aria-hidden="true">❓</span>Find an Answer</button>
-      <button class="nav" type="button" data-view="qa" data-query="articles"><span class="ico" aria-hidden="true">📝</span>Article Generator<span class="navplus">+</span></button>
-      <button class="nav" type="button" data-view="qa" data-query="boost"><span class="ico" aria-hidden="true">🚀</span>Boosters<span class="navplus">+</span></button>
-      <button class="nav" type="button" data-view="qa" data-query="billing"><span class="ico" aria-hidden="true">💳</span>Billing<span class="navplus">›</span></button>
       <button class="nav" type="button" data-view="support"><span class="ico" aria-hidden="true">💬</span>Support</button>
+
+      <!-- Areas of the main AI Business Lab product. They are shown so the
+           sidebar still reads like the real system, but this page cannot
+           navigate to them, so they are inert. Give them a data-view (or an
+           href) if this page is ever mounted inside the product. -->
+      <div class="side-label side-label-group">IN YOUR DASHBOARD</div>
+      <button class="nav nav-external" type="button" disabled><span class="ico" aria-hidden="true">📝</span>Article Generator<span class="navplus">+</span></button>
+      <button class="nav nav-external" type="button" disabled><span class="ico" aria-hidden="true">🚀</span>Boosters<span class="navplus">+</span></button>
+      <button class="nav nav-external" type="button" disabled><span class="ico" aria-hidden="true">💳</span>Billing<span class="navplus">›</span></button>
     </nav>
 
     <div class="side-foot">
-      <button class="nav" type="button"><span class="ico" aria-hidden="true">↪</span>Log Out</button>
+      <button class="nav nav-external" type="button" disabled><span class="ico" aria-hidden="true">↪</span>Log Out</button>
     </div>
   </aside>
 

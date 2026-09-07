@@ -31,14 +31,11 @@ export function showView(id) {
 }
 
 /**
- * Sidebar buttons. Some carry data-query, which jumps to the
- * Q&A view with the search box pre-filled.
+ * Sidebar buttons. Only those carrying data-view navigate; the
+ * inert .nav-external entries have none and are skipped.
  */
-export function initNav(onQuery) {
+export function initNav() {
   $$('.nav[data-view]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      showView(btn.dataset.view);
-      if (btn.dataset.query) onQuery(btn.dataset.query);
-    });
+    btn.addEventListener('click', () => showView(btn.dataset.view));
   });
 }

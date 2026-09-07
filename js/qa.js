@@ -305,15 +305,6 @@ export function searchKB() {
   }
 }
 
-/** Set the search box and run a search (sidebar shortcuts use this). */
-export function askQuestion(q) {
-  ensureLoaded().then(() => {
-    byId('qSearch').value = q;
-    activeCat = 'All';
-    searchKB();
-  });
-}
-
 export function appendToSmartAnswer(html) {
   byId('smartAnswer').innerHTML += html;
 }
