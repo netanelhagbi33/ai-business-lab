@@ -1,7 +1,7 @@
 # AI Business Lab — Start Here
 
-Customer onboarding and Help Center. Six views: Start Here, two step-by-step
-guides, What Happens Next, the Help Center (232 articles across 10 topics), and
+Customer onboarding and Support Center. Six views: Start Here, two step-by-step
+guides, What Happens Next, the Support Center (232 articles across 10 topics), and
 Support.
 
 Rebuilt from a single 4.1 MB `index.html` into static files. No framework, no
@@ -29,7 +29,7 @@ scripts/            extraction + verification
 ```
 
 Page weight: **~200 KB** on first paint (was 4.1 MB). The 232-answer knowledge
-base is fetched only when someone opens Find an Answer; screenshots are lazy.
+base is fetched only when someone opens Support Center; screenshots are lazy.
 
 ## Things that will bite you
 
@@ -63,7 +63,7 @@ white and fails AA below 24px.
 
 ## The sidebar is two groups
 
-The top four entries — Start Here, Dashboard guide, Find an Answer, Support —
+The top four entries — Start Here, Dashboard guide, Support Center, Support —
 are views inside this file and carry `data-view`.
 
 Below the `IN YOUR DASHBOARD` divider, **Article Generator, Boosters, Billing**
@@ -72,14 +72,26 @@ navigate to them, so they are `disabled` and muted: present for continuity with
 the real system, out of the tab order, and inert on click.
 
 They previously carried `data-view="qa"` with a pre-filled `data-query`, so
-clicking Boosters dropped you into the Help Center searching for "boost", and
-opening Find an Answer lit up all four buttons at once — `showView` marks every
+clicking Boosters dropped you into the Support Center searching for "boost", and
+opening Support Center lit up all four buttons at once — `showView` marks every
 `.nav[data-view="qa"]` active.
 
 If this page is ever mounted inside the product, give each one an `href` (or a
 `data-view`) and drop the `disabled` attribute and the `nav-external` class.
 
-## The Help Center
+## The Support Center
+
+The tab is named **Support Center**. It was called "Find an Answer" in the
+sidebar while everything inside it said "Help Center" — one thing under two
+names. Both are now Support Center throughout the UI.
+
+Two answers in `data/kb.json` still say "Help Center" in their body text.
+That is customer-facing content, not UI chrome, so it was left alone — worth
+a copy pass if the product is renaming for real.
+
+Note it sits next to the separate **Support** tab, which holds tickets. The
+split is deliberate: Support Center is self-service, Support is where a person
+picks it up.
 
 `#qa` is one view with three states, driven by `js/qa.js`:
 
@@ -103,7 +115,7 @@ silently.
 Start the server first, then:
 
 ```
-node scripts/verify.mjs        # 55 checks: parity, sidebar, Help Center states, screenshots
+node scripts/verify.mjs        # 55 checks: parity, sidebar, Support Center states, screenshots
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast
 node scripts/verify-overflow.mjs  # 30 checks: no view scrolls sideways at 5 widths
 node scripts/verify-bug.mjs    # demonstrates the bug the original shipped with
@@ -127,7 +139,7 @@ scripts for a different browser.
   three) merged into single rules. The dated `V2.1`/`V2.3`/`V2.5` patch layers
   are gone; what they styled is not.
 - 32 inline `onclick` handlers → `data-action` delegation.
-- Find an Answer became a real Help Center: a flat list of 232 accordions
+- Support Center became a real Support Center: a flat list of 232 accordions
   behind pill filters is now a hero search, ten topic cards with counts, and a
   breadcrumbed topic view. Search ranking is unchanged — the parity suite
   proves ten queries return identical results.

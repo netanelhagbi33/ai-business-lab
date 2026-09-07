@@ -109,7 +109,7 @@ console.log('\n=== KEYBOARD');
   await p.goto(URL);
   await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
 
-  // Tab until the sidebar "Find an Answer" button has focus, then Enter.
+  // Tab until the sidebar "Support Center" button has focus, then Enter.
   let reached = false;
   for (let i = 0; i < 40 && !reached; i++) {
     await p.keyboard.press('Tab');
@@ -130,7 +130,7 @@ console.log('\n=== KEYBOARD');
 
   await p.keyboard.press('Enter');
   await p.waitForTimeout(600);
-  check('Enter activates it (Q&A view opened)',
+  check('Enter activates it (Support Center opened)',
         await p.evaluate(() => document.getElementById('qa').classList.contains('active')));
 
   // The Home "what happens next" card is a div with role=button.
@@ -165,7 +165,7 @@ console.log('\n=== KEYBOARD');
   await p.focus('.qa .q');
   await p.keyboard.press('Enter');
   await p.waitForTimeout(200);
-  check('Q&A accordion toggles by keyboard and reports aria-expanded',
+  check('answer accordion toggles by keyboard and reports aria-expanded',
         await p.evaluate(() => document.querySelector('.qa .q').getAttribute('aria-expanded') === 'true'));
   await p.close();
 }

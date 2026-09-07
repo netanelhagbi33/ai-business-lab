@@ -1,5 +1,5 @@
 /* ============================================================
-   Help Center — "Find an Answer".
+   Support Center — "Support Center".
 
    Three states, one view:
 
@@ -120,7 +120,7 @@ function applyState() {
   byId('popularQs').hidden = !browsing;
 }
 
-/** The topic grid — the Help Center's landing state. */
+/** The topic grid — the Support Center's landing state. */
 export function showBrowse() {
   state = 'browse';
   activeCat = 'All';
@@ -289,7 +289,7 @@ export function searchKB() {
       `<div class="answer-card">`
       + `<div class="answer-label">NO CLOSE MATCH</div>`
       + `<h3>I could not find a close answer</h3>`
-      + `<p>Try a shorter question or browse the topics. If the Help Center `
+      + `<p>Try a shorter question or browse the topics. If the Support Center `
       + `still cannot solve it, the Support path remains available.</p>`
       + `<div class="answer-actions">`
         + `<button class="btn soft" type="button" data-action="qa-not-solved" `

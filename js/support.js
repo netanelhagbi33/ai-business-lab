@@ -2,7 +2,7 @@
    Support — the escalation gate, the ticket modal, ticket list.
 
    The gate is deliberate: a general ticket only unlocks after
-   the Help Center has failed twice. Refund requests bypass it.
+   the Support Center has failed twice. Refund requests bypass it.
    ============================================================ */
 
 import { esc, byId, registerActions } from './dom.js';
@@ -36,7 +36,7 @@ export function notSolved(q, answer) {
   appendSmartAnswer(failedAnswers >= 2
     ? `<div class="answer-card">`
       + `<h3>Let’s send this to Support.</h3>`
-      + `<p>You tried the Help Center and still need help. `
+      + `<p>You tried the Support Center and still need help. `
       + `You can now open a general Support ticket.</p>`
       + `<button class="btn green" type="button" data-action="open-ticket">`
         + `Open Support Ticket</button>`
@@ -76,7 +76,7 @@ export function openGeneralTicket() {
     showView('qa');
     byId('smartAnswer').innerHTML =
       `<div class="answer-card">`
-      + `<h3>Let the Help Center try first</h3>`
+      + `<h3>Let the Support Center try first</h3>`
       + `<p>Search for your question. If the answer does not solve it after `
       + `two attempts, the general ticket form will open.</p>`
       + `</div>`;
@@ -97,7 +97,7 @@ export function openTicketModal(type, prefill) {
     + `<h2>${esc(type)}</h2>`
     + `<p>${isRefund
         ? 'Refund requests can be submitted directly so they are tracked from the start.'
-        : 'Tell us what is still not working after using the Help Center.'}</p>`
+        : 'Tell us what is still not working after using the Support Center.'}</p>`
     + `<div class="form">`
       + `<label>Subject`
         + `<input id="tSubject" value="${isRefund ? 'Refund Request' : 'Need more help'}">`

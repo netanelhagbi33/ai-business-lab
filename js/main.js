@@ -5,7 +5,7 @@
      1. delegation + modal (no data needed)
      2. steps.json + highlights.json  -> the guides can render
      3. kb.json is NOT fetched here; qa.js pulls it the first
-        time the "Find an Answer" view is opened.
+        time the "Support Center" view is opened.
    ============================================================ */
 
 import { initDelegation, registerActions, byId, loadJSON, renderError } from './dom.js';

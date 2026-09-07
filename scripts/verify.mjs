@@ -46,7 +46,7 @@ async function probe(page, url, label) {
     document.querySelectorAll('.topic-card').length > 1);
 
   // Original renders .cat pills (incl. a synthetic "All"); the rebuilt
-  // Help Center renders topic cards. Compare name -> count either way.
+  // Support Center renders topic cards. Compare name -> count either way.
   const catCounts = await page.evaluate(() => {
     const pills = [...document.querySelectorAll('.cat')];
     if (pills.length) {
@@ -184,14 +184,14 @@ console.log('\n=== SIDEBAR: in-page vs external entries');
         nav.filter(n => !n.external).map(n => n.view),
         ['home', 'guide-live', 'qa', 'support']);
 
-  // The original gave four buttons data-view="qa", so opening the Help
+  // The original gave four buttons data-view="qa", so opening the Support
   // Center lit up Article Generator, Boosters and Billing too.
   await p.click('.nav[data-view="qa"]');
   await p.waitForTimeout(300);
-  check('opening Find an Answer highlights exactly one entry',
+  check('opening Support Center highlights exactly one entry',
         await p.evaluate(() =>
           [...document.querySelectorAll('.nav.active')].map(n => n.textContent.trim())),
-        ['❓Find an Answer']);
+        ['❓Support Center']);
 
   // Inert entries must not be keyboard-reachable either. A disabled
   // button still reports tabIndex 0, so tab through and see where focus
@@ -217,7 +217,7 @@ console.log('\n=== SIDEBAR: in-page vs external entries');
 }
 
 
-console.log('\n=== HELP CENTER STATES (browse / topic / search)');
+console.log('\n=== SUPPORT CENTER STATES (browse / topic / search)');
 {
   const p = pageB;
   await p.goto(REBUILT);
