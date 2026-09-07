@@ -174,6 +174,35 @@ would.
 
 `scripts/verify-spotlight.mjs` covers all of it, contrast included.
 
+## Article text
+
+Answers and guide copy render through `richText()` in `js/dom.js`, which
+turns `**bold**` into `<strong>` and drops the asterisks. The source stays
+markdown so the articles remain editable as text rather than HTML.
+
+**The order inside `richText()` is a security boundary.** It escapes first and
+adds emphasis second. Converting before escaping would make every article an
+HTML injection point — `verify-content.mjs` pins that with three checks,
+including `**<script>…</script>**`.
+
+An unmatched `**` is left as written, and emphasis never spans a line break,
+so a stray asterisk cannot bold half an article.
+
+## No promised contact times
+
+Nothing tells a customer when their Success Manager will call. Every
+"within 24–72 hours" and "within the next few days" now reads "soon", across
+14 articles and the What Happens Next view, because a window the business does
+not control becomes a complaint when it slips.
+
+Three durations are deliberately **not** touched, and `verify-content.mjs`
+fails if they disappear: the Daily Boost's 24-hour cycle, and the money-back
+guarantee's "60 days" and "three free support calls" — those are conditions
+the customer must meet, not promises made to them.
+
+`scripts/retime-success-manager.mjs` did the rewrite and is kept for reference.
+It refuses to write if any timeframe survives or any non-promise is lost.
+
 ## The sidebar is two groups
 
 The top four entries — Start Here, Dashboard guide, Support Center, Support —
@@ -258,6 +287,7 @@ Start the server first, then:
 ```
 node scripts/verify.mjs           # 58 checks: parity, sidebar, Support Center states, screenshots
 node scripts/verify-deflection.mjs  # 32 checks: the whole ticket funnel
+node scripts/verify-content.mjs     # 19 checks: content invariants, no browser needed
 node scripts/verify-popular.mjs     # 10 checks: every Popular chip lands on its article
 node scripts/verify-spotlight.mjs   # 26 checks: the one-time Start Here marker + demo mode
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast

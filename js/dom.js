@@ -20,6 +20,20 @@ export function esc(s) {
   }[c]));
 }
 
+/**
+ * Long-form content, with `**bold**` rendered as bold.
+ *
+ * The order matters: esc() runs FIRST, so everything in the source is inert
+ * markup by the time the emphasis is added. Converting before escaping would
+ * turn article text into an HTML injection point.
+ *
+ * The pattern cannot span a line break or swallow a neighbouring pair, and an
+ * unmatched `**` is simply left as written rather than mangling the sentence.
+ */
+export function richText(s) {
+  return esc(s).replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+}
+
 export const byId = id => document.getElementById(id);
 export const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 

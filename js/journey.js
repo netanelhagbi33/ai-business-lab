@@ -6,7 +6,7 @@
    restored from localStorage on boot and saved on every move.
    ============================================================ */
 
-import { esc, byId, registerActions } from './dom.js';
+import { esc, richText, byId, registerActions } from './dom.js';
 import { showView } from './router.js';
 import { highlightMarkup, firstHighlightLabel, sizeAttrs, IMG_DIR } from './highlights.js';
 import { getJourneyIndex, getJourneyDone, saveJourneyState } from './store.js';
@@ -104,7 +104,7 @@ function rulesMarkup(step) {
     + `<h3 class="lesson-rules-title">${esc(r.title)}</h3>`
     + (r.lead ? `<p class="lesson-rules-lead">${esc(r.lead)}</p>` : '')
     + `<ol class="lesson-rules-list">`
-      + r.items.map(i => `<li>${esc(i)}</li>`).join('')
+      + r.items.map(i => `<li>${richText(i)}</li>`).join('')
     + `</ol>`
     + (r.example
         ? `<p class="lesson-rules-example"><strong>For example:</strong> ${esc(r.example)}</p>`
@@ -144,11 +144,11 @@ function lessonMarkup(path, j, step, _pct) {
     + `<div class="lesson-kicker">STEP ${j.index + 1} OF ${steps.length}</div>`
     + `<div class="lesson-title-row">`
       + `<div class="lesson-step-number">${j.index + 1}</div>`
-      + `<div><h2>${esc(step.title)}</h2><p>${esc(step.simple)}</p></div>`
+      + `<div><h2>${esc(step.title)}</h2><p>${richText(step.simple)}</p></div>`
     + `</div>`
     + `<div class="lesson-explain">`
-      + `<div class="what-card"><span>WHAT TO DO</span><p>${esc(step.simple)}</p></div>`
-      + `<div class="remember-card"><span>KEEP IN MIND</span><p>${esc(step.tip)}</p></div>`
+      + `<div class="what-card"><span>WHAT TO DO</span><p>${richText(step.simple)}</p></div>`
+      + `<div class="remember-card"><span>KEEP IN MIND</span><p>${richText(step.tip)}</p></div>`
     + `</div>`
     + rulesMarkup(step)
     + `<div class="journey-gallery ${step.images.length === 1 ? 'one' : ''}">${images}</div>`

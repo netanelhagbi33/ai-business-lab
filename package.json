@@ -14,5 +14,6 @@
   "description": "",
   "devDependencies": {
     "playwright": "^1.63.0"
-  }
+  },
+  "type": "module"
 }
