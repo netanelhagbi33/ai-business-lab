@@ -141,6 +141,21 @@ Two things the effect must not cost:
   be: brighter measured 4.14:1 on the tint and missed AA. The gold people
   actually see is the ring and the sheen, which carry no text.
 
+### Showing the spotlight to someone
+
+Once you have clicked Start Here it is gone for you, which makes it awkward to
+demonstrate. **`?spotlight`** forces it on regardless of what is stored:
+
+```
+http://localhost:8137/?spotlight
+```
+
+Clicking still takes it down, so the whole interaction can be shown, and a
+reload brings it back. It never writes `abl_start_here_seen`, so demonstrating
+it to a genuine first-time visitor does not burn their one-shot — and it does
+not clear your own guide progress or tickets the way `localStorage.clear()`
+would.
+
 `scripts/verify-spotlight.mjs` covers all of it, contrast included.
 
 ## The sidebar is two groups
@@ -228,7 +243,7 @@ Start the server first, then:
 node scripts/verify.mjs           # 58 checks: parity, sidebar, Support Center states, screenshots
 node scripts/verify-deflection.mjs  # 32 checks: the whole ticket funnel
 node scripts/verify-popular.mjs     # 10 checks: every Popular chip lands on its article
-node scripts/verify-spotlight.mjs   # 18 checks: the one-time Start Here marker
+node scripts/verify-spotlight.mjs   # 26 checks: the one-time Start Here marker + demo mode
 node scripts/verify-a11y.mjs   # 18 checks: handler coverage, keyboard, WCAG AA contrast
 node scripts/verify-overflow.mjs  # 30 checks: no view scrolls sideways at 5 widths
 node scripts/verify-bug.mjs    # demonstrates the bug the original shipped with

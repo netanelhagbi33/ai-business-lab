@@ -98,6 +98,52 @@ console.log('\n=== VISITING OTHER TABS DOES NOT RETIRE IT');
   await p.close();
 }
 
+
+console.log('\n=== DEMO MODE (?spotlight)');
+{
+  // Someone who has already dismissed it for real.
+  const p = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await p.goto(URL);
+  await p.evaluate(() => localStorage.setItem('abl_start_here_seen', '1'));
+
+  await p.goto(URL);
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+  check('(setup) normally stays hidden for them', await marked(p), false);
+
+  await p.goto(URL + '?spotlight');
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+  check('?spotlight shows it anyway', await marked(p), true);
+  check('their real flag is untouched',
+        await p.evaluate(() => localStorage.getItem('abl_start_here_seen')), '1');
+
+  await p.click('.nav[data-view="home"]');
+  await p.waitForTimeout(300);
+  check('clicking still demonstrates the dismissal', await marked(p), false);
+  check('and the click still navigates',
+        await p.evaluate(() => document.getElementById('home').classList.contains('active')), true);
+
+  await p.reload();
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+  check('a reload brings it back, so it can be shown again', await marked(p), true);
+  await p.close();
+}
+
+{
+  // Demo mode must not burn a real first-timer's one-shot either.
+  const p = await fresh();
+  await p.goto(URL + '?spotlight');
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+  await p.click('.nav[data-view="home"]');
+  await p.waitForTimeout(300);
+  check('demo mode never writes the flag',
+        await p.evaluate(() => localStorage.getItem('abl_start_here_seen')), null);
+
+  await p.goto(URL);
+  await p.waitForSelector('#buildNav .journey-step', { state: 'attached' });
+  check('so a real first visit still gets its marker', await marked(p), true);
+  await p.close();
+}
+
 console.log('\n=== REDUCED MOTION');
 {
   const p = await fresh({ reducedMotion: 'reduce' });
