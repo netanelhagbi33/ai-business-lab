@@ -174,6 +174,22 @@ would.
 
 `scripts/verify-spotlight.mjs` covers all of it, contrast included.
 
+## No personal data in articles
+
+One article was a customer's support ticket pasted verbatim into the public
+knowledge base — their phone number, their email address, an employee's name,
+and an unfilled `[Your Name]` signature block. It ranked **#1** for
+"contact my representative", so any customer searching that phrase read
+another customer's contact details.
+
+It was removed (231 articles, not 232). The general case it half-answered is
+already covered by "How can I request a callback?" and "What should I do if no
+one has contacted me after my purchase?".
+
+`verify-content.mjs` now fails on any phone number, email address, or
+`[Your Name]`-style template in `kb.json`. **Articles come from real tickets,
+so check this after any content import.**
+
 ## Article text
 
 Answers and guide copy render through `richText()` in `js/dom.js`, which

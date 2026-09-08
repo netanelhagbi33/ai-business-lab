@@ -1310,13 +1310,6 @@
  },
  {
   "category": "Support",
-  "question": "I have tried on multiple occasions to contact my customer service representative at DBMentor-Stani Vero. He was working through a conversion from a prior service to this one and was supposed to get back to me after July 20th. I haven't heard from him. Please have him contact me at 618-567-8360 or pedersen0906@gmail.com. Thank you.",
-  "answer": "Dear [Customer Name],\n\nThank you for reaching out to us. I understand that you have been trying to contact your customer service representative, Stani Vero, regarding your conversion from a prior service. I apologize for the delay in communication.\n\nI will ensure that your request is forwarded to Stani, and I will ask him to reach out to you at the provided phone number, 618-567-8360, or via email at pedersen0906@gmail.com as soon as possible.\n\nIf you have any further questions or need immediate assistance, please feel free to reply to this email.\n\nThank you for your patience.\n\nBest regards,  \n[Your Name]  \n[Your Position]  \nAI Business Lab Support Team",
-  "source": "Knowledge_Base",
-  "rawCategory": "Human Support & Callbacks"
- },
- {
-  "category": "Support",
   "question": "Please let them know to leave a message so I know they called and I will call them back.",
   "answer": "Dear Dean,\n\nThank you for your message! I understand that you would like your Success Manager to leave a message when they call, so you know to return the call. I will ensure that your request is forwarded to them, and they will be informed to leave a message for you.\n\nIf you have any other questions or need further assistance, feel free to reach out!\n\nBest regards,\nAI Business Lab Support Team",
   "source": "Knowledge_Base",

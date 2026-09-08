@@ -76,7 +76,10 @@ console.log('\n=== NON-PROMISE DURATIONS KEPT');
    ============================================================ */
 console.log('\n=== STRUCTURE');
 {
-  check('232 articles', kb.length, 232);
+  // 231, not 232: one article was a real customer's support ticket pasted
+  // verbatim into the public knowledge base — their phone number and email
+  // address included. It ranked #1 for "contact my representative".
+  check('231 articles', kb.length, 231);
   check('every article has category, question and answer',
         kb.filter(x => !x.category || !x.question || !x.answer).length, 0);
 
@@ -137,6 +140,25 @@ console.log('\n=== RICH TEXT (**bold**)');
   const bolded = kb.filter(x => richText(x.answer).includes('<strong>')).length;
   console.log(`      ${bolded} articles render bold text`);
   check('the articles that use bold still do', bolded, 7);
+}
+
+/* ============================================================
+   No personal data in customer-facing articles.
+
+   Not a style rule. One article was a real customer's support
+   ticket pasted verbatim into the public knowledge base — their
+   phone number and email address included — and it ranked #1
+   for "contact my representative".
+   ============================================================ */
+console.log('\n=== NO PERSONAL DATA');
+{
+  const text = JSON.stringify(kb);
+  check('no phone numbers', text.match(/\b\d{3}[-.]\d{3}[-.]\d{4}\b/g) || [], []);
+  check('no email addresses',
+        (text.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi) || [])
+          .filter(e => !/example|yoursite|aibusiness-lab/i.test(e)), []);
+  check('no agent-template fields in customer text',
+        text.match(/\[Your Name\]|\[Your Position\]|\[Customer Name\]/gi) || [], []);
 }
 
 console.log('\n=== UNFILLED PLACEHOLDERS (reported, not enforced)');

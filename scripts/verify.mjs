@@ -113,7 +113,14 @@ const pageB = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const B = await probe(pageB, REBUILT, 'rebuilt');
 
 console.log('\n=== CONTENT PARITY (rebuilt must equal original)');
-check('category counts (11 filters)', B.catCounts, A.catCounts);
+// One article was deliberately removed from the rebuild: a real customer's
+// support ticket, published with their phone number and email. Declared here
+// so the count check still guards every other category.
+const REMOVED_FROM_CATEGORY = { 'Support': 1 };
+const expectedCounts = A.catCounts.map(([name, n]) =>
+  [name, String(Number(n) - (REMOVED_FROM_CATEGORY[name] || 0))]);
+check('category counts match, minus the article removed for privacy',
+      B.catCounts, expectedCounts);
 for (const q of QUERIES) {
   check(`search "${q}" — best match`, B.searches[q].best, A.searches[q].best);
   check(`search "${q}" — top 5 results`, B.searches[q].top5, A.searches[q].top5);
