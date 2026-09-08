@@ -143,7 +143,7 @@ console.log('\n=== RICH TEXT (**bold**)');
   // 11 after the voice rewrite. Bold marks the branch headings and the
   // named options in a list — "**Activate your Daily Boost**" — which is
   // what makes a multi-part answer scannable instead of a wall of text.
-  check('the articles that use bold still do', bolded, 11);
+  check('the articles that use bold still do', bolded, 13);
 }
 
 /* ============================================================
@@ -163,6 +163,60 @@ console.log('\n=== NO PERSONAL DATA');
           .filter(e => !/example|yoursite|aibusiness-lab/i.test(e)), []);
   check('no agent-template fields in customer text',
         text.match(/\[Your Name\]|\[Your Position\]|\[Customer Name\]/gi) || [], []);
+}
+
+
+/* ============================================================
+   No article hijacks a topic search.
+
+   An article that names every category matches every category
+   search. "Where can I find the instructions or help section?"
+   listed all ten and became the best match for "security",
+   ahead of the actual security articles — a broad article
+   outranking the specific ones is a search regression, not a
+   content one.
+   ============================================================ */
+console.log('\n=== NO SEARCH HIJACKING');
+{
+  const SYN = {
+    boost: ['booster','traffic','visitors','24 hour','24h','accelerator'],
+    earn: ['earning','earnings','revenue','money','income','profit'],
+    withdraw: ['withdrawal','payout','payment method','wallet','paypal','wise','bank'],
+    site: ['website','business','storefront','domain'],
+    build: ['launch','setup','create','onboarding'],
+    refund: ['cancel','money back','return'],
+    support: ['ticket','callback','call back','human','success manager'],
+    article: ['content','products','keywords','niche'],
+  };
+  const norm = s => String(s || '').toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+  const score = (it, q) => {
+    const nq = norm(q); if (!nq) return 0;
+    const qt = norm(it.question), t = norm(it.question + ' ' + it.category + ' ' + it.answer);
+    let s = 0;
+    nq.split(' ').filter(x => x.length > 1).forEach(x => {
+      if (t.includes(x)) s += 2; if (qt.includes(x)) s += 5;
+    });
+    Object.entries(SYN).forEach(([k, a]) => {
+      if (nq.includes(k) || a.some(v => nq.includes(v))) {
+        if (t.includes(k) || a.some(v => t.includes(v))) s += 6;
+      }
+    });
+    if (qt.includes(nq)) s += 16;
+    return s;
+  };
+
+  const BROAD = 'Where can I find the instructions or help section?';
+  const offenders = [];
+  for (const q of ['billing','security','refund','earnings','traffic',
+                   'niche','password','payout','boost','domain']) {
+    const ranked = kb.map(x => ({ q: x.question, s: score(x, q) }))
+      .filter(x => x.s > 0).sort((a, b) => b.s - a.s);
+    const pos = ranked.findIndex(x => x.q === BROAD);
+    if (pos !== -1 && pos < 5) offenders.push(`"${q}" -> #${pos + 1}`);
+  }
+  check('the "where are the instructions" article tops no topic search',
+        offenders, []);
 }
 
 console.log('\n=== UNFILLED PLACEHOLDERS (reported, not enforced)');

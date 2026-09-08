@@ -190,6 +190,22 @@ one has contacted me after my purchase?".
 `[Your Name]`-style template in `kb.json`. **Articles come from real tickets,
 so check this after any content import.**
 
+## An article must not hijack topic search
+
+"Where can I find the instructions or help section?" was rewritten to describe
+the guides and the Support Center. The first version listed all ten topic
+names and the contents of all nine guide steps — thorough, and wrong: it then
+matched every topic search and came back as the **best match for "security"**,
+ahead of the actual security articles.
+
+A broad article outranking specific ones is a search regression. The article
+now names no category and no step contents; `verify-content.mjs` runs the real
+scoring over ten topic keywords and fails if it enters the top five for any of
+them.
+
+Its counts are read from `data/`, not typed in, and checked — so adding a
+guide step or a topic makes the check fail until the article is updated.
+
 ## Articles are articles, not chat replies
 
 The knowledge base was built from support agents' own replies, so half of it

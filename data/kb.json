@@ -128,14 +128,14 @@
  {
   "category": "Getting Started",
   "question": "Where can I find the instructions or help section?",
-  "answer": "We are currently developing a complete help and training section that will include both written instructions and recorded tutorials.\nThis section is not yet available. For now, all guidance, system training, questions, and technical issues are handled directly by our Support Team.\nYou can contact the support team through the chat whenever you need assistance, and they will guide you through the relevant steps.",
+  "answer": "Everything is in the Start Here section. It contains two guided walkthroughs and a searchable library of answers.\n\n**Step-by-step guides**\nBuild Your Website walks through the 6 steps of creating and launching your site.\n\nYour Website Is Live — Now What? walks through the 9 steps of running it once it is up.\n\nEach step shows the actual screen with the button you need marked on it, and you can click any screenshot to enlarge it. Open either guide from Start Here.\n\n**Support Center**\nA searchable library of 230 answers, grouped into 10 topics shown as cards on the Support Center page.\n\nSearch it in your own words or open the topic that fits your question. Your progress through the guides is saved, so you can leave and pick up where you stopped.",
   "source": "Knowledge_Base",
   "rawCategory": "Getting Started & Next Steps"
  },
  {
   "category": "Building My Site",
   "question": "How can I change the name of my site and choose a domain name for my business?",
-  "answer": "You can select a domain name from the list of available options during the setup. Unfortunately, you cannot choose a specific domain name because it must be available and not already in use by another business. If your website setup is complete, please contact your assigned Success Manager for assistance.",
+  "answer": "During setup you choose a domain name from the list of available options. You cannot enter any name you like, because it has to be available and not already in use by another business.\n\n**Once your website is live**\nThe domain can still be changed. Contact your assigned Success Manager to check what is possible for your site — they will review the request and explain the available options, including a custom branded domain if you want a more brand-focused address.",
   "source": "Knowledge_Base",
   "rawCategory": "Domain Name Selection"
  },
