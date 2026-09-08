@@ -171,6 +171,50 @@ console.log('\n=== KEYBOARD');
 }
 
 /* ============ 3. Contrast ============ */
+
+console.log('\n=== FEEDBACK BUTTON HOVER');
+for (const scheme of ['light', 'dark']) {
+  const p = await browser.newPage({ viewport: { width: 1440, height: 900 }, colorScheme: scheme });
+  await p.goto(URL);
+  await p.evaluate(() => localStorage.clear());
+  await p.reload();
+  await p.click('.nav[data-view="qa"]');
+  await p.waitForSelector('.topic-card', { state: 'attached' });
+  await p.click('.topic-card[data-category="Support"]');
+  await p.waitForTimeout(300);
+  await p.click('#results .qa:nth-child(1) .q');
+  await p.waitForTimeout(300);
+
+  const read = async action => {
+    await p.hover(`#results .qa.open [data-action="${action}"]`);
+    await p.waitForTimeout(200);
+    return p.evaluate(a => {
+      const srgb = c => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+      const lum = ([r, g, b]) => 0.2126 * srgb(r) + 0.7152 * srgb(g) + 0.0722 * srgb(b);
+      const parse = s => s.match(/\d+/g).slice(0, 3).map(Number);
+      const el = document.querySelector(`#results .qa.open [data-action="${a}"]`);
+      const cs = getComputedStyle(el);
+      const f = lum(parse(cs.color)), b = lum(parse(cs.backgroundColor));
+      const hi = Math.max(f, b), lo = Math.min(f, b);
+      return { hue: parse(cs.backgroundColor), ratio: +((hi + 0.05) / (lo + 0.05)).toFixed(2) };
+    }, action);
+  };
+
+  const yes = await read('article-yes');
+  const no = await read('article-no');
+
+  // Green leans green, red leans red — checked on the channel, not by name,
+  // so a token change that inverts them cannot pass.
+  check(`${scheme}: "Yes" hovers green`, yes.hue[1] >= Math.max(yes.hue[0], yes.hue[2]), true);
+  check(`${scheme}: "No" hovers red`, no.hue[0] > no.hue[1] && no.hue[0] > no.hue[2], true);
+
+  // The tint must not make the label harder to read than it was at rest.
+  check(`${scheme}: "Yes" label still meets AA while hovered`, yes.ratio >= 4.5, true);
+  check(`${scheme}: "No" label still meets AA while hovered`, no.ratio >= 4.5, true);
+  console.log(`      ${scheme}: yes ${yes.ratio}:1, no ${no.ratio}:1`);
+  await p.close();
+}
+
 console.log('\n=== CONTRAST (WCAG AA)');
 for (const scheme of ['light', 'dark']) {
   const p = await browser.newPage({ viewport: { width: 1440, height: 900 }, colorScheme: scheme });

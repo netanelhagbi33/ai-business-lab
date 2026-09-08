@@ -436,3 +436,29 @@
   .article-feedback { flex-direction: column; align-items: stretch; }
   .article-feedback-actions .btn { flex: 1; }
 }
+
+/* ============================================================
+   Feedback buttons: the hover says which way you are answering
+   before you commit to it.
+
+   Both are neutral at rest — colouring them by default would
+   push people toward one answer. The tints are deliberately
+   pale; this is a hint, not a warning.
+   ============================================================ */
+.article-feedback-actions [data-action="article-yes"]:hover {
+  background: var(--brand-wash);
+  border-color: var(--brand-border);
+  color: var(--brand-strong);
+}
+
+.article-feedback-actions [data-action="article-no"]:hover {
+  background: var(--danger-subtle);
+  border-color: var(--danger-border);
+  color: var(--danger-strong);
+}
+
+/* Keep the keyboard ring readable over the tint. */
+.article-feedback-actions [data-action="article-yes"]:focus-visible,
+.article-feedback-actions [data-action="article-no"]:focus-visible {
+  border-color: transparent;
+}

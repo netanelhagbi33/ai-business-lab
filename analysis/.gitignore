@@ -1,0 +1,5 @@
+# Ticket exports are customer data — analysed locally, never committed.
+*.csv
+*.tsv
+*.xlsx
+*.json
