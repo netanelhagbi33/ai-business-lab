@@ -143,7 +143,7 @@ console.log('\n=== RICH TEXT (**bold**)');
   // 11 after the voice rewrite. Bold marks the branch headings and the
   // named options in a list — "**Activate your Daily Boost**" — which is
   // what makes a multi-part answer scannable instead of a wall of text.
-  check('the articles that use bold still do', bolded, 13);
+  check('the articles that use bold still do', bolded, 14);
 }
 
 /* ============================================================
@@ -176,6 +176,34 @@ console.log('\n=== NO PERSONAL DATA');
    outranking the specific ones is a search regression, not a
    content one.
    ============================================================ */
+
+/* ============================================================
+   No answer states one customer's own choices as fact.
+
+   An article said "which is why only the cooking category was
+   chosen" — cooking was that one customer's niche, so every
+   other reader was told theirs was cooking too. Same class as
+   the balances ("$9.87 in revenue") already removed: a
+   conversation kept as an article.
+
+   Questions are exempt. They are the customer's own words and
+   are what makes search match their phrasing.
+   ============================================================ */
+console.log('\n=== NO ANSWER ASSUMES THE READER\'S CHOICES');
+{
+  const NICHES = /\b(cooking|fishing|outdoors|gardening|golf|yoga|coffee|knitting|camping|hiking)\b/i;
+  const offenders = kb
+    .filter(x => NICHES.test(x.answer))
+    .map(x => `${x.question.slice(0, 50)} -> "${x.answer.match(NICHES)[0]}"`);
+  check('no answer names a specific niche as the reader\'s', offenders, []);
+
+  // The same shape, stated about the reader's account rather than in general.
+  const asserts = kb
+    .filter(x => /\b(your|the) (niche|category|plan) (was|is) (cooking|fishing|the [a-z]+ category)\b/i.test(x.answer))
+    .map(x => x.question.slice(0, 60));
+  check('no answer asserts what the reader selected', asserts, []);
+}
+
 console.log('\n=== NO SEARCH HIJACKING');
 {
   const SYN = {

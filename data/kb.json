@@ -239,8 +239,8 @@
  },
  {
   "category": "Building My Site",
-  "question": "Why was only one category selected during the setup process, and why was it the cooking category instead of fishing or outdoors?",
-  "answer": "During the setup process, you can only select one niche, which is why only the cooking category was chosen. Unfortunately, there isn't an option to choose multiple categories.",
+  "question": "Why was only one category selected during setup, and why that one?",
+  "answer": "Setup assigns one niche per website. There is no option to select multiple categories, so the site is built around whichever niche was chosen during setup.\n\n**If the niche is not the one you picked**\nContact Support and report which niche you selected and which one your account shows. Your setup conversation is checked against what was assigned, and your account is corrected if the two do not match.\n\n**If you want a different niche**\nBefore your website has been created, you can change your selections through the AI Assistant — edit your answers during each stage, change them at the final review step, or restart the setup. Once the site is live, contact Support and the request is passed to your assigned Success Manager, who will explain the available options.",
   "source": "Knowledge_Base",
   "rawCategory": "Niche Selection"
  },
