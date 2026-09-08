@@ -76,10 +76,11 @@ console.log('\n=== NON-PROMISE DURATIONS KEPT');
    ============================================================ */
 console.log('\n=== STRUCTURE');
 {
-  // 231, not 232: one article was a real customer's support ticket pasted
-  // verbatim into the public knowledge base — their phone number and email
-  // address included. It ranked #1 for "contact my representative".
-  check('231 articles', kb.length, 231);
+  // 230, not the original 232. Two articles were personal replies to named
+  // individuals rather than articles: one carried a customer's phone number
+  // and email, the other opened "Dear Dean". Both cases are covered by the
+  // general articles that remain.
+  check('230 articles', kb.length, 230);
   check('every article has category, question and answer',
         kb.filter(x => !x.category || !x.question || !x.answer).length, 0);
 
@@ -139,7 +140,10 @@ console.log('\n=== RICH TEXT (**bold**)');
 
   const bolded = kb.filter(x => richText(x.answer).includes('<strong>')).length;
   console.log(`      ${bolded} articles render bold text`);
-  check('the articles that use bold still do', bolded, 7);
+  // 11 after the voice rewrite. Bold marks the branch headings and the
+  // named options in a list — "**Activate your Daily Boost**" — which is
+  // what makes a multi-part answer scannable instead of a wall of text.
+  check('the articles that use bold still do', bolded, 11);
 }
 
 /* ============================================================

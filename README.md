@@ -190,6 +190,34 @@ one has contacted me after my purchase?".
 `[Your Name]`-style template in `kb.json`. **Articles come from real tickets,
 so check this after any content import.**
 
+## Articles are articles, not chat replies
+
+The knowledge base was built from support agents' own replies, so half of it
+read like one: "Hello! I'm here to help", "just let me know!", full letters
+with "Dear Customer / Best regards", and three answers that contained no
+information at all ("Let me take care of that for you right now").
+
+All 33 affected articles were rewritten. `verify-content.mjs` fails on a
+greeting opening an answer, on agent first person, and on a chat sign-off.
+
+Two classes needed more than a tone pass:
+
+- **Eight were internal agent playbooks** — "Scenario 1 / Customer Response",
+  "Internal Instructions for Support Agents", quoted scripts to read aloud,
+  and `[Insert customer's username]` fields. One had a question about
+  disconnected calls sitting above an answer about account activation.
+- **Three quoted one customer's balance at every reader.** The worst denied
+  the 200% refund because "you earned $1.27" — a figure true of one person.
+
+**A mechanical strip was tried first and thrown away.** Regex produced
+"I'd be Could you please confirm…" and could not touch letter-format replies.
+Facts were carried over by hand, with the source article named in a comment
+wherever an answer had none of its own.
+
+`scripts/rewrite-playbooks.mjs` and `scripts/rewrite-voice.mjs` record every
+change and refuse to write if a chat marker survives or a policy figure —
+$0.01, $99, $297, 60 days, NET-45 — is lost.
+
 ## Article text
 
 Answers and guide copy render through `richText()` in `js/dom.js`, which

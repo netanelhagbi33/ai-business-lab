@@ -51,7 +51,7 @@
  {
   "category": "Getting Started",
   "question": "I’m lost what do I do",
-  "answer": "No worries! You’re at the beginning of your digital asset journey. First, you’ll want to complete the setup steps: choose your niche, design, domain name, and logo. Once you finish these, your website will go live! Your Success Manager will also reach out soon to guide you through the process. Just let me know if you need help with any specific step!",
+  "answer": "You are at the beginning of your digital asset journey.\n\nStart by completing the setup steps: choose your niche, your design, your domain name and your logo. Once you finish these, your website goes live.\n\nYour Success Manager will also reach out soon to guide you through the process.",
   "source": "Knowledge_Base",
   "rawCategory": "Getting Started & Next Steps"
  },
@@ -72,14 +72,14 @@
  {
   "category": "Getting Started",
   "question": "Should i be doing something differently",
-  "answer": "It sounds like you're looking for ways to improve your website's performance! Here are a few suggestions:  \n\n1. **Activate Your Daily Boost**: Make sure to activate it every 24 hours for extra traffic.  \n2. **Promote Your Website**: Share it on social media and in relevant online communities.  \n3. **Add More Content**: Consider purchasing additional articles to expand your website's offerings.  \n\nIf you have specific goals or areas you're focusing on, let me know, and I can provide more tailored advice!",
+  "answer": "Three things make the most difference to a website's performance:\n\n1. **Activate your Daily Boost** — activate it every 24 hours for extra traffic.\n2. **Promote your website** — share it on social media and in relevant online communities.\n3. **Add more content** — additional articles expand what your website offers.",
   "source": "Knowledge_Base",
   "rawCategory": "Getting Started & Next Steps"
  },
  {
   "category": "Getting Started",
   "question": "We don't know what going on.Can you help me set it up",
-  "answer": "Hello! I'm here to help you get started with your website setup. To create your first website, you'll need to complete the following four steps:\n\n1. **Choose your niche** - Select the main category your website will focus on.\n2. **Choose your design** - Pick a website template and visual style.\n3. **Choose your domain name** - Select an available name related to your chosen niche.\n4. **Choose your logo** - Select a logo that will represent your website.\n\nOnce you finish these steps, your website will go live shortly! Additionally, your Success Manager will reach out to you soon to provide further guidance. If you have any specific questions or need assistance with any of these steps, just let me know!",
+  "answer": "To create your first website, complete these four steps:\n\n1. **Choose your niche** — the main category your website will focus on.\n2. **Choose your design** — a website template and visual style.\n3. **Choose your domain name** — an available name related to your chosen niche.\n4. **Choose your logo** — the logo that will represent your website.\n\nOnce you finish these steps, your website goes live shortly. Your Success Manager will reach out to you soon to provide further guidance.",
   "source": "Knowledge_Base",
   "rawCategory": "Getting Started & Next Steps"
  },
@@ -198,7 +198,7 @@
  {
   "category": "Building My Site",
   "question": "What should I do now regarding my website?",
-  "answer": "There are two possible cases:  \n**Case 1: The customer has not created a website yet.**  \n\"Hi, welcome to AI BUSINESS LAB! Right now, you are inside your dashboard, which also works as an AI Assistant. All you need to do is complete the first four steps to create your first website. You will need to choose:  \n1. A niche  \n2. A website template  \n3. A domain name  \n4. A logo  \nOnce you complete these steps, your website will go live within a few moments. Please also keep in mind that your Success Manager will contact you soon to guide you and explain more about the product you purchased.\"  \n\n**Case 2: The customer has already created their website.**  \n\"Your website is already live and generating revenue! You can view your earnings directly through your AI Assistant. Additionally, your Success Manager will contact you soon to provide additional guidance and explain the product in more detail.\"",
+  "answer": "What to do next depends on whether your website is live yet.\n\n**If you have not created your website**\nYou are in your dashboard, which also works as your AI Assistant. Complete the first four steps to create your website. You choose:\n1. A niche\n2. A website template\n3. A domain name\n4. A logo\nOnce you complete these steps, your website goes live within a few moments.\n\n**If your website is already live**\nYour website is running and can generate revenue. You can view your earnings directly through your AI Assistant.\n\nIn both cases, your Success Manager will contact you soon to explain the product in more detail and guide you through the next stage.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Creation Process"
  },
@@ -212,14 +212,14 @@
  {
   "category": "Building My Site",
   "question": "Why does my live website say “Activate Your Account”?",
-  "answer": "Scenario 1: The Customer Completed a Purchase\nThe customer probably opened the original purchase or activation link again instead of accessing their existing account or website.\nCustomer Response\nYour purchase has already been completed.\nThe “Activate Your Account” message appears because you opened the original purchase or activation link again. You do not need to purchase or activate your account a second time.\nPlease use the following details to access your existing website and account:\nWebsite URL: [Insert customer’s website domain]\n Login URL: [Insert customer’s login page]\n Username: [Insert customer’s username]\n Temporary Password: [Insert temporary/reset password]\nUse the Website URL to view your public website and the Login URL to access your account.\n\nScenario 2: No Completed Purchase Exists\nThe customer may believe that the purchase was completed, but there is no successful transaction in the system.\nCustomer Response\nWe reviewed your account but could not find a completed purchase.\nThe “Activate Your Account” message appears because your account has not yet been activated through a successful purchase.\nPlease check whether the payment was completed. If you believe you were charged, send us the purchase receipt or transaction details so we can investigate the payment.",
+  "answer": "There are two reasons this message appears.\n\n**Your purchase is already complete**\nThe most common cause is opening the original purchase or activation link a second time instead of signing in to your existing account. Your purchase is already complete and you do not need to activate or pay again.\nSign in through your account's login page rather than the original purchase link. If you no longer have your login details, contact Support and your account details will be re-sent to you.\n\n**No completed purchase was found**\nIf no successful transaction exists on the account, the message appears because the account has not been activated yet.\nCheck whether the payment went through. If you believe you were charged, send Support the purchase receipt or the transaction details and the payment will be investigated.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Status, Build & Launch"
  },
  {
   "category": "Building My Site",
   "question": "Why does my my site say active your account ?",
-  "answer": "Your website is already live, but the \"Activate Your Account\" message usually appears if you opened the original purchase link again instead of accessing your existing account. You don’t need to activate it a second time. Please use the following details to access your website:  \nWebsite URL: [Insert customer’s website domain]  \nLogin URL: [Insert customer’s login page]  \nUsername: [Insert customer’s username]  \nTemporary Password: [Insert temporary/reset password]  \nLet me know if you need further assistance!",
+  "answer": "Your website is already live. This message usually appears when the original purchase link is opened again instead of signing in to your existing account. You do not need to activate your account a second time.\n\nSign in through your account's login page rather than the original purchase link. If you no longer have your login details, contact Support and your account details will be re-sent to you.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Status, Build & Launch"
  },
@@ -275,7 +275,7 @@
  {
   "category": "Dashboard & Access",
   "question": "How can I get this on my computer? / I still need to know how to access my site?",
-  "answer": "Hi! I'd be happy to help you with your account. Could you please confirm the email address associated with your purchase so I can assist you further?",
+  "answer": "Your dashboard runs in a browser, so there is nothing to install. It works the same on a computer and on a phone.\n\nGo to https://aibusiness-lab.com/ and sign in with the email address you registered with, using the password you set during registration. Use your account's login page rather than the original purchase link — opening the purchase link again shows an \"Activate Your Account\" message even though your account already exists.\n\nIf you do not have your login details, contact Support and they will be re-sent to you.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Access"
  },
@@ -289,21 +289,21 @@
  {
   "category": "Dashboard & Access",
   "question": "How do I know what my password is if I haven’t had to put it in ?",
-  "answer": "If you haven't set a password yet, you can log in using your email address and the phone number connected to your account. If you need to reset your password, just let me know, and I can help you with that!",
+  "answer": "If you have not set a password yet, you can log in using your email address and the phone number connected to your account.\n\nIf you need to reset your password, contact Support. A temporary password can be generated for you, and you can change it to one only you know after logging in.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
  {
   "category": "Dashboard & Access",
   "question": "If Support sets up or resets my password, does it become a shared password between me and the company?",
-  "answer": "No. Your password remains your personal login password. It does not become a shared password between you and our Support Team.\n\nOur Support Team has separate administrative access to your account and the products connected to it so we can assist with technical issues, verify purchases, and handle account-related requests. We do not need to know or use your personal password for normal support.\n\nIf you need help accessing your account, Support may generate a temporary or reset password. After logging in, you can change it to a new password that only you know.\n\nThe important difference is:\n\nYour login password: Private and used by you to access your account.\nSupport administrative access: Separate internal access used to assist with your account and products.\n\nYou should never need to share your personal password with the Support Team.\n\nInternal Instructions for Support Agents\n\nNever ask a customer to provide their existing password.\n\nIf a password reset is required, use the approved internal reset process and provide a temporary/reset password where applicable. Do not send or expose an existing customer password.",
+  "answer": "No. Your password remains your personal login password. It does not become a shared password between you and our Support Team.\n\nOur Support Team has separate administrative access to your account and the products connected to it so we can assist with technical issues, verify purchases, and handle account-related requests. We do not need to know or use your personal password for normal support.\n\nIf you need help accessing your account, Support may generate a temporary or reset password. After logging in, you can change it to a new password that only you know.\n\nThe important difference is:\n\nYour login password: Private and used by you to access your account.\nSupport administrative access: Separate internal access used to assist with your account and products.\n\nYou should never need to share your personal password with the Support Team.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Account Access"
  },
  {
   "category": "Dashboard & Access",
-  "question": "User reports repeated disconnected calls and inability to get support.",
-  "answer": "Thank you for reaching out! It seems that you are seeing the \"Activate Your Account\" message because you may have opened the original purchase link again. Your website is already live, and you do not need to activate your account a second time. \n\nPlease use the following details to access your existing website and account:  \n- **Website URL:** [Insert customer’s website domain]  \n- **Login URL:** [Insert customer’s login page]  \n- **Username:** [Insert customer’s username]  \n- **Temporary Password:** [Insert temporary/reset password]  \n\nIf you continue to experience issues, please let me know, and I will assist you further!",
+  "question": "My calls keep disconnecting and I cannot reach anyone. What should I do?",
+  "answer": "If calls drop or you cannot get through by phone, you do not need to keep retrying. Requests can be logged in writing and a callback arranged.\n\nContact Support through the AI Assistant or open a Support Ticket describing the problem. Support will verify your account and leave a callback request for your assigned Success Manager.\n\nPlease remain available by phone once the request is logged. The call may come from a number with a New York area code, so it can appear unfamiliar.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
@@ -331,7 +331,7 @@
  {
   "category": "Dashboard & Access",
   "question": "What should I do if I did not receive my login email despite it being resent?",
-  "answer": "Subject: Assistance with Your Login Email  \n\nDear Customer,  \n\nThank you for reaching out to us regarding the issue with your login email. I understand how important it is for you to access your account, and I'm here to help.  \n\nFirst, please ensure that you are checking the correct email inbox, including your spam or junk folders, as sometimes emails can be filtered there. If you still cannot find the login email, I recommend trying to access your account directly through the following link:  \n\n[https://aibusiness-lab.com/](https://aibusiness-lab.com/)  \n\nYou can log in using your registered email address as your username. Your password is the one you set during registration. If you are still having trouble logging in, please let me know, and I can assist you further.  \n\nIf you believe the email was not sent, I can check your account details to ensure everything is set up correctly. Please confirm the email address associated with your account so I can assist you more effectively.  \n\nThank you for your patience, and I look forward to resolving this for you.  \n\nBest regards,  \nAI Business Lab Support Team",
+  "answer": "First check the correct inbox, including spam and junk folders — login emails are often filtered there.\n\nIf you still cannot find it, you do not need the email to get in. Go to https://aibusiness-lab.com/ and sign in directly: your username is your registered email address, and your password is the one you set during registration.\n\nIf you still cannot log in, contact Support with the email address on your account and your access will be checked and restored.",
   "source": "Knowledge_Base",
   "rawCategory": "Login Issues"
  },
@@ -527,7 +527,7 @@
  {
   "category": "Website & Content",
   "question": "How do I add additional content for building my website?",
-  "answer": "To add more content to your website, you have two options: 1. You can purchase additional articles directly through your AI Assistant, where each purchase adds 5 new articles tailored to your website's niche. Just let me know if you'd like to proceed with that! 2. Alternatively, you can work with the Success Manager to purchase more than 5 articles at a time. The Success Manager can help find a package that suits your needs.",
+  "answer": "There are two ways to add more content.\n\n1. **Through your AI Assistant** — each purchase adds 5 new articles tailored to your website's niche.\n2. **Through your Success Manager** — for more than 5 articles at a time. Your Success Manager can help find a package that suits your needs.",
   "source": "Knowledge_Base",
   "rawCategory": "Additional Content for Websites"
  },
@@ -548,7 +548,7 @@
  {
   "category": "Website & Content",
   "question": "How do I change the niche or product category of my website?",
-  "answer": "Internal Instructions for Support Agents\nBefore answering a request to change a website niche or product category, you must first check the customer’s account and confirm whether the website setup process has been completed.\nDo not ask the customer to determine this for you.\nIf the customer has not completed the setup process:\nExplain that they can still change their selections through the AI Assistant. They can edit their answers during each stage, review and change them at the final step, or return to the beginning and restart the setup process.\n\nIf the website has already been created and is live:\nExplain that the niche or product category can no longer be changed directly through the AI Assistant or dashboard. The request must be forwarded to the customer’s assigned Success Manager, who will review the requested changes and explain the available options.\nAlways verify the website status before choosing which response to send.",
+  "answer": "Whether the niche can still be changed depends on how far your setup has progressed.\n\n**Before your website has been created**\nYou can still change your selections through the AI Assistant. You can edit your answers during each stage, review and change them at the final step, or return to the beginning and restart the setup.\n\n**Once your website is live**\nThe niche or product category can no longer be changed through the AI Assistant or the dashboard. Contact Support and the request will be passed to your assigned Success Manager, who will review what you want to change and explain the available options.",
   "source": "Knowledge_Base",
   "rawCategory": "Niche & Product Changes"
  },
@@ -590,7 +590,7 @@
  {
   "category": "Website & Content",
   "question": "I selected one niche, but my account shows another niche. How can I correct it?",
-  "answer": "Internal Instructions for Support Agents\nWhen a customer claims that the niche shown in their account is different from the niche they selected, do not answer before completing the following verification:\nOpen the Conversations tab.\nLocate the customer’s website setup conversation with the AI Assistant.\nReview the conversation and identify the niche the customer selected.\nOpen the Users tab.\nLocate the customer and check the niche currently assigned to the website.\nCompare the niche selected in the conversation with the niche assigned in the Users tab.\nIf the niches do not match\nThe customer is correct.\nUpdate the customer’s account to the niche they originally selected.\nConfirm that the correct niche is now assigned.\nSend the first customer response below.\nIf the niches match\nThe customer is incorrect.\nOpen the relevant part of the setup conversation.\nTake a screenshot showing the niche the customer selected.\nSend the screenshot when needed as confirmation.\nSend the second customer response below.\nIf the customer still wants a different niche, forward the request to their assigned Success Manager.\n\nCustomer Response — The Customer Is Correct",
+  "answer": "Contact Support and report which niche you selected and which one your account shows.\n\nYour setup conversation with the AI Assistant is checked against the niche assigned to your website. If the two do not match, your account is corrected to the niche you originally selected and you are told once it has been updated. If they do match, you are shown the point in your setup conversation where the selection was made.\n\nIf you would like a different niche either way, the request is passed to your assigned Success Manager, who will explain the available options.",
   "source": "Knowledge_Base",
   "rawCategory": "Niche & Product Changes"
  },
@@ -744,7 +744,7 @@
  {
   "category": "Traffic & Boosters",
   "question": "Ok so how do I get to that ?",
-  "answer": "Dear Customer,\n\nThank you for your inquiry about increasing your website's viewers and clicks. To enhance your traffic and reach more viewers, you have several options available:\n\n1. **SEO Boost**: This service can improve your website's visibility in search engines, helping to attract more organic traffic over time.\n\n2. **Content Expansion**: Adding more articles to your website can provide additional content for visitors to engage with, which may lead to increased traffic and earnings.\n\n3. **Custom Domain**: Upgrading to a custom domain can give your website a more professional appearance, potentially attracting more visitors.\n\nTo proceed with any of these options, you can discuss them with your Success Manager, who will guide you through the process and help you choose the best strategy for your goals. If you have any further questions or need assistance, feel free to reach out!\n\nBest regards,\nAI Business Lab Support Team",
+  "answer": "There are several ways to increase your website's visitors and clicks:\n\n1. **SEO Boost** — improves your website's visibility in search engines, attracting more organic traffic over time.\n2. **Content Expansion** — more articles give visitors more to engage with, which may lead to increased traffic and earnings.\n3. **Custom Domain** — a custom domain gives your website a more professional appearance.\n\nTo proceed with any of these, discuss them with your Success Manager, who will help you choose the best strategy for your goals.",
   "source": "Knowledge_Base",
   "rawCategory": "Traffic, Boosters & Earnings"
  },
@@ -821,7 +821,7 @@
  {
   "category": "Earnings & Payouts",
   "question": "am i on track to start making decent money?",
-  "answer": "It's great that you're looking to make decent money! Earnings can vary based on traffic volume and quality. Make sure to activate your Daily Boost regularly and promote your website through social media and other channels. Keep an eye on your Site Stats to monitor your progress. If you have any specific strategies in mind or need help, feel free to ask!",
+  "answer": "Earnings vary based on traffic volume and quality, so there is no single figure to compare yourself against.\n\nWhat increases them is consistent activity: activate your Daily Boost regularly and promote your website through social media and other channels. Your Site Stats show your earnings and traffic, which is where you can see whether what you are doing is working.",
   "source": "Knowledge_Base",
   "rawCategory": "Earnings & Performance"
  },
@@ -835,14 +835,14 @@
  {
   "category": "Earnings & Payouts",
   "question": "Do I use explodely as a payout method or click bank",
-  "answer": "The supported payout methods are PayPal, Wise, and Bank Transfer. You can set up your payout method directly through the AI Assistant. If you have any specific questions about using Explodely or ClickBank, please let me know!",
+  "answer": "Explodely and ClickBank are not payout methods for this account.\n\nThe supported payout methods are PayPal, Wise and Bank Transfer. You can set up your payout method directly through the AI Assistant.",
   "source": "Knowledge_Base",
   "rawCategory": "Payment & Payout Setup"
  },
  {
   "category": "Earnings & Payouts",
   "question": "how can i make $500 per day with your system?",
-  "answer": "Hello! I appreciate your interest in maximizing your earnings with our system. While there is no guaranteed way to make $500 per day, there are several strategies you can implement to increase your revenue potential:\n\n1. **Activate Your Daily Boost**: Make sure to activate it every 24 hours to increase traffic to your website.\n2. **Promote Your Website**: Share your site on social media, relevant online communities, and through referrals to attract more visitors.\n3. **Add More Content**: Consider purchasing additional articles to expand your website's offerings, which can help improve SEO and attract more traffic over time.\n4. **Utilize Boosters**: If you have purchased any traffic optimization packages or Boosters, ensure they are active to help drive more visitors to your site.\n5. **Monitor Your Site Stats**: Regularly check your earnings and traffic through the Site Stats feature to understand what strategies are working best.\n\nRemember, building a successful online presence takes time and consistent effort. If you have any specific questions or need further assistance, feel free to reach out!",
+  "answer": "There is no guaranteed way to make $500 per day. Earnings depend on traffic and engagement, and building them takes time and consistent effort.\n\nThese are the things that increase your revenue potential:\n\n1. **Activate your Daily Boost** — activate it every 24 hours to increase traffic to your website.\n2. **Promote your website** — share it on social media, relevant online communities, and through referrals.\n3. **Add more content** — additional articles expand your website's offerings, which can improve SEO and attract more traffic over time.\n4. **Use your Boosters** — if you have purchased traffic optimization packages or Boosters, make sure they are active.\n5. **Monitor your Site Stats** — regularly check your earnings and traffic to understand which strategies are working best.",
   "source": "Knowledge_Base",
   "rawCategory": "Earnings & Performance"
  },
@@ -863,7 +863,7 @@
  {
   "category": "Earnings & Payouts",
   "question": "How do I initiate a withdrawal and what are the rules associated with it?",
-  "answer": "To initiate a withdrawal, please follow these steps:  \n1. Log into your account.  \n2. Navigate to the withdrawal section.  \n3. Enter the amount you wish to withdraw and select your preferred payment method.  \n4. Confirm your request.  \n\nPlease make sure to review the withdrawal rules, which include:  \n- Processing times may vary based on the payment method.  \n- Minimum withdrawal amounts are [insert amount].  \n- Maximum withdrawal limits are [insert amount].  \n- Ensure all account verification is completed before submitting your request.  \n\nIf you have any further questions or need assistance, feel free to reach out!",
+  "answer": "Withdrawals are requested through the AI Assistant.\n\nAsk the AI Assistant to help you request a withdrawal, or click the + icon to the left of the text field and select Check Billing. A billing window opens showing your earnings, available balance, pending earnings and withdrawal information. Click Request Withdrawal, enter the amount and submit.\n\nBefore you submit, all of the following must be true:\n- A valid payout method is saved — PayPal, Wise or Bank Transfer.\n- You have at least $100 in eligible earnings.\n- Those earnings have completed the NET-45 clearance period, counted from the last day of the month in which they were generated.\n- You are submitting between the 1st and the 14th of the month.\n\nApproved payouts are sent on the 15th or 16th. If you miss the request window, the withdrawal waits for the next cycle. The time funds take to arrive after that depends on your payout method.",
   "source": "Knowledge_Base",
   "rawCategory": "Withdrawal Process"
  },
@@ -918,15 +918,15 @@
  },
  {
   "category": "Earnings & Payouts",
-  "question": "I had $12.98 in my app earlier, but I can't find it now. If I order the upgrade for $297, will my revenue increase faster, or do I need to wait for 45 days?",
-  "answer": "\"I checked your account, and it shows that you currently have $9.87 in revenue. To view your profits, please navigate to the 'Earnings' section in the app. Regarding the upgrade for $297, it can help increase your revenue potential, but you will still need to wait for the NET-45 clearance period for your earnings to become withdrawable. The upgrade may enhance your traffic and earnings, but results can vary based on activity and engagement.\"",
+  "question": "My revenue figure changed and I cannot find it. Will the $297 upgrade make my earnings arrive faster, or do I still have to wait 45 days?",
+  "answer": "Your current revenue is shown in the Earnings section of the app, which is the accurate place to check it rather than a figure remembered from earlier.\n\nThe $297 upgrade can increase your revenue potential, but it does not shorten the NET-45 clearance period. Earnings still have to complete NET-45 before they can be withdrawn, and results vary based on activity and engagement.",
   "source": "Knowledge_Base",
   "rawCategory": "Earnings & Performance"
  },
  {
   "category": "Earnings & Payouts",
-  "question": "I know to boost my traffic every day, but that is all I can do on my end. Today, I received fewer clicks. My website value went up every day, but revenue $16.47 can you explain?",
-  "answer": "Dear Customer,\n\nThank you for reaching out with your question regarding your website's performance. I understand that you are experiencing fewer clicks today, and I’d like to provide some clarity on this matter.\n\nIt's important to note that fluctuations in website traffic and clicks can occur for various reasons, including changes in visitor behavior, the effectiveness of your content, and external factors such as market trends. While you are actively boosting your traffic every day, the number of clicks can vary based on how many visitors engage with your site on any given day.\n\nYour website's value increasing daily is a positive sign, indicating that your asset is developing and gaining potential. However, the revenue of $16.47 reflects the activity that has occurred on your site. It may take time for consistent traffic and engagement to translate into higher earnings. \n\nI recommend continuing to activate your Daily Boost and promoting your website through social media and other channels to help increase visibility and traffic. Additionally, monitoring your website's performance regularly can provide insights into what strategies may be most effective.\n\nIf you have any further questions or need assistance with specific strategies to enhance your website's performance, please feel free to reach out.\n\nBest regards,  \nAI Business Lab Support Team",
+  "question": "I boost my traffic every day but received fewer clicks today. My website value keeps going up while revenue stays low — can you explain?",
+  "answer": "Fluctuations in traffic and clicks are normal. They happen for several reasons: changes in visitor behaviour, how well the content matches what people are searching for, and external factors such as market trends. Boosting every day increases your exposure, but the number of clicks still depends on how many visitors engage on any given day.\n\nA website value that rises daily is a positive sign — it means the asset is developing. Revenue reflects the activity that has actually occurred on the site, so it usually lags behind. It takes time for consistent traffic and engagement to translate into higher earnings.\n\nContinuing to activate your Daily Boost and promoting your website through social media and other channels is what increases visibility. Your Site Stats show which of those is working.",
   "source": "Knowledge_Base",
   "rawCategory": "Earnings & Performance"
  },
@@ -954,14 +954,14 @@
  {
   "category": "Earnings & Payouts",
   "question": "Orientation I have not spoken to anyone regarding my site and would like some guidance. The site is not making much money.",
-  "answer": "Hello! I understand that you're looking for guidance regarding your website and its earnings. I'm here to help you get started and improve your situation.\n\n1. **Website Setup**: If you haven't completed the setup process, you can still do so by choosing your niche, design, domain name, and logo. Once you finish these steps, your website will go live shortly. If you need assistance with any specific step, just let me know!\n\n2. **Earnings Concerns**: It's common for new websites to take some time to generate significant revenue. To enhance your earnings, I recommend activating your Daily Boost regularly and promoting your website through social media and other channels. Additionally, consider adding more articles to expand your content, which can help attract more visitors over time.\n\nYour Success Manager will also reach out soon to provide further guidance and support. If you have any specific questions or need help with anything else, feel free to ask!",
+  "answer": "**If your setup is not finished**\nYou can still complete it by choosing your niche, design, domain name and logo. Once you finish these steps, your website goes live shortly.\n\n**If earnings are lower than you expected**\nIt is common for new websites to take time to generate significant revenue. Activate your Daily Boost regularly, promote your website through social media and other channels, and consider adding more articles to expand your content and attract more visitors over time.\n\nYour Success Manager will also reach out soon to provide further guidance and support.",
   "source": "Knowledge_Base",
   "rawCategory": "Getting Started & Next Steps, Earnings & Performance"
  },
  {
   "category": "Earnings & Payouts",
   "question": "thinking I picked the wrong topic because it is not doing good. Suggestions?",
-  "answer": "I understand your concern about recouping your $99 investment. Your website has generated some revenue, but it can take time for traffic and earnings to build up. Keep activating your Daily Boost and promoting your site to increase visibility. If you have any specific strategies in mind or need assistance, just let me know!",
+  "answer": "A website generating little revenue early on does not necessarily mean the topic was wrong. Traffic and earnings take time to build up.\n\nKeep activating your Daily Boost and promoting your site to increase visibility. If you do want to change the niche, that is possible before your website is created; once it is live the request goes through your Success Manager, who will explain the available options.",
   "source": "Knowledge_Base",
   "rawCategory": "Earnings & Performance"
  },
@@ -1157,7 +1157,7 @@
  {
   "category": "Purchases & Billing",
   "question": "What is the payment structure for the Accelerator Program?",
-  "answer": "The Accelerator payment is a one-time fee designed to give your website a boost for a limited period, which can help increase your income. If you're seeing conflicting information about the payment structure on your site, please provide any relevant details or proof of what you're seeing. This will help us understand where the misunderstanding may have come from. If you have any further questions or need assistance, feel free to reach out!",
+  "answer": "The Accelerator payment is a one-time fee. It is designed to give your website a boost for a limited period, which can help increase your income.\n\nIf the payment structure shown in your account does not match what you expected, contact Support with the details you are seeing so the difference can be investigated.",
   "source": "Knowledge_Base",
   "rawCategory": "Payment Structure"
  },
@@ -1310,13 +1310,6 @@
  },
  {
   "category": "Support",
-  "question": "Please let them know to leave a message so I know they called and I will call them back.",
-  "answer": "Dear Dean,\n\nThank you for your message! I understand that you would like your Success Manager to leave a message when they call, so you know to return the call. I will ensure that your request is forwarded to them, and they will be informed to leave a message for you.\n\nIf you have any other questions or need further assistance, feel free to reach out!\n\nBest regards,\nAI Business Lab Support Team",
-  "source": "Knowledge_Base",
-  "rawCategory": "Human Support & Callbacks"
- },
- {
-  "category": "Support",
   "question": "What is the main advertisement on my website, and how can I view the rest of the site?",
   "answer": "The large advertisement displayed on your website is the primary ad placement and is responsible for generating a significant portion of the website’s advertising revenue.\nDirectly below the advertisement, you will see a small button. Click that button to open your website’s homepage, where you can browse all of the articles, products, and other content available on the site.",
   "source": "Knowledge_Base",
@@ -1360,7 +1353,7 @@
  {
   "category": "Support",
   "question": "Why is my upgrade not showing in my account?",
-  "answer": "I understand your frustration regarding the upgrade not showing up in your account. I can help you check your account to see if the upgrade is visible. If you have any questions about accessing the features or need assistance, please let me know. We take your concerns seriously, and if you feel that this is a scam, I encourage you to reach out to us directly so we can address any issues and clarify any misunderstandings. Your satisfaction is important to us, and we are here to help you.",
+  "answer": "Purchased upgrades appear in your account under the Booster tab, so check there first.\n\nIf the upgrade is still not visible, contact Support with your purchase details and the purchase will be verified against your account. Do not create multiple tickets for the same purchase — duplicates slow the review down rather than speeding it up.",
   "source": "Knowledge_Base",
   "rawCategory": "Customer Support"
  },
@@ -1381,7 +1374,7 @@
  {
   "category": "Refunds",
   "question": "Does the money-back guarantee provide a 100% or 200% refund?",
-  "answer": "he 200% money-back guarantee is not automatic. It applies only when the published eligibility requirements are met.\nTo qualify for the 200% guarantee, the account must meet the applicable conditions, including either:\nNot earning the first $0.01 within the first week through advertising activity shown on the website dashboard; or\nActively promoting the website for 60 days according to our guidance and completing at least three free support calls with a Success Manager.\nIf these requirements are not met, you may still be eligible for a 100% refund under the standard refund policy, but not for the additional 200% guarantee.\nEligibility is reviewed based on the activity and records associated with your account.",
+  "answer": "The 200% money-back guarantee is not automatic. It applies only when the published eligibility requirements are met.\nTo qualify for the 200% guarantee, the account must meet the applicable conditions, including either:\nNot earning the first $0.01 within the first week through advertising activity shown on the website dashboard; or\nActively promoting the website for 60 days according to our guidance and completing at least three free support calls with a Success Manager.\nIf these requirements are not met, you may still be eligible for a 100% refund under the standard refund policy, but not for the additional 200% guarantee.\nEligibility is reviewed based on the activity and records associated with your account.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1395,7 +1388,7 @@
  {
   "category": "Refunds",
   "question": "How can I receive the 200% refund as explained in your promotional material?",
-  "answer": "I understand your concerns, and I'm sorry to hear you're feeling this way. However, since you earned $1.27 within the first week, you do not meet the condition of not earning the first $0.01, which means you are not eligible for the 200% refund as explained in our promotional material. If you have any other questions or need further assistance, feel free to ask!",
+  "answer": "The 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance and completing at least three free support calls with a Success Manager.\n\nIf any earnings were generated in the first week, the first condition is not met. If the requirements are not met you may still be eligible for a 100% refund under the standard refund policy, but not for the additional 200% guarantee.\n\nEligibility is reviewed based on the activity and records associated with your account.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1430,7 +1423,7 @@
  {
   "category": "Refunds",
   "question": "How do I cancel my subscription?",
-  "answer": "I can help you with that! Your request to cancel your subscription is being processed as a refund request. Let me take care of that for you right now.",
+  "answer": "A cancellation request is handled as a refund request. Open Support and submit a Refund Request.\n\nOnce the request is received it can be tracked through the Support process, and you will receive updates as it is reviewed. The standard refund eligibility period is 60 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1451,7 +1444,7 @@
  {
   "category": "Refunds",
   "question": "How long will it take to receive the refund after it has been requested?",
-  "answer": "The timeframe for receiving your refund after it has been requested typically takes 5-10 business days to process. Once processed, it may take additional time for the funds to appear in your account, depending on your bank. If you have any further questions or need assistance, feel free to ask!",
+  "answer": "A refund typically takes 5-10 business days to process once it has been requested.\n\nAfter it has been processed, the funds may take additional time to appear in your account, depending on your bank.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1465,7 +1458,7 @@
  {
   "category": "Refunds",
   "question": "Please DELETE MY BANK CARD HISTORY IMMEDIATELY!!! YOU GUYS WERE NOT HONEST AND AFTER YOU TOOK THE $99 DOLLARS FROM ME TOU HELPED YOURSELVES TO $67 DOLLARS MORE!!",
-  "answer": "Hello! I sincerely apologize for the frustration you've experienced regarding the lack of support and communication after purchasing the Accelerator Package. I understand how important it is for you to receive the assistance you expected.\n\nI will ensure that your request is forwarded to your assigned Success Manager, and they will reach out to you as soon as possible to provide the one-on-one help you need.\n\nAdditionally, if you would like to proceed with a refund for the Accelerator Package, please confirm, and I will initiate that process for you right away. Your satisfaction is important to us, and we want to ensure you have the support you need.",
+  "answer": "If a charge was taken that you did not expect, or you want your payment details removed, submit a Refund Request through Support and state clearly what you are asking for.\n\nThe request is tracked from the moment it is submitted, and you will receive updates as it is reviewed. Include the amounts and dates you are querying so the charges can be checked against your account.\n\nIf you also want one-to-one help with the package you purchased, your assigned Success Manager can be asked to contact you through the same request.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations, Human Support & Callbacks"
  },
@@ -1507,14 +1500,14 @@
  {
   "category": "Account & Security",
   "question": "Hello, I am wondering what plan I’m on. The ai tells me starter plan is that $297. What I paid is the $99 one off payment then was talked into the $297 plan so not sure what plan I’m on",
-  "answer": "Hello! I understand your confusion regarding your current plan. Based on your message, it seems you initially paid the one-time fee of $99 for the standard package, which includes one website, a niche, a design template, a domain, a logo, and 30 articles.\n\nIf you were then talked into the $297 plan, that typically refers to the Accelerator Package, which is an optional upgrade designed to boost your website's traffic and earnings. To confirm your current plan and any additional purchases, I recommend checking your account details through the AI Assistant or contacting your Success Manager for clarification.\n\nIf you have any further questions or need assistance, feel free to ask!",
+  "answer": "Two different purchases are easy to confuse.\n\nThe **$99 one-time fee** is the standard package. It includes one website, a niche, a design template, a domain, a logo and 30 articles.\n\nThe **$297 payment** is the Accelerator Package, an optional upgrade designed to boost your website's traffic and earnings.\n\nTo confirm which of these are on your account, check your account details through the AI Assistant, or ask your Success Manager to confirm what has been purchased.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Details & Credentials"
  },
  {
   "category": "Account & Security",
   "question": "How can I find my AI Account?",
-  "answer": "Hello! To find your AI Account, you can access it through the chat interface, which serves as the dashboard of the website. From there, you can manage everything related to your account. If you encounter any issues, please let me know, and I can assist you further!",
+  "answer": "Your AI Account is the chat interface, which also serves as the dashboard for your website. Everything related to your account is managed from there.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Management"
  },
@@ -1549,7 +1542,7 @@
  {
   "category": "Account & Security",
   "question": "I bought the Accelerator Package and it’s not showing up. When could someone reach out?",
-  "answer": "Dear Customer,\n\nThank you for reaching out regarding your $297 Accelerator Package. I understand your concern about it not showing up where expected.\n\nI see that the Accelerator Package is visible in your account under the Booster tab. If you have any questions about accessing the features or need assistance, please let me know.\n\nAdditionally, your Success Manager will reach out to you soon to provide guidance and support. If you have not heard from them yet, I can follow up on that for you.\n\nThank you for your patience, and I’m here to help if you need anything else!",
+  "answer": "The Accelerator Package appears in your account under the **Booster** tab.\n\nIf it is not visible there, contact Support with your purchase details so it can be checked against your account.\n\nYour Success Manager will also reach out to you soon to provide guidance and support.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Issues"
  },
