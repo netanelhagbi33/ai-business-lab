@@ -13,6 +13,13 @@ import { esc, byId, registerActions } from './dom.js';
 
 export const IMG_DIR = 'img/';
 
+/**
+ * The src for a screenshot. One place, because the single-file review build
+ * swaps it for an inline data: URI — there is no img/ directory inside a
+ * page that has to travel as one file.
+ */
+export const imgSrc = file => IMG_DIR + file;
+
 let HIGHLIGHTS = {};
 let SIZES = {};
 
@@ -61,7 +68,7 @@ export function firstHighlightLabel(file) {
 export function zoomImg(file) {
   byId('modalInner').innerHTML =
     `<div class="modal-frame">`
-    + `<img src="${IMG_DIR}${esc(file)}"${sizeAttrs(file)} alt="Screen example">`
+    + `<img src="${esc(imgSrc(file))}"${sizeAttrs(file)} alt="Screen example">`
     + highlightMarkup(file)
     + `</div>`;
   openModal();

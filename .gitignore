@@ -15,3 +15,8 @@ Thumbs.db
 # NOTE: img/ and data/ are NOT ignored. They are the application's content,
 # extracted from the original single-file build, and the app is broken
 # without them.
+
+# Built by scripts/build-single.mjs — the whole site inlined into one file,
+# 4 MB of it base64 screenshots. Regenerate it; do not commit a binary blob
+# that changes wholesale whenever any source file moves by a byte.
+dist/

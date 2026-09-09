@@ -8,7 +8,7 @@
 
 import { esc, richText, byId, registerActions } from './dom.js';
 import { showView } from './router.js';
-import { highlightMarkup, firstHighlightLabel, sizeAttrs, IMG_DIR } from './highlights.js';
+import { highlightMarkup, firstHighlightLabel, sizeAttrs, imgSrc } from './highlights.js';
 import { getJourneyIndex, getJourneyDone, saveJourneyState } from './store.js';
 
 /** DOM element ids each journey renders into. */
@@ -129,7 +129,7 @@ function lessonMarkup(path, j, step, _pct) {
     return `<figure class="journey-shot ${action ? 'has-action' : ''}">`
          + hint
          + `<div class="shot-stage">`
-         + `<img src="${IMG_DIR}${esc(file)}"${sizeAttrs(file)} loading="lazy" decoding="async" `
+         + `<img src="${esc(imgSrc(file))}"${sizeAttrs(file)} loading="lazy" decoding="async" `
          + `alt="Example screen for ${esc(step.title)}" `
          + `data-action="zoom-img" data-file="${esc(file)}">`
          + highlightMarkup(file)
