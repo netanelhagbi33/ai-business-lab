@@ -143,7 +143,7 @@ console.log('\n=== RICH TEXT (**bold**)');
   // 11 after the voice rewrite. Bold marks the branch headings and the
   // named options in a list — "**Activate your Daily Boost**" — which is
   // what makes a multi-part answer scannable instead of a wall of text.
-  check('the articles that use bold still do', bolded, 17);
+  check('the articles that use bold still do', bolded, 18);
 }
 
 /* ============================================================
@@ -230,7 +230,7 @@ console.log('\n=== START HERE CARD TARGETS');
     'Where is my dashboard?': 'Dashboard & Access',
     'How does the money-back guarantee work, and how do I request a refund?': 'Refunds',
     'What are the program details, packages, and pricing?': 'Getting Started',
-    'Can my website’s niche be changed after the site has been created?': 'Website & Content',
+    'How do I change the niche or product category of my website?': 'Website & Content',
     'Can I change the design after my website is live?': 'Website & Content',
     'Why can’t I log in to my dashboard?': 'Dashboard & Access',
     'How many websites are included in my purchase?': 'Website & Content',
