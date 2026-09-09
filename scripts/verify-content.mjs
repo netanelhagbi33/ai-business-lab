@@ -44,7 +44,7 @@ console.log('=== NO CONTACT-TIME PROMISES');
   // line is a contact deadline that has crept back in.
   const NON_PROMISE = [
     /Continue activating your Daily Boost every 24 hours/gi,
-    /Actively promoting the website for 60 days/gi,
+    /Actively promoting the website for 90 days/gi,
     /three free support calls/gi,
     /every 24 hours/gi,
   ];
@@ -64,7 +64,7 @@ console.log('\n=== NON-PROMISE DURATIONS KEPT');
 {
   for (const phrase of [
     'every 24 hours',                             // Daily Boost cycle
-    'Actively promoting the website for 60 days', // guarantee condition
+    'Actively promoting the website for 90 days', // guarantee condition
     'three free support calls',                   // guarantee condition
   ]) {
     check(`kept: "${phrase}"`, everything.includes(phrase), true);
@@ -457,22 +457,14 @@ console.log('\n=== A REQUEST FOR DETAILS NAMES ITS DESTINATION');
                    .map(a => a.question.slice(0, 46));
   check('no answer is a pasted agent reply', pasted, []);
 
-  // The refund window is 90 days. The knowledge base said 60 in fourteen
-  // places, which is the kind of number a customer plans around — someone on
-  // day 75 would have read that they had missed it.
-  //
-  // "Actively promoting the website for 60 days" is a different rule: a
-  // condition of the 200% guarantee, not the window for asking. It keeps its
-  // 60, so the check is per line rather than per article.
-  const stale = [];
-  for (const a of kb) {
-    for (const line of a.answer.split('\n')) {
-      if (!/\b60[\s-]days?\b/.test(line)) continue;
-      if (/Actively promoting the website for 60 days/.test(line)) continue;
-      stale.push(`[${a.category}] ${a.question.slice(0, 36)}`);
-    }
-  }
-  check('no refund window still says 60 days', stale, []);
+  // Both timed rules are 90 days: the window for asking for a refund, and the
+  // 200% guarantee's promotion condition. The knowledge base said 60 in
+  // seventeen places. That is a number customers plan around — someone on day
+  // 75 would have read that they had already missed it.
+  const stale = kb
+    .filter(a => /\b60[\s-]days?\b/.test(a.answer))
+    .map(a => `[${a.category}] ${a.question.slice(0, 36)}`);
+  check('no 60-day rule left anywhere', stale, []);
   check('articles state the 90-day window',
         kb.filter(a => /\b90[\s-]days?\b/.test(a.answer)).length >= 10, true);
 
