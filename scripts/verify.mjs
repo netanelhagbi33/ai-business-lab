@@ -133,7 +133,13 @@ for (const q of QUERIES) {
   check(`search "${q}" — top 5 results`, B.searches[q].top5, A.searches[q].top5);
 }
 check('build guide step titles', B.guides.build, A.guides.build);
-check('live guide step titles', B.guides.live, A.guides.live);
+// Step 9 was retitled when support moved to the Support-Center-first
+// route; the original said "view and manage tickets", which described the
+// old shortcut. Declared so the other eight titles are still pinned.
+const RETITLED = { 8: 'Support — find an answer, then open a ticket if you need one' };
+const expectedLive = A.guides.live.map((t, i) => RETITLED[i] ?? t);
+check('live guide step titles, allowing the declared retitle',
+      B.guides.live, expectedLive);
 // Every overlay the original shipped must still be pixel-identical: that is
 // the guarantee that the per-screenshot calibration has not drifted.
 // Deliberate additions are allowed, and named, so a new one cannot slip in

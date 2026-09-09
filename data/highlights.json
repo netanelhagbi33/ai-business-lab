@@ -193,34 +193,25 @@
    "edgeRight": true
   }
  ],
- "35980f19-2659-4cb1-b421-6bb9fa9b2334.png": [
-  {
-   "x": 88.135,
-   "y": 89.082,
-   "w": 10.343,
-   "h": 7.782,
-   "label": "1. Press Support",
-   "edgeRight": true
-  },
-  {
-   "x": 73.033,
-   "y": 75.261,
-   "w": 25.444,
-   "h": 12.776,
-   "label": "2. Choose My Tickets",
-   "tone": "blue",
-   "edgeRight": true
-  }
- ],
  "8d0c15eb-3148-4b54-a5b5-b226aa5ec463.png": [
   {
-   "x": 88.363,
-   "y": 1.789,
-   "w": 10.217,
-   "h": 3.496,
-   "label": "Press Open a ticket",
-   "edgeRight": true,
-   "labelBelow": true
+   "x": 26.049,
+   "y": 8.537,
+   "w": 51.286,
+   "h": 40.65,
+   "label": "Your tickets and their status",
+   "tone": "blue",
+   "noBadge": true
+  }
+ ],
+ "support-tickets-tab.png": [
+  {
+   "x": 4.615,
+   "y": 68.545,
+   "w": 90.385,
+   "h": 23.005,
+   "label": "Support Tickets — where your tickets live",
+   "tone": "orange"
   }
  ]
 }

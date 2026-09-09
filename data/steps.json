@@ -154,13 +154,25 @@
   },
   {
    "n": 9,
-   "title": "Support — view and manage tickets",
-   "simple": "Open Support to see your requests and the team’s replies. You can see whether a ticket is in progress or closed and open a new request when needed.",
-   "tip": "Refund requests always stay available as a direct Support request so they can be tracked from the beginning.",
+   "title": "Support — find an answer, then open a ticket if you need one",
+   "simple": "Help starts in the Support Center. Search your problem in your own words, or open the topic that fits it — most questions are already answered there. If nothing answers it, you will be able to open a support ticket, and it is tracked under Support Tickets.",
+   "tip": "Refund requests are the exception. They are submitted directly with Request a Refund, and they appear under Support Tickets like any other ticket.",
    "images": [
     "8d0c15eb-3148-4b54-a5b5-b226aa5ec463.png",
-    "35980f19-2659-4cb1-b421-6bb9fa9b2334.png"
-   ]
+    "support-tickets-tab.png"
+   ],
+   "rules": {
+    "title": "HOW TO GET HELP",
+    "lead": "Support works in this order, and each step answers most of the people who reach it:",
+    "items": [
+     "Open the Support Center from the sidebar.",
+     "Search in your own words, or open the topic that matches your problem.",
+     "Read the article that looks closest, and tell us at the end whether it solved it.",
+     "If the answers do not solve it, you will be able to open a support ticket from inside the article.",
+     "A Support Tickets tab then appears in the sidebar. Open it any time to see every ticket you sent, its status, and the replies on it."
+    ],
+    "example": "Support Tickets only shows up once you have opened one, and it stays there afterwards. Tickets show as In Progress while the Support Team is working on them, and Closed once they are resolved."
+   }
   }
  ]
 }
