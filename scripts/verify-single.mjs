@@ -28,7 +28,12 @@ let pass = 0, fail = 0;
 const chk = (ok, m, extra='') => { ok ? pass++ : fail++;
   console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${m}${extra && !ok ? '  ' + extra : ''}`); };
 
-await p.goto('http://localhost:8137/dist/standalone.html');
+// Defaults to the built file; pass a URL to check a deployed copy instead.
+const TARGET = process.argv[2] || 'http://localhost:8137/dist/standalone.html';
+const bundled = /standalone\.html|review\.html/.test(TARGET);
+console.log('checking ' + TARGET + (bundled ? '  (single-file build)' : '  (served site)'));
+console.log('');
+await p.goto(TARGET);
 await p.waitForSelector('.sidebar');
 await p.waitForTimeout(800);
 
@@ -57,13 +62,18 @@ await p.waitForTimeout(600);
 const imgs = await p.evaluate(() => [...document.querySelectorAll('#liveSteps .journey-gallery img')]
   .map(i => ({ data: i.src.startsWith('data:image/png'), ok: i.complete && i.naturalWidth > 0 })));
 chk(imgs.length === 3, 'step 9 has three screenshots', String(imgs.length));
-chk(imgs.every(i => i.data), 'every screenshot is an inline data URI');
+// Only the single-file build inlines them; a served site has real files,
+// and both are correct.
+if (bundled) chk(imgs.every(i => i.data), 'every screenshot is an inline data URI');
+else chk(imgs.every(i => !i.data), 'screenshots are served as files, not inlined');
 chk(imgs.every(i => i.ok), 'every screenshot decoded');
 chk(await p.locator('#liveSteps .action-highlight').count() === 3, 'the three markers rendered');
 
 // --- Support Center --------------------------------------
 await p.click('.nav[data-view="qa"]');
 await p.waitForSelector('#qSearch');
+await p.waitForFunction(() => document.querySelectorAll('.topic-card').length === 10,
+                        null, { timeout: 20000 }).catch(() => {});
 chk(await p.locator('.topic-card').count() === 10, 'ten topic cards');
 chk(await p.locator('[data-action="open-refund"]').count() === 1, 'one Request a Refund button');
 
