@@ -35,6 +35,9 @@ const SYNONYMS = {
   refund:   ['cancel', 'money back', 'return'],
   support:  ['ticket', 'callback', 'call back', 'human', 'success manager'],
   article:  ['content', 'products', 'keywords', 'niche'],
+  design:   ['colors', 'colours', 'color', 'colour', 'theme', 'template',
+             'logo', 'font', 'layout', 'appearance', 'look', 'dark',
+             'bright', 'style', 'branding'],
 };
 
 const norm = s => String(s || '').toLowerCase()

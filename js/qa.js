@@ -58,6 +58,13 @@ const SYNONYMS = {
   refund:   ['cancel', 'money back', 'return'],
   support:  ['ticket', 'callback', 'call back', 'human', 'success manager'],
   article:  ['content', 'products', 'keywords', 'niche'],
+  // Customers describe a look rather than name a setting — "too dark",
+  // "green earthy theme", "logo swap", "colors are awful". Without this
+  // group none of those reached the design articles, which is why 114
+  // tickets asked a question the knowledge base already answered.
+  design:   ['colors', 'colours', 'color', 'colour', 'theme', 'template',
+             'logo', 'font', 'layout', 'appearance', 'look', 'dark',
+             'bright', 'style', 'branding'],
 };
 
 let KB = [];

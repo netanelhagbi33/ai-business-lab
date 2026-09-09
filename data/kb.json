@@ -420,7 +420,7 @@
  {
   "category": "Website & Content",
   "question": "Can I change the design after my website is live?",
-  "answer": "Yes. Once your website is live, design changes can still be requested, including updates to the colors, font, theme, logo, or overall appearance.\nThese changes cannot be made directly through the AI Assistant or dashboard after the setup process has been completed.\nWe can forward your request to your assigned Success Manager, who will review the changes you would like to make, explain the available options, and assist you with updating the website.",
+  "answer": "Yes. Nothing about the design is permanent. Colours, fonts, the theme, the logo and the overall appearance can all be updated after the site is live — including a complete reset if you want to start the look again from scratch.\n\nThese changes cannot be made through the AI Assistant or the dashboard once setup is finished. Contact Support, describe the look you want — brighter, darker, cleaner, closer to your brand — and the request goes to your assigned Success Manager.\n\nDesign work is handled as a separate package from the one that created your website, so your Success Manager will explain the available options and what each involves before anything changes.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Design, Content & Features"
  },
@@ -504,7 +504,7 @@
  {
   "category": "Website & Content",
   "question": "Does changing the website theme require the site to be rebuilt?",
-  "answer": "No. Changing the website theme does not require the website to be rebuilt.\nOnly the necessary visual and design adjustments are made, such as the layout, colors, fonts, and overall appearance. Your existing content, articles, products, domain, and website data remain unchanged.\nYour Success Manager can review the requested theme change and assist with the available design options.",
+  "answer": "No. Changing the theme does not rebuild the website.\n\nOnly the visual layer is adjusted — the layout, colours, fonts and overall appearance. Your articles, products, domain, logo and all website data stay exactly as they are. Swapping a dark theme for a bright one, or a generic look for something closer to your brand, does not cost you any content.\n\nYour Success Manager reviews the theme change you want and handles the update.\n\nDesign work is handled as a separate package from the one that created your website, so your Success Manager will explain the available options and what each involves before anything changes.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Design, Content & Features"
  },
@@ -546,7 +546,7 @@
  {
   "category": "Website & Content",
   "question": "How do I change my website’s colors, font, or theme?",
-  "answer": "This depends on whether your website setup has been completed.\nIf you are still completing the setup process:\n You can change your design selections during the setup stages. At the final review step, you can also edit your previous answers or return to the beginning and restart the process.\nIf your website has already been created and is live:\n The colors, font, and theme cannot be changed directly through the AI Assistant or dashboard.\nWe can forward your request to your assigned Success Manager, who will review the changes you would like to make, explain the available design options, and assist you with updating the website.",
+  "answer": "Yes — colours, fonts, the theme, the logo and the overall look can all be changed. If the site feels too dark, too bright, or simply not like your brand, none of that is fixed.\n\n**Before your website has been created**\nYou can change your design selections during the setup stages. At the final review step you can edit your earlier answers, or go back to the beginning and start over.\n\n**Once your website is live**\nColours, fonts and themes can no longer be changed through the AI Assistant or the dashboard. Contact Support and your request goes to your assigned Success Manager, who will review the look you want and update the site for you.\n\nDesign work is handled as a separate package from the one that created your website, so your Success Manager will explain the available options and what each involves before anything changes.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Design, Content & Features"
  },

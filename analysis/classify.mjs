@@ -25,6 +25,10 @@ const SYN = {
   refund: ['cancel','money back','return'],
   support: ['ticket','callback','call back','human','success manager'],
   article: ['content','products','keywords','niche'],
+  // Customers describe a look rather than name a setting — "too dark",
+  // "green earthy", "logo swap". Without this group none of those reach
+  // the design articles, which is why 114 tickets asked anyway.
+  design:   ['colors','colours','color','colour','theme','template','logo','font','layout','appearance','look','dark','bright','style','branding'],
 };
 const norm = s => String(s || '').toLowerCase()
   .replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();

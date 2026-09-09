@@ -210,6 +210,33 @@ The knowledge base loads lazily, so the card records what it wants and the
 view change resolves it after the fetch; otherwise entering the Support
 Center would reset straight back to the grid.
 
+## Articles have to speak the customer's language
+
+Design changes were 114 tickets, and three articles already answered them.
+Testing 60 of those tickets against the real search showed **68% never
+reached any of them**.
+
+The articles were written operationally — "How do I change my website's
+colors, font, or theme?" — while customers write descriptively: "too dark",
+"green earthy", "logo swap", "the colors are awful". No shared words, no
+match. The answer sat there and nobody arrived.
+
+Two fixes, measured on 120 real tickets:
+
+| | design article in the top 3 |
+|---|---|
+| Before | 33/120 — 28% |
+| `design` synonym group added | 47/120 — 39% |
+| …plus articles reworded in customer language | **54/120 — 45%** |
+
+`SYNONYMS` in `js/qa.js` now has a `design` group. **It is duplicated in
+`scripts/coverage.mjs`, `scripts/verify-content.mjs` and
+`analysis/classify.mjs` — change all four together** or the analysis stops
+matching what customers actually experience.
+
+The lesson generalises: an article is only as good as the words it shares
+with the question. Before writing one, check how customers phrase it.
+
 ## An article must not hijack topic search
 
 "Where can I find the instructions or help section?" was rewritten to describe
