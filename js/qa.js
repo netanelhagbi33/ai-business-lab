@@ -272,7 +272,7 @@ function outcomeMarkup(question) {
     return `<div class="article-outcome-box unlocked">`
       + `<strong>We could not answer this one.</strong>`
       + `<p>You have tried ${REQUIRED_ATTEMPTS} articles without getting an `
-      + `answer, so a person should take it from here.</p>`
+      + `answer, so the Support Team should take it from here.</p>`
       + `<button class="btn green" type="button" data-action="open-ticket" `
         + `data-question="${esc(question)}">Open a support ticket</button>`
       + `</div>`;
