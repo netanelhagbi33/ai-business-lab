@@ -414,7 +414,7 @@ export function searchKB() {
       + `<h3>Nothing in the Support Center matches that</h3>`
       + `<p>Try shorter words or a different topic first — the answer may be `
       + `filed under wording you did not expect. If it really is not here, `
-      + `open a ticket and a person will pick it up.</p>`
+      + `open a ticket and the Support Team will pick it up.</p>`
       + `<div class="answer-actions">`
         + `<button class="btn soft" type="button" data-action="qa-home">`
           + `Browse all topics</button>`
