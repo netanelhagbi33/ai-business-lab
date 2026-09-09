@@ -140,10 +140,12 @@ console.log('\n=== RICH TEXT (**bold**)');
 
   const bolded = kb.filter(x => richText(x.answer).includes('<strong>')).length;
   console.log(`      ${bolded} articles render bold text`);
-  // 11 after the voice rewrite. Bold marks the branch headings and the
-  // named options in a list — "**Activate your Daily Boost**" — which is
-  // what makes a multi-part answer scannable instead of a wall of text.
-  check('the articles that use bold still do', bolded, 18);
+  // 11 after the voice rewrite, 18 after the Start Here guides, 36 once the
+  // support-route rewrite bolded the destination in every article that names
+  // one. Bold marks branch headings, the named options in a list, and now the
+  // tab the reader is being sent to — which is what makes a multi-part answer
+  // scannable instead of a wall of text.
+  check('the articles that use bold still do', bolded, 36);
 }
 
 /* ============================================================
@@ -171,6 +173,17 @@ console.log('\n=== ARTICLE STRUCTURE');
   check('bullets become a list',
         renderArticle('- One\n- Two'),
         '<ul class="answer-list"><li>One</li><li>Two</li></ul>');
+
+  // 18 blocks introduce a list with a lead line and no blank line after it.
+  // Each bullet used to come out as its own paragraph with a dash in front.
+  check('a lead line before bullets still gets a list',
+        renderArticle('They can help you:\n- One\n- Two'),
+        '<p>They can help you:</p>'
+        + '<ul class="answer-list"><li>One</li><li>Two</li></ul>');
+
+  check('text after a list closes it rather than joining it',
+        renderArticle('- One\n- Two\nThat is all.'),
+        '<ul class="answer-list"><li>One</li><li>Two</li></ul><p>That is all.</p>');
 
   check('a numbered item keeps its continuation line',
         renderArticle('1. Pick a niche\nThis decides the content.'),
@@ -346,6 +359,63 @@ console.log('\n=== NO SEARCH HIJACKING');
   }
   check('the "where are the instructions" article tops no topic search',
         offenders, []);
+}
+
+/* ============================================================
+   No article teaches the route we replaced.
+
+   Support runs one way now: the Support Center, the article, and
+   only once the answers have run out does a ticket appear. 45 of
+   the 232 articles still told customers to open a "Support tab in
+   the left-side menu", offered "the AI Assistant, Support, or a
+   Support Ticket" as three channels to pick between, or simply
+   said to open a ticket. An article that sends someone to a tab
+   that does not exist is worse than no article.
+
+   Two articles keep "left-side menu" on purpose: they name the
+   product's real Boosters and Billing entries, which are not ours
+   and have not moved.
+   ============================================================ */
+console.log('\n=== NO ARTICLE TEACHES THE OLD SUPPORT ROUTE');
+{
+  const KEEP = ['Why is the Boosters section missing from my dashboard?',
+                'Where can I see what I purchased?'];
+  const OLD = [
+    [/\bSupport tab\b/i,                              'names a "Support tab"'],
+    // "open Support Tickets" and "open the Support Center" are the new
+    // destinations, so they are excluded rather than matched.
+    [/\bOpen(?:ing)? Support(?! Tickets| Center)\b/i, 'says "open Support"'],
+    [/\bopen(?:ing)? a Support Ticket\b/i,            'tells the reader to open a ticket'],
+    [/\bcreate a new ticket\b/i,                      'tells the reader to create a ticket'],
+    [/\bAI Assistant, Support\b/i,                    'offers the old channel list'],
+    [/\bthrough Support\b/i,                          'says "through Support"'],
+    [/\bcontact Support\b/i,                          'says "contact Support"'],
+    [/\bsupport chat bubble\b/i,                      'points at the chat bubble'],
+  ];
+  const offenders = [];
+  for (const a of kb) {
+    if (KEEP.includes(a.question)) continue;
+    for (const [re, why] of OLD) {
+      if (re.test(a.answer)) offenders.push(`[${a.category}] ${a.question.slice(0, 44)} — ${why}`);
+    }
+  }
+  check('no article sends customers down the replaced route', offenders, []);
+
+  // The threshold stays unpublished. An article that states it turns the
+  // gate into two deliberate clicks.
+  const published = kb.filter(a => /\b(two|2) articles\b/i.test(a.answer))
+                      .map(a => a.question.slice(0, 44));
+  check('no article publishes how many attempts unlock a ticket', published, []);
+
+  // The refund bypass has exactly one entry point, so an article that names
+  // the button has to say where it is. Matched case-sensitively: "Request a
+  // Refund" is the button, "request a refund" is just the English for it.
+  const wrongPlace = kb
+    .filter(a => a.answer.includes('Request a Refund'))
+    .filter(a => !a.answer.includes('Looking for a refund?'))
+    .map(a => a.question.slice(0, 44));
+  check('every article naming the Request a Refund button says where it is',
+        wrongPlace, []);
 }
 
 console.log('\n=== UNFILLED PLACEHOLDERS (reported, not enforced)');

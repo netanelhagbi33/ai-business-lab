@@ -212,14 +212,14 @@
  {
   "category": "Building My Site",
   "question": "Why does my live website say “Activate Your Account”?",
-  "answer": "There are two reasons this message appears.\n\n**Your purchase is already complete**\nThe most common cause is opening the original purchase or activation link a second time instead of signing in to your existing account. Your purchase is already complete and you do not need to activate or pay again.\nSign in through your account's login page rather than the original purchase link. If you no longer have your login details, contact Support and your account details will be re-sent to you.\n\n**No completed purchase was found**\nIf no successful transaction exists on the account, the message appears because the account has not been activated yet.\nCheck whether the payment went through. If you believe you were charged, send Support the purchase receipt or the transaction details and the payment will be investigated.",
+  "answer": "There are two reasons this message appears.\n\n**Your purchase is already complete**\nThe most common cause is opening the original purchase or activation link a second time instead of signing in to your existing account. Your purchase is already complete and you do not need to activate or pay again.\nSign in through your account's login page rather than the original purchase link. If you no longer have your login details, ask through the Support Center in the sidebar and your account details will be re-sent to you.\n\n**No completed purchase was found**\nIf no successful transaction exists on the account, the message appears because the account has not been activated yet.\nCheck whether the payment went through. If you believe you were charged, send Support the purchase receipt or the transaction details and the payment will be investigated.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Status, Build & Launch"
  },
  {
   "category": "Building My Site",
   "question": "Why does my my site say active your account ?",
-  "answer": "Your website is already live. This message usually appears when the original purchase link is opened again instead of signing in to your existing account. You do not need to activate your account a second time.\n\nSign in through your account's login page rather than the original purchase link. If you no longer have your login details, contact Support and your account details will be re-sent to you.",
+  "answer": "Your website is already live. This message usually appears when the original purchase link is opened again instead of signing in to your existing account. You do not need to activate your account a second time.\n\nSign in through your account's login page rather than the original purchase link. If you no longer have your login details, ask through the Support Center in the sidebar and your account details will be re-sent to you.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Status, Build & Launch"
  },
@@ -240,7 +240,7 @@
  {
   "category": "Building My Site",
   "question": "Why was only one category selected during setup, and why that one?",
-  "answer": "Setup assigns one niche per website. There is no option to select multiple categories, so the site is built around whichever niche was chosen during setup.\n\n**If the niche is not the one you picked**\nContact Support and report which niche you selected and which one your account shows. Your setup conversation is checked against what was assigned, and your account is corrected if the two do not match.\n\n**If you want a different niche**\nBefore your website has been created, you can change your selections through the AI Assistant — edit your answers during each stage, change them at the final review step, or restart the setup. Once the site is live, contact Support and the request is passed to your assigned Success Manager, who will explain the available options.",
+  "answer": "Setup assigns one niche per website. There is no option to select multiple categories, so the site is built around whichever niche was chosen during setup.\n\n**If the niche is not the one you picked**\nReport which niche you selected and which one your account shows through the Support Center in the sidebar. Your setup conversation is checked against what was assigned, and your account is corrected if the two do not match.\n\n**If you want a different niche**\nBefore your website has been created, you can change your selections through the AI Assistant — edit your answers during each stage, change them at the final review step, or restart the setup. Once the site is live, ask through the Support Center in the sidebar and the request is passed to your assigned Success Manager, who will explain the available options.",
   "source": "Knowledge_Base",
   "rawCategory": "Niche Selection"
  },
@@ -275,7 +275,7 @@
  {
   "category": "Dashboard & Access",
   "question": "How can I get this on my computer? / I still need to know how to access my site?",
-  "answer": "Your dashboard runs in a browser, so there is nothing to install. It works the same on a computer and on a phone.\n\nGo to https://aibusiness-lab.com/ and sign in with the email address you registered with, using the password you set during registration. Use your account's login page rather than the original purchase link — opening the purchase link again shows an \"Activate Your Account\" message even though your account already exists.\n\nIf you do not have your login details, contact Support and they will be re-sent to you.",
+  "answer": "Your dashboard runs in a browser, so there is nothing to install. It works the same on a computer and on a phone.\n\nGo to https://aibusiness-lab.com/ and sign in with the email address you registered with, using the password you set during registration. Use your account's login page rather than the original purchase link — opening the purchase link again shows an \"Activate Your Account\" message even though your account already exists.\n\nIf you do not have your login details, ask through the Support Center in the sidebar and they will be re-sent to you.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Access"
  },
@@ -289,7 +289,7 @@
  {
   "category": "Dashboard & Access",
   "question": "How do I know what my password is if I haven’t had to put it in ?",
-  "answer": "If you have not set a password yet, you can log in using your email address and the phone number connected to your account.\n\nIf you need to reset your password, contact Support. A temporary password can be generated for you, and you can change it to one only you know after logging in.",
+  "answer": "If you have not set a password yet, you can log in using your email address and the phone number connected to your account.\n\nIf you need to reset your password, ask through the Support Center in the sidebar. A temporary password can be generated for you, and you can change it to one only you know after logging in.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
@@ -303,7 +303,7 @@
  {
   "category": "Dashboard & Access",
   "question": "My calls keep disconnecting and I cannot reach anyone. What should I do?",
-  "answer": "If calls drop or you cannot get through by phone, you do not need to keep retrying. Requests can be logged in writing and a callback arranged.\n\nContact Support through the AI Assistant or open a Support Ticket describing the problem. Support will verify your account and leave a callback request for your assigned Success Manager.\n\nPlease remain available by phone once the request is logged. The call may come from a number with a New York area code, so it can appear unfamiliar.",
+  "answer": "If calls drop or you cannot get through by phone, you do not need to keep retrying. Requests can be logged in writing and a callback arranged.\n\nOpen the Support Center in the sidebar and search for the problem in your own words. If the answers do not solve it, the Support Center will offer to send it to the Support Team. Support will verify your account and leave a callback request for your assigned Success Manager.\n\nPlease remain available by phone once the request is logged. The call may come from a number with a New York area code, so it can appear unfamiliar.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
@@ -317,7 +317,7 @@
  {
   "category": "Dashboard & Access",
   "question": "What is the Dashboard and AI Assistant?",
-  "answer": "The dashboard is the main control area for your AI Business Lab account, and it also works as the AI Assistant interface.\n\nFrom the Dashboard you can:\n• Visit your live website.\n• Check impressions, clicks, revenue and website value.\n• Review daily earnings and billing information.\n• Add or change a payout method.\n• Activate the free traffic boost.\n• View paid upgrades and article options.\n• Open Support and review ticket status.\n\nYou can type normal questions into the AI Assistant. You can also type “/” to see available shortcuts such as stats, billing, earnings, withdrawals, payment method, boost and shop. You do not need to memorize the commands.",
+  "answer": "The dashboard is the main control area for your AI Business Lab account, and it also works as the AI Assistant interface.\n\nFrom the Dashboard you can:\n• Visit your live website.\n• Check impressions, clicks, revenue and website value.\n• Review daily earnings and billing information.\n• Add or change a payout method.\n• Activate the free traffic boost.\n• View paid upgrades and article options.\n• Open the Support Center for answers, and Support Tickets to follow a request you have already sent.\n\nYou can type normal questions into the AI Assistant. You can also type “/” to see available shortcuts such as stats, billing, earnings, withdrawals, payment method, boost and shop. You do not need to memorize the commands.",
   "source": "Current dashboard screenshots + Corrections",
   "rawCategory": ""
  },
@@ -331,7 +331,7 @@
  {
   "category": "Dashboard & Access",
   "question": "What should I do if I did not receive my login email despite it being resent?",
-  "answer": "First check the correct inbox, including spam and junk folders — login emails are often filtered there.\n\nIf you still cannot find it, you do not need the email to get in. Go to https://aibusiness-lab.com/ and sign in directly: your username is your registered email address, and your password is the one you set during registration.\n\nIf you still cannot log in, contact Support with the email address on your account and your access will be checked and restored.",
+  "answer": "First check the correct inbox, including spam and junk folders — login emails are often filtered there.\n\nIf you still cannot find it, you do not need the email to get in. Go to https://aibusiness-lab.com/ and sign in directly: your username is your registered email address, and your password is the one you set during registration.\n\nIf you still cannot log in, ask through the Support Center in the sidebar with the email address on your account, and your access will be checked and restored.",
   "source": "Knowledge_Base",
   "rawCategory": "Login Issues"
  },
@@ -420,7 +420,7 @@
  {
   "category": "Website & Content",
   "question": "Can I change the design after my website is live?",
-  "answer": "Yes. Nothing about the design is permanent. Colours, fonts, the theme, the logo and the overall appearance can all be updated after the site is live — including a complete reset if you want to start the look again from scratch.\n\nThese changes cannot be made through the AI Assistant or the dashboard once setup is finished. Contact Support, describe the look you want — brighter, darker, cleaner, closer to your brand — and the request goes to your assigned Success Manager.\n\nDesign work is handled as a separate package from the one that created your website, so your Success Manager will explain the available options and what each involves before anything changes.",
+  "answer": "Yes. Nothing about the design is permanent. Colours, fonts, the theme, the logo and the overall appearance can all be updated after the site is live — including a complete reset if you want to start the look again from scratch.\n\nThese changes cannot be made through the AI Assistant or the dashboard once setup is finished. Ask through the Support Center in the sidebar, describe the look you want — brighter, darker, cleaner, closer to your brand — and the request goes to your assigned Success Manager.\n\nDesign work is handled as a separate package from the one that created your website, so your Success Manager will explain the available options and what each involves before anything changes.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Design, Content & Features"
  },
@@ -455,7 +455,7 @@
  {
   "category": "Website & Content",
   "question": "Can I create more than one website?",
-  "answer": "Yes, additional websites can be created when an additional website package is available or purchased for the account. Each website is separate and can have its own niche, content and activity.\n\nIf you expected more than one website but only see one, check your purchase history in Billing first. If you believe an additional website was included or purchased and it is missing, open Support with the purchase details so the fulfillment status can be reviewed.",
+  "answer": "Yes, additional websites can be created when an additional website package is available or purchased for the account. Each website is separate and can have its own niche, content and activity.\n\nIf you expected more than one website but only see one, check your purchase history in Billing first. If you believe an additional website was included or purchased and it is missing, ask through the Support Center in the sidebar with the purchase details so the fulfillment status can be reviewed.",
   "source": "Knowledge_Base + ticket themes",
   "rawCategory": ""
  },
@@ -490,7 +490,7 @@
  {
   "category": "Website & Content",
   "question": "Can my website’s niche be changed after the site has been created?",
-  "answer": "Yes, but not by yourself. Once the website is live the niche cannot be changed through the AI Assistant or the dashboard, because the articles, categories, design and structure were all built around it.\n\nContact Support and the request goes to your assigned Success Manager, who will review it, explain the available options and handle the change.\n\n**If your website has not been created yet**\nNothing is locked in. You can still change the niche, the design, the business name and the logo yourself — edit your answers during setup, change them at the final review step, or restart the setup from the beginning.",
+  "answer": "Yes, but not by yourself. Once the website is live the niche cannot be changed through the AI Assistant or the dashboard, because the articles, categories, design and structure were all built around it.\n\nAsk through the Support Center in the sidebar and the request goes to your assigned Success Manager, who will review it, explain the available options and handle the change.\n\n**If your website has not been created yet**\nNothing is locked in. You can still change the niche, the design, the business name and the logo yourself — edit your answers during setup, change them at the final review step, or restart the setup from the beginning.",
   "source": "Knowledge_Base",
   "rawCategory": "Niche & Product Changes"
  },
@@ -546,14 +546,14 @@
  {
   "category": "Website & Content",
   "question": "How do I change my website’s colors, font, or theme?",
-  "answer": "Yes — colours, fonts, the theme, the logo and the overall look can all be changed. If the site feels too dark, too bright, or simply not like your brand, none of that is fixed.\n\n**Before your website has been created**\nYou can change your design selections during the setup stages. At the final review step you can edit your earlier answers, or go back to the beginning and start over.\n\n**Once your website is live**\nColours, fonts and themes can no longer be changed through the AI Assistant or the dashboard. Contact Support and your request goes to your assigned Success Manager, who will review the look you want and update the site for you.\n\nDesign work is handled as a separate package from the one that created your website, so your Success Manager will explain the available options and what each involves before anything changes.",
+  "answer": "Yes — colours, fonts, the theme, the logo and the overall look can all be changed. If the site feels too dark, too bright, or simply not like your brand, none of that is fixed.\n\n**Before your website has been created**\nYou can change your design selections during the setup stages. At the final review step you can edit your earlier answers, or go back to the beginning and start over.\n\n**Once your website is live**\nColours, fonts and themes can no longer be changed through the AI Assistant or the dashboard. Ask through the Support Center in the sidebar and your request goes to your assigned Success Manager, who will review the look you want and update the site for you.\n\nDesign work is handled as a separate package from the one that created your website, so your Success Manager will explain the available options and what each involves before anything changes.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Design, Content & Features"
  },
  {
   "category": "Website & Content",
   "question": "How do I change the niche or product category of my website?",
-  "answer": "What you can change depends on whether your website has been created yet.\n\n**Before your website has been created**\nEverything is still open. The niche, the design template, the business name and the logo can all be changed — you are not locked into any choice you made earlier.\n\nYou can edit your answers as you go through each stage, change them at the final review step, or go back to the beginning and start the setup over from scratch.\n\n**Once your website is live**\nThe niche and product category can no longer be changed through the AI Assistant or the dashboard, because your articles, categories, design and structure were all built around the niche you selected.\n\nContact Support and the request goes to your assigned Success Manager, who will review what you want to change and explain the available options.",
+  "answer": "What you can change depends on whether your website has been created yet.\n\n**Before your website has been created**\nEverything is still open. The niche, the design template, the business name and the logo can all be changed — you are not locked into any choice you made earlier.\n\nYou can edit your answers as you go through each stage, change them at the final review step, or go back to the beginning and start the setup over from scratch.\n\n**Once your website is live**\nThe niche and product category can no longer be changed through the AI Assistant or the dashboard, because your articles, categories, design and structure were all built around the niche you selected.\n\nAsk through the Support Center in the sidebar and the request goes to your assigned Success Manager, who will review what you want to change and explain the available options.",
   "source": "Knowledge_Base",
   "rawCategory": "Niche & Product Changes"
  },
@@ -595,7 +595,7 @@
  {
   "category": "Website & Content",
   "question": "I selected one niche, but my account shows another niche. How can I correct it?",
-  "answer": "Contact Support and report which niche you selected and which one your account shows.\n\nYour setup conversation with the AI Assistant is checked against the niche assigned to your website. If the two do not match, your account is corrected to the niche you originally selected and you are told once it has been updated. If they do match, you are shown the point in your setup conversation where the selection was made.\n\nIf you would like a different niche either way, the request is passed to your assigned Success Manager, who will explain the available options.",
+  "answer": "Report which niche you selected and which one your account shows through the Support Center in the sidebar.\n\nYour setup conversation with the AI Assistant is checked against the niche assigned to your website. If the two do not match, your account is corrected to the niche you originally selected and you are told once it has been updated. If they do match, you are shown the point in your setup conversation where the selection was made.\n\nIf you would like a different niche either way, the request is passed to your assigned Success Manager, who will explain the available options.",
   "source": "Knowledge_Base",
   "rawCategory": "Niche & Product Changes"
  },
@@ -616,7 +616,7 @@
  {
   "category": "Website & Content",
   "question": "What exactly did I buy?",
-  "answer": "You purchased access to an AI-powered system that creates and manages a niche comparison website — a digital asset designed to receive traffic and monetize visitor activity.\n\nThe current website setup creates 30 comparison articles based on the niche selected during setup. These are content pages that compare and discuss products or topics in that niche. They are not physical products that you need to buy, store, sell or ship.\n\nYou also receive access to the AI Business Lab dashboard, where you can visit the website, view statistics and revenue, use the AI Assistant, manage traffic boosts, add a payout method, review billing and purchases, and contact Support when needed.\n\nThe website can continue to develop over time through traffic, additional content, branding, SEO and other optional growth tools. Results, traffic and earnings are not guaranteed and can take time to develop.",
+  "answer": "You purchased access to an AI-powered system that creates and manages a niche comparison website — a digital asset designed to receive traffic and monetize visitor activity.\n\nThe current website setup creates 30 comparison articles based on the niche selected during setup. These are content pages that compare and discuss products or topics in that niche. They are not physical products that you need to buy, store, sell or ship.\n\nYou also receive access to the AI Business Lab dashboard, where you can visit the website, view statistics and revenue, use the AI Assistant, manage traffic boosts, add a payout method, review billing and purchases, and reach the Support Center when needed.\n\nThe website can continue to develop over time through traffic, additional content, branding, SEO and other optional growth tools. Results, traffic and earnings are not guaranteed and can take time to develop.",
   "source": "New Product Q&A + current screenshots",
   "rawCategory": ""
  },
@@ -658,7 +658,7 @@
  {
   "category": "Website & Content",
   "question": "Who selected the content and topics on my website?",
-  "answer": "The content and topics are selected automatically by the AI system based on the niche you chose during setup.\n\nThe niche is used to create the website structure and the 30 comparison articles, including relevant product topics, categories and page titles. You do not need to select every article or product manually.\n\nIf the content does not match the niche you intended to choose, open Support and explain what you expected to see. The account can then be reviewed to determine whether the niche or content needs to be corrected.",
+  "answer": "The content and topics are selected automatically by the AI system based on the niche you chose during setup.\n\nThe niche is used to create the website structure and the 30 comparison articles, including relevant product topics, categories and page titles. You do not need to select every article or product manually.\n\nIf the content does not match the niche you intended to choose, ask through the Support Center in the sidebar and explain what you expected to see. The account can then be reviewed to determine whether the niche or content needs to be corrected.",
   "source": "New Product Q&A",
   "rawCategory": ""
  },
@@ -1043,7 +1043,7 @@
  {
   "category": "Earnings & Payouts",
   "question": "Why am I not making money yet?",
-  "answer": "A new website may not generate meaningful revenue immediately. Earnings depend on traffic and visitor activity, and the early stage is usually focused on building the website’s foundation, indexing and traffic history.\n\nThings to check:\n• Open Stats and confirm whether impressions and clicks are being recorded.\n• Use the available Free Traffic Boost when it is available.\n• Make sure the website is live and accessible.\n• Give organic traffic time to develop.\n• If you want a more active growth plan, discuss the available options with your Success Manager.\n\nMore traffic creates more opportunities for impressions, clicks and revenue, but traffic, rankings and earnings are not guaranteed. If the dashboard appears completely inactive or incorrect, open Support with a screenshot so the account can be reviewed.",
+  "answer": "A new website may not generate meaningful revenue immediately. Earnings depend on traffic and visitor activity, and the early stage is usually focused on building the website’s foundation, indexing and traffic history.\n\nThings to check:\n• Open Stats and confirm whether impressions and clicks are being recorded.\n• Use the available Free Traffic Boost when it is available.\n• Make sure the website is live and accessible.\n• Give organic traffic time to develop.\n• If you want a more active growth plan, discuss the available options with your Success Manager.\n\nMore traffic creates more opportunities for impressions, clicks and revenue, but traffic, rankings and earnings are not guaranteed. If the dashboard appears completely inactive or incorrect, ask through the Support Center in the sidebar with a screenshot so the account can be reviewed.",
   "source": "Knowledge_Base + Introduction Guide + ticket themes",
   "rawCategory": ""
  },
@@ -1134,7 +1134,7 @@
  {
   "category": "Purchases & Billing",
   "question": "I paid for an upgrade or Accelerator but I do not see it. What should I do?",
-  "answer": "First check the section where that product is normally shown. Traffic/Accelerator products may appear under Boosters, while article purchases and other add-ons may appear under Billing or the relevant product area.\n\nIf the purchase is visible there, it may already be connected to the account even if you expected it to appear somewhere else. If you still cannot find it:\n• Check Billing for the invoice and delivery status.\n• Check Boosters if the purchase was a traffic/acceleration product.\n• Refresh the dashboard and sign in again if needed.\n• Open Support and include the purchase date, product name and a screenshot of what you see.\n\nDo not create multiple tickets for the same purchase. Your Success Manager may also contact you soon to explain how the product is used.",
+  "answer": "First check the section where that product is normally shown. Traffic/Accelerator products may appear under Boosters, while article purchases and other add-ons may appear under Billing or the relevant product area.\n\nIf the purchase is visible there, it may already be connected to the account even if you expected it to appear somewhere else. If you still cannot find it:\n• Check Billing for the invoice and delivery status.\n• Check Boosters if the purchase was a traffic/acceleration product.\n• Refresh the dashboard and sign in again if needed.\n• Ask through the Support Center in the sidebar and include the purchase date, product name and a screenshot of what you see.\n\nDo not create multiple tickets for the same purchase. Your Success Manager may also contact you soon to explain how the product is used.",
   "source": "Corrections + Knowledge_Base + screenshots",
   "rawCategory": ""
  },
@@ -1162,7 +1162,7 @@
  {
   "category": "Purchases & Billing",
   "question": "What is the payment structure for the Accelerator Program?",
-  "answer": "The Accelerator payment is a one-time fee. It is designed to give your website a boost for a limited period, which can help increase your income.\n\nIf the payment structure shown in your account does not match what you expected, contact Support with the details you are seeing so the difference can be investigated.",
+  "answer": "The Accelerator payment is a one-time fee. It is designed to give your website a boost for a limited period, which can help increase your income.\n\nIf the payment structure shown in your account does not match what you expected, ask through the Support Center in the sidebar with the details you are seeing so the difference can be investigated.",
   "source": "Knowledge_Base",
   "rawCategory": "Payment Structure"
  },
@@ -1232,21 +1232,21 @@
  {
   "category": "Support",
   "question": "Can I receive support from a person instead of the AI assistant?",
-  "answer": "Yes. You can request assistance from a human member of our Support Team at any time.\nYou can do this by:\nAsking the AI Assistant to connect you with the Support Team\nContacting us through Support\nOpening a Support Ticket\nA support representative will review your request and respond during operating hours. If you contact us outside operating hours, you will receive an automatic message confirming that the team will respond once support becomes available again.",
+  "answer": "Yes. A human Support Team handles every request the answers here cannot.\n\nStart in the **Support Center** in the sidebar. Search your problem in your own words, or open the topic that matches it — most questions are already answered there, and that is the fastest way to get an answer at any hour.\n\nAt the end of each article, tell us whether it solved your problem. Once the answers have genuinely run out, the Support Center offers to send your question to the Support Team, and a representative replies during operating hours.\n\nIf you write outside operating hours you get an automatic confirmation, and the team replies once support is available again.\n\nPhone calls are handled by your assigned Success Manager rather than by the Support Team.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
  {
   "category": "Support",
   "question": "Can I request a different Success Manager?",
-  "answer": "Yes. You can submit a request through the AI Assistant, Support, or by opening a Support Ticket.\nPlease explain the reason for your request. The Support Team will document it and forward it to the relevant management team for review.\nA reassignment may depend on availability and approval, so a different Success Manager cannot always be guaranteed.",
+  "answer": "Yes. Open the **Support Center** in the sidebar and search for **Success Manager**. If the answers do not solve it, the Support Center will offer to send your question to the Support Team.\n\nExplain why you are asking. The team documents the reason and forwards it to the relevant management team for review.\n\nA reassignment depends on availability and approval, so a different Success Manager cannot always be guaranteed.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
  {
   "category": "Support",
   "question": "Can support contact me by email or text instead of by phone?",
-  "answer": "Yes. You can receive written assistance through Support or by opening a Support Ticket, and relevant updates may also be sent to the email address connected to your account.\nText messaging is not currently a standard support channel.\nPlease note that phone calls and callbacks are handled by your assigned Success Manager. The Support Team can assist you in writing or leave a callback request for your Success Manager when needed.",
+  "answer": "Yes. Written support is the normal channel. Anything you send through the **Support Center** is answered in writing, and relevant updates may also go to the email address connected to your account.\n\nText messaging is not a support channel.\n\nPhone calls and callbacks are handled by your assigned Success Manager rather than by the Support Team. The Support Team can leave a callback request for your Success Manager when one is needed.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
@@ -1260,56 +1260,56 @@
  {
   "category": "Support",
   "question": "How can I check the status of a questionnaire I submitted?",
-  "answer": "Please provide the email address connected to your account and, when available, the approximate date the questionnaire was submitted.\nWe can check whether:\nThe questionnaire was received successfully\nIt is still under review\nThe relevant team has started processing it\nAny information is missing or requires clarification\nThe next stage of your website setup has begun\nYou may also check the email address connected to your account, including the spam or junk folder, as confirmation messages or follow-up questions may be sent there.\nPlease avoid submitting the same questionnaire again unless the support team asks you to do so, as duplicate submissions may delay the review process.",
+  "answer": "The questionnaire is reviewed by the setup team, and its status is not shown in your dashboard.\n\nTo ask about yours, open the **Support Center** in the sidebar and search for **questionnaire**. If the answers do not solve it, the Support Center will offer to send your question to the Support Team. Include the email address connected to your account and, if you know it, roughly when you submitted it.\n\nThe team can confirm whether the questionnaire was received, whether it is still under review, whether processing has started, whether anything is missing, and whether the next stage of your website setup has begun.\n\nCheck the email address connected to your account as well, including the spam or junk folder — confirmations and follow-up questions are sent there.\n\nPlease do not submit the same questionnaire again unless you are asked to. Duplicate submissions delay the review.",
   "source": "Knowledge_Base",
   "rawCategory": "Existing Ticket Follow-Up"
  },
  {
   "category": "Support",
   "question": "How can I check the status of an existing support ticket?",
-  "answer": "Open Support from the left-side menu. The Support page shows the requests you have already submitted and their current status, such as In Progress or Closed. Open the ticket to read the latest reply from the team.\n\nYou may also receive updates by email, so check the email address connected to your account, including the spam or junk folder.\n\nIf the ticket is still open, keep using the same ticket for follow-up instead of opening a duplicate request. Duplicate tickets can make the issue harder to track and may delay the review.",
+  "answer": "Open **Support Tickets** in the sidebar. The tab appears once you have sent a ticket and stays there afterwards, and it lists every request you have sent with its current status — In Progress while the team is working on it, Closed once it is resolved. Open a ticket to read the latest reply.\n\nUpdates may also go to the email address connected to your account, so check there too, including the spam or junk folder.\n\nWhile a ticket is open, keep using that same ticket for follow-up rather than sending a second one. Duplicates make the issue harder to track and can delay the review.",
   "source": "Current Support screenshots + Knowledge_Base",
   "rawCategory": ""
  },
  {
   "category": "Support",
   "question": "How can I request a callback?",
-  "answer": "You can request a callback through the AI Assistant, Support, or by opening a Support Ticket.\nPlease provide your full name, account email, phone number with country code, and the reason for the requested call.\nThe Support Team does not conduct callbacks directly. They will forward your request to your assigned Success Manager, who will contact you based on their availability.\nIf you are a new customer and have not yet received your introductory call, your Success Manager should contact you soon. Please remain available by phone and note that the call may come from a number with a New York area code.",
+  "answer": "Callbacks are handled by your assigned Success Manager rather than by the Support Team.\n\nOpen the **Support Center** in the sidebar and search for **callback**. If the answers do not solve it, the Support Center will offer to send your question to the Support Team. The team will pass the request to your Success Manager, who calls back based on their availability.\n\nInclude your full name, the email address on your account, your phone number with country code, and the reason for the call.\n\nIf you are a new customer and have not had your introductory call yet, your Success Manager should contact you soon. Keep your phone available — the call may come from a number with a New York area code.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
  {
   "category": "Support",
   "question": "How can I speak with a human representative?",
-  "answer": "You can contact a human representative in any of the following ways:\nAsk through the AI Assistant to speak with the Support Team\nContact the team through Support\nOpen a Support Ticket\nA support representative will review your request and respond during operating hours. If you contact us outside operating hours, you will receive an automatic message confirming that the team will respond once support becomes available again.\nFor questions about additional services, upgrades, traffic, content, SEO, social media, or additional websites, you can also request to speak with your Success Manager.",
+  "answer": "Every request the answers cannot settle reaches a human.\n\nOpen the **Support Center** in the sidebar and search your problem in your own words, or open the topic that fits it. At the end of each article, tell us whether it solved your problem. Once the answers have genuinely run out, the Support Center offers to send your question to the Support Team, and a representative replies during operating hours.\n\nOutside operating hours you get an automatic confirmation, and the team replies once support is available again.\n\nFor additional services, upgrades, traffic, content, SEO, social media or additional websites, you can also ask to speak with your assigned Success Manager.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
  {
   "category": "Support",
   "question": "How do I open a Support Ticket?",
-  "answer": "You can open a Support Ticket directly through your AI Assistant dashboard in either of the following ways:\nOpen the Support tab in the left-side menu and select the option to create a new ticket.\nWhen opening the ticket, clearly describe the issue and include any relevant information, such as:\nYour website domain\nThe feature or page involved\nA screenshot or error message\nPurchase details, when the issue relates to a payment or product\nAfter the ticket is submitted, you can track its status through the Support tab or the support chat bubble.\nPlease do not create multiple tickets for the same issue, as duplicate requests may delay the review process.",
+  "answer": "Support starts with the answers rather than with a form.\n\nOpen the **Support Center** in the sidebar and search your problem in your own words, or open the topic that matches it. Most questions are answered there in one short article, which is faster than waiting for a reply.\n\nAt the end of every article, tell us whether it solved your problem. Once the answers have genuinely run out, the Support Center offers to send your question to the Support Team, and what you were reading is carried into the request for you.\n\nA **Support Tickets** tab then appears in the sidebar. Every ticket you have sent is read there, with its status and the replies on it.\n\nWhen you do write to the team, describe the issue clearly and include whatever helps:\n- Your website domain\n- The feature or page involved\n- A screenshot, or the error message\n- Purchase details, when the issue involves a payment or a product\n\nPlease do not send a second request for the same issue. Duplicates delay the review rather than speeding it up.",
   "source": "Knowledge_Base",
   "rawCategory": "Existing Ticket Follow-Up"
  },
  {
   "category": "Support",
   "question": "How do I reopen a ticket that was not resolved correctly?",
-  "answer": "Open your AI Assistant dashboard and go to the Support tab in the left-side menu. Select the relevant ticket and add a new message explaining:\nWhat part of the issue is still unresolved\nWhat result you expected\nAny new details, screenshots, or error messages\nIf the ticket is closed and you cannot reply to it, provide the ticket number and the email address connected to your account, when available. We can review the previous resolution, reopen the case, and send it back to the appropriate team.\nYou may also reply to the ticket’s email conversation, as your response may be added to the existing case.\nPlease do not create a new ticket for the same issue. Reopening the existing ticket helps the support team retain the full history and may prevent delays.",
+  "answer": "Open **Support Tickets** in the sidebar and select the ticket. Add a new message on that same ticket explaining:\n- What part of the issue is still unresolved\n- What result you expected\n- Any new details, screenshots or error messages\n\nIf the ticket is closed and you cannot reply to it, send the ticket number and the email address connected to your account. The previous resolution can be reviewed, the case reopened, and sent back to the right team.\n\nYou can also reply to the ticket's email conversation — your reply is added to the existing case.\n\nPlease do not start a new ticket for the same issue. Reopening the existing one keeps the full history with it and avoids delays.",
   "source": "Knowledge_Base",
   "rawCategory": "Existing Ticket Follow-Up"
  },
  {
   "category": "Support",
   "question": "How long does it take for a support ticket to be answered?",
-  "answer": "The material you provided does not set one fixed response time for every support ticket. The time depends on the type of request, the complexity of the issue and the team handling it.\n\nThe best way to follow the request is to open Support and check the ticket status and latest reply. Also check the email address connected to your account because updates may be sent there.\n\nIf the ticket is already open, continue the same request rather than opening another ticket for the same issue.",
+  "answer": "There is no single response time for every ticket. It depends on the type of request, how complex it is, and which team handles it.\n\nThe fastest way to follow one is to open **Support Tickets** in the sidebar and read its status and latest reply. Updates may also go to the email address connected to your account, so check there too, including the spam or junk folder.\n\nWhile a ticket is open, continue on that same ticket rather than sending another one for the same issue.",
   "source": "Knowledge_Base + Corrections",
   "rawCategory": ""
  },
  {
   "category": "Support",
   "question": "How long does it take for my support ticket to be fulfilled?",
-  "answer": "The time it takes to fulfill a support ticket can vary based on the complexity of the issue and the current workload of the support team. For specific time estimates, please refer to the status updates provided in your support ticket or contact support directly with your ticket number.",
+  "answer": "The time depends on how complex the request is and how much the team is handling at that moment, so no single time applies to every ticket.\n\nOpen **Support Tickets** in the sidebar to see where yours stands. It shows In Progress while the team is working on it and Closed once it is resolved, and the latest reply from the team is on the ticket itself.",
   "source": "Knowledge_Base",
   "rawCategory": "Ticket Fulfillment Time"
  },
@@ -1323,42 +1323,42 @@
  {
   "category": "Support",
   "question": "What should I do if my support ticket has not been answered?",
-  "answer": "First, check the status of the ticket through your AI Assistant dashboard:\nOpen the Support tab in the left-side menu to review your submitted tickets and their current status.\nCheck the email address connected to your account, including the spam or junk folder, as updates may also be sent by email.\nYou can also send us the ticket number and the email address connected to your account, when available. We can check:\nThe current status of the ticket\nWhich team is handling it\nThe most recent update\nWhether additional information is required from you\nPlease do not create another ticket for the same issue. Duplicate tickets may delay the review process. Instead, reply to the existing ticket or ask us to follow up on it.",
+  "answer": "First, check where it stands. Open **Support Tickets** in the sidebar to see the ticket and its current status, and check the email address connected to your account, including the spam or junk folder, since updates may be sent there.\n\nIf it still looks stuck, reply on the existing ticket with the ticket number and the email address connected to your account. The team can confirm the current status, which team is handling it, the most recent update, and whether anything is needed from you.\n\nPlease do not send another ticket for the same issue. Duplicates delay the review — replying on the existing ticket is what moves it.",
   "source": "Knowledge_Base",
   "rawCategory": "Existing Ticket Follow-Up"
  },
  {
   "category": "Support",
   "question": "What should I do if no one has contacted me after my purchase?",
-  "answer": "Your assigned Success Manager will contact you soon.\nPlease keep your phone available, as the call may come from a number with a New York area code.\nIf you have not been contacted yet and would like an update, reach out through the AI Assistant, Support, or open a Support Ticket. The Support Team will verify your account and leave a callback request for your assigned Success Manager.",
+  "answer": "Your assigned Success Manager will contact you soon. Keep your phone available — the call may come from a number with a New York area code.\n\nIf you would like an update in the meantime, open the **Support Center** in the sidebar and search for **onboarding call**. If the answers do not solve it, the Support Center will offer to send your question to the Support Team. The team will verify your account and leave a callback request for your Success Manager.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
  {
   "category": "Support",
   "question": "What time can I expect my success manager to contact me?",
-  "answer": "We cannot guarantee a specific time when your success manager will contact you, but their working days are Monday through Friday from 10 am to 6 pm New York time. I have updated your success manager about your request, and they will try to contact you as soon as possible.",
+  "answer": "An exact time cannot be guaranteed. Your Success Manager works Monday to Friday, 10am to 6pm New York time, and will try to reach you as soon as possible within those hours.\n\nKeep your phone available — the call may come from a number with a New York area code.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
  {
   "category": "Support",
   "question": "When will I receive my onboarding phone call?",
-  "answer": "If you are a new customer, your assigned Success Manager will contact you soon.\nPlease keep your phone available, as the call may come from a number with a New York area code.\nIf you have not received the call after this period, contact the Support Team through the AI Assistant, Support, or a Support Ticket. The team will leave a callback request for your assigned Success Manager.",
+  "answer": "If you are a new customer, your assigned Success Manager will contact you soon. Keep your phone available — the call may come from a number with a New York area code.\n\nIf time has passed and no one has called, open the **Support Center** in the sidebar and search for **callback**. If the answers do not solve it, the Support Center will offer to send your question to the Support Team. The team will leave a callback request for your Success Manager.",
   "source": "Knowledge_Base",
   "rawCategory": "Human Support & Callbacks"
  },
  {
   "category": "Support",
   "question": "Why can’t I find, open, or access my Support Ticket?",
-  "answer": "First, check your submitted tickets through both available locations:\nOpen the Support tab in the left-side menu.\nAlso check the email address connected to your account, including the spam or junk folder, for the original ticket confirmation and any updates.\nIf the ticket is missing, does not load, or the ticket number is not recognized, provide us with the ticket number and account email when available. We can locate the request using your account information and confirm:\nWhether the ticket was created successfully\nIts current status\nWhich team is handling it\nThe latest update\nWhether any additional information is required\nPlease do not open another ticket for the same issue until we confirm that the original request cannot be found.",
+  "answer": "Check both places a ticket appears:\n- **Support Tickets** in the sidebar. The tab appears once you have sent a ticket, and every ticket you have sent is listed there.\n- The email address connected to your account, including the spam or junk folder, for the original confirmation and any updates.\n\nIf the ticket is missing, does not load, or the ticket number is not recognised, send us the ticket number and the email address connected to your account. The request can be found from your account details, and we can confirm whether it was created, its current status, which team is handling it, the latest update, and whether anything is needed from you.\n\nPlease do not send another ticket for the same issue until we confirm the original cannot be found.",
   "source": "Knowledge_Base",
   "rawCategory": "Existing Ticket Follow-Up"
  },
  {
   "category": "Support",
   "question": "Why is my upgrade not showing in my account?",
-  "answer": "Purchased upgrades appear in your account under the Booster tab, so check there first.\n\nIf the upgrade is still not visible, contact Support with your purchase details and the purchase will be verified against your account. Do not create multiple tickets for the same purchase — duplicates slow the review down rather than speeding it up.",
+  "answer": "Purchased upgrades appear in your account under the **Booster** tab, so check there first.\n\nIf it is still not visible, open the **Support Center** in the sidebar and search for your purchase. If the answers do not solve it, the Support Center will offer to send your question to the Support Team. The purchase is then verified against your account.\n\nInclude the purchase date, the product name, and a screenshot of what you see. Do not send several requests for the same purchase — duplicates slow the review down rather than speeding it up.",
   "source": "Knowledge_Base",
   "rawCategory": "Customer Support"
  },
@@ -1414,28 +1414,28 @@
  {
   "category": "Refunds",
   "question": "How do I cancel my order or stop participating in the program?",
-  "answer": "There are three ways to request a refund:\nThrough the AI Assistant\n Send a message to the AI assistant stating that you would like to request a refund. The system will identify your request and initiate the refund process in our internal system.\nBy opening a support ticket\n Submit a support ticket and clearly state that you would like to request a refund.\nThrough Support\n Ask our support team for a refund directly through Support, and we will begin the process for you.",
+  "answer": "A cancellation is handled as a refund request.\n\nOpen the **Support Center** in the sidebar. In the box titled \"Looking for a refund?\" at the bottom of the page, press **Request a Refund**, state that you want to cancel, and submit it.\n\nRefund requests do not go through the article flow. They are submitted directly and tracked from the moment you send them, and they appear under **Support Tickets** in the sidebar like any other ticket.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How do I cancel my subscription or stop participating?",
-  "answer": "A cancellation request is handled as a refund request. If you want to cancel, open Support and submit a Refund Request.\n\nOnce the request is received, it can be tracked through the Support process. You will receive updates as the request is reviewed and processed.\n\nThe standard refund eligibility period in the provided Knowledge Base is 60 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
+  "answer": "A cancellation request is handled as a refund request. If you want to cancel, open the Support Center in the sidebar and press Request a Refund in the \"Looking for a refund?\" box.\n\nOnce the request is received, it can be tracked through the Support process. You will receive updates as the request is reviewed and processed.\n\nThe standard refund eligibility period is 60 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
   "source": "Knowledge_Base + Corrections",
   "rawCategory": ""
  },
  {
   "category": "Refunds",
   "question": "How do I cancel my subscription?",
-  "answer": "A cancellation request is handled as a refund request. Open Support and submit a Refund Request.\n\nOnce the request is received it can be tracked through the Support process, and you will receive updates as it is reviewed. The standard refund eligibility period is 60 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
+  "answer": "A cancellation request is handled as a refund request. Open the Support Center in the sidebar and press Request a Refund in the \"Looking for a refund?\" box.\n\nOnce the request is received it can be tracked through the Support process, and you will receive updates as it is reviewed. The standard refund eligibility period is 60 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How do I request a refund?",
-  "answer": "Refund requests can be opened directly through Support. Unlike normal questions, you do not need to go through the Help Center answer flow first because refund requests need to be tracked from the moment they are submitted.\n\nOpen Support → Request a Refund, then submit the request for the relevant purchase.\n\nThe standard policy in the provided Knowledge Base says refund requests are eligible when submitted within 60 days of the relevant purchase date. Each transaction or add-on is reviewed separately. After a refund is approved and processed, the time for the funds to appear can depend on the payment provider or bank.\n\nKeep the refund request in the same Support ticket so the status can be tracked from start to finish.",
+  "answer": "Open the **Support Center** in the sidebar. In the box titled \"Looking for a refund?\" at the bottom of the page, press **Request a Refund** and submit the request for the relevant purchase.\n\nRefund requests do not go through the article flow. They are submitted directly, because a refund needs to be tracked from the moment it is sent.\n\nA refund request is eligible when it is submitted within **60 days** of the relevant purchase date. Each transaction or add-on is reviewed separately, and each is measured from its own purchase date. Once a refund is approved and processed, the time for the money to appear can depend on your payment provider or bank.\n\nKeep everything about the refund on that same ticket, under **Support Tickets** in the sidebar, so its status can be followed from start to finish.",
   "source": "Knowledge_Base + current Support design + user requirement",
   "rawCategory": ""
  },
@@ -1463,7 +1463,7 @@
  {
   "category": "Refunds",
   "question": "Please DELETE MY BANK CARD HISTORY IMMEDIATELY!!! YOU GUYS WERE NOT HONEST AND AFTER YOU TOOK THE $99 DOLLARS FROM ME TOU HELPED YOURSELVES TO $67 DOLLARS MORE!!",
-  "answer": "If a charge was taken that you did not expect, or you want your payment details removed, submit a Refund Request through Support and state clearly what you are asking for.\n\nThe request is tracked from the moment it is submitted, and you will receive updates as it is reviewed. Include the amounts and dates you are querying so the charges can be checked against your account.\n\nIf you also want one-to-one help with the package you purchased, your assigned Success Manager can be asked to contact you through the same request.",
+  "answer": "If a charge was taken that you did not expect, or you want your payment details removed, open the Support Center in the sidebar and press Request a Refund in the \"Looking for a refund?\" box, stating clearly what you are asking for.\n\nThe request is tracked from the moment it is submitted, and you will receive updates as it is reviewed. Include the amounts and dates you are querying so the charges can be checked against your account.\n\nIf you also want one-to-one help with the package you purchased, your assigned Success Manager can be asked to contact you through the same request.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations, Human Support & Callbacks"
  },
@@ -1477,7 +1477,7 @@
  {
   "category": "Refunds",
   "question": "What should I do if I submitted a refund request but have not received a response?",
-  "answer": "Refund requests are usually reviewed within 24–48 hours.\nIf more than 48 hours have passed and you have not received an update, please contact us again through Support or reply to your existing support ticket.\nTo help us locate your request quickly, please provide:\nThe email address used for the purchase\nYour support ticket number, if available\nThe date the refund was requested\nThe purchase or transaction details\nOur support team will check the status of your request and provide an update.",
+  "answer": "Refund requests are usually reviewed within 24–48 hours.\nIf more than 48 hours have passed and you have not received an update, open Support Tickets in the sidebar and reply on your existing refund ticket.\nTo help us locate your request quickly, please provide:\nThe email address used for the purchase\nYour support ticket number, if available\nThe date the refund was requested\nThe purchase or transaction details\nOur support team will check the status of your request and provide an update.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1491,7 +1491,7 @@
  {
   "category": "Refunds",
   "question": "What should I do if the support ticket number I received for my refund is invalid?",
-  "answer": "If your ticket number is not recognized or the ticket cannot be opened, please contact us through Support or submit a new support ticket.\nProvide the following information so we can locate your original refund request:\nThe email address used for the purchase\nYour full name\nThe date you submitted the refund request\nThe purchase amount\n\nThe invalid ticket number\nA screenshot of the error, if available\nYour refund request can still be located using your account and transaction details, even if the original ticket number is not working. Our support team will verify the request and provide you with an updated ticket number or status.",
+  "answer": "If your ticket number is not recognized or the ticket cannot be opened, open Support Tickets in the sidebar to check it, and reply on the ticket.\nProvide the following information so we can locate your original refund request:\nThe email address used for the purchase\nYour full name\nThe date you submitted the refund request\nThe purchase amount\n\nThe invalid ticket number\nA screenshot of the error, if available\nYour refund request can still be located using your account and transaction details, even if the original ticket number is not working. Our support team will verify the request and provide you with an updated ticket number or status.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1505,7 +1505,7 @@
  {
   "category": "Refunds",
   "question": "How does the money-back guarantee work, and how do I request a refund?",
-  "answer": "**Requesting a refund**\nOpen the Support Center and click **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Fill in what you are asking for and submit.\n\nRefund requests do not go through the article flow — they are submitted directly and tracked from the moment you send them. You can also ask through the AI Assistant or open a Support Ticket if you prefer.\n\n**The standard guarantee**\nA refund request is eligible if it is submitted within **60 days** of the original purchase date. Each purchase and add-on is reviewed separately, and each is measured from its own purchase date. Approved amounts are returned the same way you originally paid.\n\n**The 200% guarantee**\nThe 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week, through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance, and completing at least three free support calls with a Success Manager.\n\nIf those requirements are not met you may still be eligible for a 100% refund under the standard policy, but not the additional 200%. Eligibility is reviewed against the activity and records on your account."
+  "answer": "**Requesting a refund**\nOpen the Support Center and click **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Fill in what you are asking for and submit.\n\nRefund requests do not go through the article flow — they are submitted directly and tracked from the moment you send them.\n\n**The standard guarantee**\nA refund request is eligible if it is submitted within **60 days** of the original purchase date. Each purchase and add-on is reviewed separately, and each is measured from its own purchase date. Approved amounts are returned the same way you originally paid.\n\n**The 200% guarantee**\nThe 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week, through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance, and completing at least three free support calls with a Success Manager.\n\nIf those requirements are not met you may still be eligible for a 100% refund under the standard policy, but not the additional 200%. Eligibility is reviewed against the activity and records on your account."
  },
  {
   "category": "Account & Security",
@@ -1552,7 +1552,7 @@
  {
   "category": "Account & Security",
   "question": "I bought the Accelerator Package and it’s not showing up. When could someone reach out?",
-  "answer": "The Accelerator Package appears in your account under the **Booster** tab.\n\nIf it is not visible there, contact Support with your purchase details so it can be checked against your account.\n\nYour Success Manager will also reach out to you soon to provide guidance and support.",
+  "answer": "The Accelerator Package appears in your account under the **Booster** tab.\n\nIf it is not visible there, ask through the Support Center in the sidebar with your purchase details so it can be checked against your account.\n\nYour Success Manager will also reach out to you soon to provide guidance and support.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Issues"
  },

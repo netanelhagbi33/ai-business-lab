@@ -99,10 +99,28 @@ export function renderArticle(text) {
     // bold is a heading for what follows — most articles write the heading
     // and its first paragraph on consecutive lines, so this is checked per
     // line rather than per block.
-    lines.forEach(l => out.push(
-      /^\*\*[^*]+\*\*$/.test(l)
+    //
+    // A run of bullet lines inside such a block still becomes a list. 18
+    // blocks introduce their list with a lead line and no blank line after
+    // it — "They can help you:" followed by six bullets — which the
+    // all-lines-are-bullets test above cannot see, so every bullet used to
+    // render as its own paragraph with a dash in front of it.
+    let bullets = [];
+    const flushBullets = () => {
+      if (!bullets.length) return;
+      out.push('<ul class="answer-list">'
+        + bullets.map(l => `<li>${richText(l.replace(/^[-•*]\s+/, ''))}</li>`).join('')
+        + '</ul>');
+      bullets = [];
+    };
+    for (const l of lines) {
+      if (/^[-•*]\s+/.test(l)) { bullets.push(l); continue; }
+      flushBullets();
+      out.push(/^\*\*[^*]+\*\*$/.test(l)
         ? `<h4 class="answer-h">${richText(l.slice(2, -2))}</h4>`
-        : `<p>${richText(l)}</p>`));
+        : `<p>${richText(l)}</p>`);
+    }
+    flushBullets();
   }
 
   return out.join('');
