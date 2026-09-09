@@ -192,15 +192,24 @@ so check this after any content import.**
 
 ## Start Here cards can open one article
 
-The three original cards open a guide or a view. Two more open a single
-named article, via `data-action="open-article"` and `data-question`:
+Three cards open a guide or a view. Seven open a single named article, via
+`data-action="open-article"` and `data-question`. Each was chosen from the
+ticket ranking, and together they cover **987 tickets**:
 
-| Card | Article |
+| Card | Tickets |
 |---|---|
-| Where is my dashboard | The chat screen **is** the dashboard |
-| Guarantee and refunds | 100% / 200% terms, and how to request one |
+| What did I buy | 307 |
+| Changing your niche | 174 |
+| Colours, theme and logo | 114 |
+| Cannot log in | 101 |
+| How many websites | 97 |
+| Where is my dashboard | — |
+| Guarantee and refunds | — |
 
-Both answer questions the ticket data ranks near the top. `showArticle()` in
+**A card names its article by exact question text.** Reword or delete that
+article and the card breaks silently: the reader lands on the topic grid
+instead of the answer, with no error anywhere. `verify-content.mjs` checks
+every target still exists and still sits in the section its card implies. `showArticle()` in
 `js/qa.js` renders that one article, already expanded, with the topic grid
 hidden and the back button intact. A card naming an article that does not
 exist falls back to the grid rather than blanking the page — there is a check

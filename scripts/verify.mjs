@@ -362,8 +362,8 @@ console.log('\n=== START HERE CARDS THAT OPEN AN ARTICLE');
   await p.reload();
   await p.waitForSelector('.learn-grid .learn');
 
-  check('five cards on Start Here',
-        await p.evaluate(() => document.querySelectorAll('.learn-grid .learn').length), 5);
+  check('ten cards on Start Here',
+        await p.evaluate(() => document.querySelectorAll('.learn-grid .learn').length), 10);
 
   const CARDS = [
     ['Where is my dashboard?', 'Dashboard & Access'],

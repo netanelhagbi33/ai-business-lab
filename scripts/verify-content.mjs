@@ -204,6 +204,45 @@ console.log('\n=== NO ANSWER ASSUMES THE READER\'S CHOICES');
   check('no answer asserts what the reader selected', asserts, []);
 }
 
+
+/* ============================================================
+   Every Start Here card must point at an article that exists.
+
+   The cards name their target by exact question text. Rewording
+   or removing an article silently breaks the card — the reader
+   lands on the topic grid instead of the answer, with no error
+   anywhere. This catches it in a second, without a browser.
+   ============================================================ */
+console.log('\n=== START HERE CARD TARGETS');
+{
+  const decode = s => s.replace(/&amp;/g, '&').replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  const targets = [...html.matchAll(/data-question="([^"]+)"/g)].map(m => decode(m[1]));
+
+  check('cards point at articles', targets.length > 0, true);
+
+  const missing = targets.filter(q => !kb.some(x => x.question === q));
+  check('every card target exists in kb.json', missing, []);
+
+  // A card promising an answer that is really a different topic is the
+  // same failure, just slower to notice.
+  const CARD_SECTION = {
+    'Where is my dashboard?': 'Dashboard & Access',
+    'How does the money-back guarantee work, and how do I request a refund?': 'Refunds',
+    'What are the program details, packages, and pricing?': 'Getting Started',
+    'Can my website’s niche be changed after the site has been created?': 'Website & Content',
+    'Can I change the design after my website is live?': 'Website & Content',
+    'Why can’t I log in to my dashboard?': 'Dashboard & Access',
+    'How many websites are included in my purchase?': 'Website & Content',
+  };
+  const wrong = targets
+    .filter(q => CARD_SECTION[q])
+    .filter(q => kb.find(x => x.question === q).category !== CARD_SECTION[q]);
+  check('each card lands in its expected section', wrong, []);
+
+  console.log(`      ${targets.length} cards checked`);
+}
+
 console.log('\n=== NO SEARCH HIJACKING');
 {
   const SYN = {
