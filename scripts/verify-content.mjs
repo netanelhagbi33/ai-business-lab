@@ -457,6 +457,25 @@ console.log('\n=== A REQUEST FOR DETAILS NAMES ITS DESTINATION');
                    .map(a => a.question.slice(0, 46));
   check('no answer is a pasted agent reply', pasted, []);
 
+  // The refund window is 90 days. The knowledge base said 60 in fourteen
+  // places, which is the kind of number a customer plans around — someone on
+  // day 75 would have read that they had missed it.
+  //
+  // "Actively promoting the website for 60 days" is a different rule: a
+  // condition of the 200% guarantee, not the window for asking. It keeps its
+  // 60, so the check is per line rather than per article.
+  const stale = [];
+  for (const a of kb) {
+    for (const line of a.answer.split('\n')) {
+      if (!/\b60[\s-]days?\b/.test(line)) continue;
+      if (/Actively promoting the website for 60 days/.test(line)) continue;
+      stale.push(`[${a.category}] ${a.question.slice(0, 36)}`);
+    }
+  }
+  check('no refund window still says 60 days', stale, []);
+  check('articles state the 90-day window',
+        kb.filter(a => /\b90[\s-]days?\b/.test(a.answer)).length >= 10, true);
+
   // Security wording that must not be softened away by a later pass.
   check('no article asks a customer to send a password',
         kb.filter(a => /send us the new password/i.test(a.answer)).length, 0);

@@ -1365,14 +1365,14 @@
  {
   "category": "Refunds",
   "question": "Am I eligible for the advertised money-back guarantee?",
-  "answer": "Yes, as long as your refund request is submitted within 60 days of the original purchase date.\nThis means you have up to 60 days from the date of purchase to change your mind and request a refund.\nAfter the 60-day period has passed, the purchase is no longer eligible for a refund under the money-back guarantee.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
+  "answer": "Yes, as long as your refund request is submitted within 90 days of the original purchase date.\nThis means you have up to 90 days from the date of purchase to change your mind and request a refund.\nAfter the 90-day period has passed, the purchase is no longer eligible for a refund under the money-back guarantee.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "Can I request a refund for all of my purchases and add-ons?",
-  "answer": "Yes. You may request a refund for your original purchase as well as any additional products or add-ons you purchased.\nEach transaction is reviewed separately and must be within the 60-day refund period, calculated from the date of that specific purchase.\nOnce approved, each eligible amount will be refunded through the same payment provider and payment method used for the original transaction. Purchases made more than 60 days before the refund request are not eligible under the standard refund policy.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
+  "answer": "Yes. You may request a refund for your original purchase as well as any additional products or add-ons you purchased.\nEach transaction is reviewed separately and must be within the 90-day refund period, calculated from the date of that specific purchase.\nOnce approved, each eligible amount will be refunded through the same payment provider and payment method used for the original transaction. Purchases made more than 90 days before the refund request are not eligible under the standard refund policy.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1386,7 +1386,7 @@
  {
   "category": "Refunds",
   "question": "How can I confirm the amount of my refund?",
-  "answer": "A refund is calculated per transaction rather than as one lump sum. Your original purchase and each add-on are reviewed separately, and each has to fall inside its own 60-day window.\n\nIf you have already sent a refund request, open **Support Tickets** in the sidebar and reply on that ticket asking for the total. Include the email address used for the purchase.\n\nIf you have not requested one yet, the amount is confirmed as part of the review. To request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nThe review covers which transactions were included, the amount paid for each, whether each is inside its own 60-day window, and whether it has already been approved or processed. Once a refund is processed the amount also appears in the refund confirmation, and each approved transaction is returned through the same payment provider and payment method used for that purchase.",
+  "answer": "A refund is calculated per transaction rather than as one lump sum. Your original purchase and each add-on are reviewed separately, and each has to fall inside its own 90-day window.\n\nIf you have already sent a refund request, open **Support Tickets** in the sidebar and reply on that ticket asking for the total. Include the email address used for the purchase.\n\nIf you have not requested one yet, the amount is confirmed as part of the review. To request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nThe review covers which transactions were included, the amount paid for each, whether each is inside its own 90-day window, and whether it has already been approved or processed. Once a refund is processed the amount also appears in the refund confirmation, and each approved transaction is returned through the same payment provider and payment method used for that purchase.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1400,7 +1400,7 @@
  {
   "category": "Refunds",
   "question": "How can I request a refund for a product or service I paid for but did not receive?",
-  "answer": "If you paid for a product, service or add-on that was never delivered or activated, the purchase can be reviewed and either delivered or refunded.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nInclude this in the request:\n- The email address used for the purchase\n- The name of the product or service you did not receive\n- The purchase date and amount, if you have them\n- That the item was never delivered or activated\n\nThe purchase is checked first to see whether it can still be delivered or activated. If you would rather not receive it, say so in the request and it is handled as a refund.\n\nRefund requests must be submitted within **60 days** of the purchase date. Approved refunds are returned through the same payment provider and payment method used for the original purchase.",
+  "answer": "If you paid for a product, service or add-on that was never delivered or activated, the purchase can be reviewed and either delivered or refunded.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nInclude this in the request:\n- The email address used for the purchase\n- The name of the product or service you did not receive\n- The purchase date and amount, if you have them\n- That the item was never delivered or activated\n\nThe purchase is checked first to see whether it can still be delivered or activated. If you would rather not receive it, say so in the request and it is handled as a refund.\n\nRefund requests must be submitted within **90 days** of the purchase date. Approved refunds are returned through the same payment provider and payment method used for the original purchase.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1421,21 +1421,21 @@
  {
   "category": "Refunds",
   "question": "How do I cancel my subscription or stop participating?",
-  "answer": "A cancellation request is handled as a refund request. If you want to cancel, open the Support Center in the sidebar and press Request a Refund in the \"Looking for a refund?\" box.\n\nOnce the request is received, it can be tracked through the Support process. You will receive updates as the request is reviewed and processed.\n\nThe standard refund eligibility period is 60 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
+  "answer": "A cancellation request is handled as a refund request. If you want to cancel, open the Support Center in the sidebar and press Request a Refund in the \"Looking for a refund?\" box.\n\nOnce the request is received, it can be tracked through the Support process. You will receive updates as the request is reviewed and processed.\n\nThe standard refund eligibility period is 90 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
   "source": "Knowledge_Base + Corrections",
   "rawCategory": ""
  },
  {
   "category": "Refunds",
   "question": "How do I cancel my subscription?",
-  "answer": "A cancellation request is handled as a refund request. Open the Support Center in the sidebar and press Request a Refund in the \"Looking for a refund?\" box.\n\nOnce the request is received it can be tracked through the Support process, and you will receive updates as it is reviewed. The standard refund eligibility period is 60 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
+  "answer": "A cancellation request is handled as a refund request. Open the Support Center in the sidebar and press Request a Refund in the \"Looking for a refund?\" box.\n\nOnce the request is received it can be tracked through the Support process, and you will receive updates as it is reviewed. The standard refund eligibility period is 90 days from the date of the relevant purchase, so the purchase date matters when the request is reviewed.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How do I request a refund?",
-  "answer": "Open the **Support Center** in the sidebar. In the box titled \"Looking for a refund?\" at the bottom of the page, press **Request a Refund** and submit the request for the relevant purchase.\n\nRefund requests do not go through the article flow. They are submitted directly, because a refund needs to be tracked from the moment it is sent.\n\nA refund request is eligible when it is submitted within **60 days** of the relevant purchase date. Each transaction or add-on is reviewed separately, and each is measured from its own purchase date. Once a refund is approved and processed, the time for the money to appear can depend on your payment provider or bank.\n\nKeep everything about the refund on that same ticket, under **Support Tickets** in the sidebar, so its status can be followed from start to finish.",
+  "answer": "Open the **Support Center** in the sidebar. In the box titled \"Looking for a refund?\" at the bottom of the page, press **Request a Refund** and submit the request for the relevant purchase.\n\nRefund requests do not go through the article flow. They are submitted directly, because a refund needs to be tracked from the moment it is sent.\n\nA refund request is eligible when it is submitted within **90 days** of the relevant purchase date. Each transaction or add-on is reviewed separately, and each is measured from its own purchase date. Once a refund is approved and processed, the time for the money to appear can depend on your payment provider or bank.\n\nKeep everything about the refund on that same ticket, under **Support Tickets** in the sidebar, so its status can be followed from start to finish.",
   "source": "Knowledge_Base + current Support design + user requirement",
   "rawCategory": ""
  },
@@ -1456,7 +1456,7 @@
  {
   "category": "Refunds",
   "question": "I would like a refund",
-  "answer": "To request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Describe what you are asking for and submit it.\n\nRefund requests do not go through the article flow. They are submitted directly and tracked from the moment you send them, and they appear under **Support Tickets** in the sidebar with their status.\n\nA request is eligible when it is submitted within **60 days** of the relevant purchase date. Each purchase and add-on is reviewed separately, from its own purchase date. Approved amounts are returned through the same payment provider and payment method used for the original purchase.",
+  "answer": "To request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Describe what you are asking for and submit it.\n\nRefund requests do not go through the article flow. They are submitted directly and tracked from the moment you send them, and they appear under **Support Tickets** in the sidebar with their status.\n\nA request is eligible when it is submitted within **90 days** of the relevant purchase date. Each purchase and add-on is reviewed separately, from its own purchase date. Approved amounts are returned through the same payment provider and payment method used for the original purchase.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1470,7 +1470,7 @@
  {
   "category": "Refunds",
   "question": "What should I do if I believe the service was misrepresented in an advertisement?",
-  "answer": "Concerns about what an advertisement promised are taken seriously. What was presented to you can be compared with the products and services actually active on your account, and any difference explained.\n\nIf something you purchased is missing, it is checked first to see whether it can still be delivered or activated.\n\nIf you would rather not continue, to request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nInclude this in the request:\n- The email address used for the purchase\n- A short explanation of what you expected to receive\n- What appears to be different in your account\n- A screenshot or copy of the advertisement, if you have one\n\nRefund requests must be submitted within **60 days** of the relevant purchase date.",
+  "answer": "Concerns about what an advertisement promised are taken seriously. What was presented to you can be compared with the products and services actually active on your account, and any difference explained.\n\nIf something you purchased is missing, it is checked first to see whether it can still be delivered or activated.\n\nIf you would rather not continue, to request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nInclude this in the request:\n- The email address used for the purchase\n- A short explanation of what you expected to receive\n- What appears to be different in your account\n- A screenshot or copy of the advertisement, if you have one\n\nRefund requests must be submitted within **90 days** of the relevant purchase date.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1505,7 +1505,7 @@
  {
   "category": "Refunds",
   "question": "How does the money-back guarantee work, and how do I request a refund?",
-  "answer": "**Requesting a refund**\nOpen the Support Center and click **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Fill in what you are asking for and submit.\n\nRefund requests do not go through the article flow — they are submitted directly and tracked from the moment you send them.\n\n**The standard guarantee**\nA refund request is eligible if it is submitted within **60 days** of the original purchase date. Each purchase and add-on is reviewed separately, and each is measured from its own purchase date. Approved amounts are returned the same way you originally paid.\n\n**The 200% guarantee**\nThe 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week, through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance, and completing at least three free support calls with a Success Manager.\n\nIf those requirements are not met you may still be eligible for a 100% refund under the standard policy, but not the additional 200%. Eligibility is reviewed against the activity and records on your account."
+  "answer": "**Requesting a refund**\nOpen the Support Center and click **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Fill in what you are asking for and submit.\n\nRefund requests do not go through the article flow — they are submitted directly and tracked from the moment you send them.\n\n**The standard guarantee**\nA refund request is eligible if it is submitted within **90 days** of the original purchase date. Each purchase and add-on is reviewed separately, and each is measured from its own purchase date. Approved amounts are returned the same way you originally paid.\n\n**The 200% guarantee**\nThe 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week, through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance, and completing at least three free support calls with a Success Manager.\n\nIf those requirements are not met you may still be eligible for a 100% refund under the standard policy, but not the additional 200%. Eligibility is reviewed against the activity and records on your account."
  },
  {
   "category": "Account & Security",
