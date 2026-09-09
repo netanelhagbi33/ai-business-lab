@@ -34,6 +34,80 @@ export function richText(s) {
   return esc(s).replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
 }
 
+/**
+ * Render an article body as real HTML blocks.
+ *
+ * The source is plain text with light markdown. Rendering it with
+ * `white-space: pre-line` made every line look identical — a heading, a
+ * list item and a sentence all got the same weight and the same spacing,
+ * which is what made long answers read as a wall.
+ *
+ * 187 of the articles use a single newline where they mean a paragraph
+ * break, so a lone newline separates paragraphs here rather than acting as
+ * a <br>. Blank lines separate blocks.
+ *
+ * Escaping still happens first, via richText(). No block type introduces
+ * markup from the source; the tags below are ours.
+ */
+export function renderArticle(text) {
+  const blocks = String(text ?? '').split(/\n\s*\n/);
+  const out = [];
+
+  for (const raw of blocks) {
+    const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+    if (!lines.length) continue;
+
+    const bulleted = lines.every(l => /^[-•*]\s+/.test(l));
+    const numbered = lines.some(l => /^\d+[.)]\s+/.test(l));
+
+    if (bulleted) {
+      out.push('<ul class="answer-list">'
+        + lines.map(l => `<li>${richText(l.replace(/^[-•*]\s+/, ''))}</li>`).join('')
+        + '</ul>');
+      continue;
+    }
+
+    if (numbered) {
+      // A line that does not start a new number continues the one above —
+      // "1. Choose your niche" followed by its explanation.
+      const items = [];
+      let first = null;
+      for (const line of lines) {
+        const m = line.match(/^(\d+)[.)]\s+/);
+        if (m) {
+          if (first === null) first = Number(m[1]);
+          items.push([line.slice(m[0].length)]);
+        } else if (items.length) {
+          items[items.length - 1].push(line);
+        } else {
+          items.push([line]);
+        }
+      }
+      // Articles often put a blank line between numbered items, which makes
+      // each one its own block. Carrying the source's own starting number
+      // stops every block restarting at 1.
+      const start = first && first !== 1 ? ` start="${first}"` : '';
+      out.push(`<ol class="answer-list"${start}>`
+        + items.map(parts =>
+            `<li>${parts.map(t => richText(t)).join('<span class="answer-cont"></span>')}</li>`)
+          .join('')
+        + '</ol>');
+      continue;
+    }
+
+    // Everything else: one paragraph per line. A line that is nothing but
+    // bold is a heading for what follows — most articles write the heading
+    // and its first paragraph on consecutive lines, so this is checked per
+    // line rather than per block.
+    lines.forEach(l => out.push(
+      /^\*\*[^*]+\*\*$/.test(l)
+        ? `<h4 class="answer-h">${richText(l.slice(2, -2))}</h4>`
+        : `<p>${richText(l)}</p>`));
+  }
+
+  return out.join('');
+}
+
 export const byId = id => document.getElementById(id);
 export const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 

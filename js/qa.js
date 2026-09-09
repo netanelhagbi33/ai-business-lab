@@ -14,7 +14,7 @@
    data/kb.json (184 KB) is fetched lazily on first entry.
    ============================================================ */
 
-import { esc, richText, byId, registerActions, loadJSON, renderError } from './dom.js';
+import { esc, richText, renderArticle, byId, registerActions, loadJSON, renderError } from './dom.js';
 import {
   markUnhelpful, markHelpful, markNoResults, isUnhelpful,
   canOpenTicket, REQUIRED_ATTEMPTS,
@@ -224,7 +224,7 @@ function showSearchState(query) {
    Rendering
    ============================================================ */
 
-const answerHtml = a => `<div class="answer-full">${richText(a)}</div>`;
+const answerHtml = a => `<div class="answer-full">${renderArticle(a)}</div>`;
 
 /**
  * Every answer ends with this. It is the only route to a support ticket:

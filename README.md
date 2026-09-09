@@ -290,6 +290,30 @@ wherever an answer had none of its own.
 change and refuse to write if a chat marker survives or a policy figure —
 $0.01, $99, $297, 60 days, NET-45 — is lost.
 
+## Article layout
+
+Article bodies go through `renderArticle()` in `js/dom.js`, which turns the
+plain-text source into real blocks — paragraphs, `<h4>` headings, `<ol>` and
+`<ul>` lists — so each can carry its own spacing.
+
+Before this the whole answer was one string under `white-space: pre-line`,
+which gave a heading, a list item and a sentence identical weight and
+identical spacing. That is what made long answers read as a wall.
+
+Two things the source does that the renderer has to respect:
+
+- **187 articles use a lone newline where they mean a paragraph break.** A
+  single newline therefore starts a new paragraph here; it is not a `<br>`.
+- **Numbered items are often separated by a blank line**, which makes each
+  its own block. The source's own number is carried through as `start=`, or
+  every block restarts at 1.
+
+Across the corpus that surfaces 20 headings, 12 numbered lists and 3 bullet
+lists that previously rendered as flat text. The measure is capped at 68ch.
+
+`renderArticle()` escapes before it adds structure, exactly as `richText()`
+does — three injection checks cover a paragraph, a heading and a list item.
+
 ## Article text
 
 Answers and guide copy render through `richText()` in `js/dom.js`, which

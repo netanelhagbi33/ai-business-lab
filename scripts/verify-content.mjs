@@ -154,6 +154,64 @@ console.log('\n=== RICH TEXT (**bold**)');
    phone number and email address included — and it ranked #1
    for "contact my representative".
    ============================================================ */
+
+console.log('\n=== ARTICLE STRUCTURE');
+{
+  const { renderArticle } = await import('../js/dom.js');
+
+  check('a bold-only line becomes a heading',
+        renderArticle('**Before you start**\nDo this first.'),
+        '<h4 class="answer-h">Before you start</h4><p>Do this first.</p>');
+
+  // 187 articles use a lone newline where they mean a new paragraph.
+  check('a lone newline separates paragraphs, it is not a <br>',
+        renderArticle('First point.\nSecond point.'),
+        '<p>First point.</p><p>Second point.</p>');
+
+  check('bullets become a list',
+        renderArticle('- One\n- Two'),
+        '<ul class="answer-list"><li>One</li><li>Two</li></ul>');
+
+  check('a numbered item keeps its continuation line',
+        renderArticle('1. Pick a niche\nThis decides the content.'),
+        '<ol class="answer-list"><li>Pick a niche<span class="answer-cont"></span>'
+        + 'This decides the content.</li></ol>');
+
+  // Blank lines between numbered items split them into separate blocks;
+  // without start= every block restarted at 1.
+  check('a list split by a blank line keeps counting',
+        renderArticle('1. First\n\n2. Second').includes('start="2"'), true);
+
+  check('empty input renders nothing', renderArticle(''), '');
+
+  // Structure must not become a way in for markup.
+  check('HTML in an article is still inert',
+        renderArticle('<img src=x onerror=alert(1)>'),
+        '<p>&lt;img src=x onerror=alert(1)&gt;</p>');
+  check('markup cannot ride in on a heading',
+        renderArticle('**<script>alert(1)</script>**'),
+        '<h4 class="answer-h">&lt;script&gt;alert(1)&lt;/script&gt;</h4>');
+  check('nor on a list item',
+        renderArticle('- <b>x</b>'),
+        '<ul class="answer-list"><li>&lt;b&gt;x&lt;/b&gt;</li></ul>');
+
+  // Nothing in the real corpus should render as an empty block.
+  const empties = kb.filter(x => !renderArticle(x.answer).trim());
+  check('every article renders to something', empties.length, 0);
+
+  const stray = kb.filter(x => /\*\*/.test(renderArticle(x.answer)));
+  check('no ** survives rendering', stray.length, 0);
+
+  const counts = kb.reduce((m, x) => {
+    const h = renderArticle(x.answer);
+    m.h += (h.match(/<h4/g) || []).length;
+    m.ol += (h.match(/<ol/g) || []).length;
+    m.ul += (h.match(/<ul/g) || []).length;
+    return m;
+  }, { h: 0, ol: 0, ul: 0 });
+  console.log(`      across the corpus: ${counts.h} headings, ${counts.ol} numbered lists, ${counts.ul} bullet lists`);
+}
+
 console.log('\n=== NO PERSONAL DATA');
 {
   const text = JSON.stringify(kb);

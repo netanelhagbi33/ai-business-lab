@@ -287,13 +287,55 @@
   color: var(--brand-strong);
   margin-bottom: var(--sp-2);
 }
+/* ============================================================
+   Article body.
+
+   renderArticle() emits real blocks — paragraphs, headings and
+   lists — so each can carry its own rhythm. Before this the
+   whole answer was one pre-line string and a heading looked
+   exactly like a sentence.
+   ============================================================ */
 .answer-full {
-  white-space: pre-line;
   color: var(--text-secondary);
-  line-height: var(--lh-relaxed);
   font-size: var(--fs-4);
-  max-width: 74ch;      /* long answers stay readable */
+  line-height: var(--lh-relaxed);
+  /* ~70 characters is the comfortable measure; past that the eye
+     loses the start of the next line. */
+  max-width: 68ch;
 }
+
+.answer-full > p { margin: 0 0 var(--sp-4); }
+.answer-full > p:last-child { margin-bottom: 0; }
+
+/* Headings need much more space above than below: the gap is what
+   attaches them to the text they introduce. */
+.answer-full .answer-h {
+  margin: var(--sp-5) 0 var(--sp-2);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--text);
+}
+.answer-full > .answer-h:first-child { margin-top: 0; }
+
+.answer-full .answer-list {
+  margin: 0 0 var(--sp-4);
+  padding-left: var(--sp-5);
+  display: grid;
+  gap: var(--sp-3);
+}
+.answer-full .answer-list:last-child { margin-bottom: 0; }
+.answer-full .answer-list li { padding-left: var(--sp-1); }
+.answer-full .answer-list li::marker {
+  color: var(--brand-strong);
+  font-weight: var(--fw-bold);
+}
+
+/* A numbered item whose explanation runs onto the next line: the
+   break keeps them together without a paragraph gap. */
+.answer-cont { display: block; height: var(--sp-1); }
+
+.answer-full strong { color: var(--text); font-weight: var(--fw-bold); }
 
 /* --- Best-match / escalation card ----------------------- */
 .answer-card {
