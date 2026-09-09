@@ -136,7 +136,7 @@ check('build guide step titles', B.guides.build, A.guides.build);
 // Step 9 was retitled when support moved to the Support-Center-first
 // route; the original said "view and manage tickets", which described the
 // old shortcut. Declared so the other eight titles are still pinned.
-const RETITLED = { 8: 'Support — find an answer, then open a ticket if you need one' };
+const RETITLED = { 8: 'Support — find your answer in the Support Center' };
 const expectedLive = A.guides.live.map((t, i) => RETITLED[i] ?? t);
 check('live guide step titles, allowing the declared retitle',
       B.guides.live, expectedLive);

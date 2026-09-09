@@ -213,5 +213,14 @@
    "label": "Support Tickets — where your tickets live",
    "tone": "orange"
   }
+ ],
+ "support-center-tab.png": [
+  {
+   "x": 4.615,
+   "y": 60.736,
+   "w": 90.385,
+   "h": 28.221,
+   "label": "Support Center — where every answer starts"
+  }
  ]
 }

@@ -154,24 +154,25 @@
   },
   {
    "n": 9,
-   "title": "Support — find an answer, then open a ticket if you need one",
-   "simple": "Help starts in the Support Center. Search your problem in your own words, or open the topic that fits it — most questions are already answered there. If nothing answers it, you will be able to open a support ticket, and it is tracked under Support Tickets.",
+   "title": "Support — find your answer in the Support Center",
+   "simple": "Help starts in the Support Center. Search your problem in your own words, or open the topic that fits it — most questions are already answered there, in one short article. Tickets you have already sent are tracked under Support Tickets.",
    "tip": "Refund requests are the exception. They are submitted directly with Request a Refund, and they appear under Support Tickets like any other ticket.",
    "images": [
-    "8d0c15eb-3148-4b54-a5b5-b226aa5ec463.png",
-    "support-tickets-tab.png"
+    "support-center-tab.png",
+    "support-tickets-tab.png",
+    "8d0c15eb-3148-4b54-a5b5-b226aa5ec463.png"
    ],
    "rules": {
     "title": "HOW TO GET HELP",
-    "lead": "Support works in this order, and each step answers most of the people who reach it:",
+    "lead": "Support works in this order, and most questions are answered before the last step:",
     "items": [
      "Open the Support Center from the sidebar.",
-     "Search in your own words, or open the topic that matches your problem.",
-     "Read the article that looks closest, and tell us at the end whether it solved it.",
-     "If the answers do not solve it, you will be able to open a support ticket from inside the article.",
-     "A Support Tickets tab then appears in the sidebar. Open it any time to see every ticket you sent, its status, and the replies on it."
+     "Search in your own words — type the problem the way you would say it out loud.",
+     "Or open the topic that matches your problem, and read the question closest to yours.",
+     "Tell us at the end whether the article solved it. That is how we know which answers are working and where you still need us.",
+     "Already sent a ticket? Open Support Tickets in the sidebar to see it, its status, and the replies on it."
     ],
-    "example": "Support Tickets only shows up once you have opened one, and it stays there afterwards. Tickets show as In Progress while the Support Team is working on them, and Closed once they are resolved."
+    "example": "Support Tickets only appears in the sidebar once you have a ticket, and it stays there afterwards. Tickets show as In Progress while the Support Team is working on them, and Closed once they are resolved."
    }
   }
  ]
