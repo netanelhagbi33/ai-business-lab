@@ -140,12 +140,13 @@ console.log('\n=== RICH TEXT (**bold**)');
 
   const bolded = kb.filter(x => richText(x.answer).includes('<strong>')).length;
   console.log(`      ${bolded} articles render bold text`);
-  // 11 after the voice rewrite, 18 after the Start Here guides, 36 once the
-  // support-route rewrite bolded the destination in every article that names
-  // one. Bold marks branch headings, the named options in a list, and now the
-  // tab the reader is being sent to — which is what makes a multi-part answer
-  // scannable instead of a wall of text.
-  check('the articles that use bold still do', bolded, 36);
+  // A floor, not an exact count. What this guards against is bold being
+  // stripped by a later pass — the run that collapsed whitespace across the
+  // knowledge base took the emphasis with it. Content work legitimately adds
+  // bold, and an exact number failed twice in a row for that reason alone.
+  // 11 after the voice rewrite, 18 after the Start Here guides, 50 once the
+  // support and refund routes were bolded wherever they are named.
+  check('bold survives in the articles that use it', bolded >= 50, true);
 }
 
 /* ============================================================
@@ -416,6 +417,54 @@ console.log('\n=== NO ARTICLE TEACHES THE OLD SUPPORT ROUTE');
     .map(a => a.question.slice(0, 44));
   check('every article naming the Request a Refund button says where it is',
         wrongPlace, []);
+}
+
+/* ============================================================
+   An article that asks for details says where they go.
+
+   "Please provide: the email address used for the purchase, the
+   name of the product…" and then nothing — no destination. That is
+   a support agent's half of a conversation kept as an article, and
+   28 of them were in here. Worse, several promised "we will submit
+   the request for you", which stopped being true when refunds moved
+   to the Request a Refund button.
+   ============================================================ */
+console.log('\n=== A REQUEST FOR DETAILS NAMES ITS DESTINATION');
+{
+  const ASK = /please provide|provide the following|provide us with|provide the Support Team with/i;
+  const DEST = /Support Center|Support Tickets|Support Team|Request a Refund/;
+  const orphan = kb.filter(a => ASK.test(a.answer) && !DEST.test(a.answer))
+                   .map(a => `[${a.category}] ${a.question.slice(0, 40)}`);
+  check('no article asks for details with nowhere to send them', orphan, []);
+
+  // A Refunds article is either about getting a refund, which means the
+  // button, or about following one already sent, which means the tab.
+  const noRoute = kb
+    .filter(a => a.category === 'Refunds')
+    .filter(a => !/Request a Refund/.test(a.answer) && !/Support Tickets/.test(a.answer))
+    .map(a => a.question.slice(0, 46));
+  check('every Refunds article names a destination', noRoute, []);
+
+  const filedForYou = kb
+    .filter(a => /we will submit the request for you|start the process right away/i.test(a.answer))
+    .map(a => a.question.slice(0, 46));
+  check('no article claims somebody else files the request', filedForYou, []);
+
+  // An answer wrapped end to end in straight quotes is a pasted agent reply.
+  // One of them told the reader their refund request had been received when
+  // nothing had been sent.
+  const pasted = kb.filter(a => /^"[\s\S]*"$/.test(a.answer.trim()))
+                   .map(a => a.question.slice(0, 46));
+  check('no answer is a pasted agent reply', pasted, []);
+
+  // Security wording that must not be softened away by a later pass.
+  check('no article asks a customer to send a password',
+        kb.filter(a => /send us the new password/i.test(a.answer)).length, 0);
+  for (const warning of ['Do not send us your password',
+                         'Never send us your full card number']) {
+    check(`kept the warning: "${warning}"`,
+          kb.some(a => a.answer.includes(warning)), true);
+  }
 }
 
 console.log('\n=== UNFILLED PLACEHOLDERS (reported, not enforced)');

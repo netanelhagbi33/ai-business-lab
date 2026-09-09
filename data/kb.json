@@ -142,7 +142,7 @@
  {
   "category": "Building My Site",
   "question": "How can I confirm that my store is online and functioning correctly?",
-  "answer": "Open your public website domain in a regular browser or private/incognito window.\nConfirm that:\nThe homepage loads correctly\nThe categories and articles open normally\nThe images, logo, and website design appear correctly\nYou are using the public website link, not the AI Assistant, setup page, login page, or dashboard link\nYou can also send the domain to another person and ask them to open it from a different device or internet connection.\nIf the website does not load or any part of it is missing, send us the website domain and a screenshot of the issue so we can check its status and technical configuration.",
+  "answer": "Open your public website domain in a regular browser or private/incognito window.\nConfirm that:\nThe homepage loads correctly\nThe categories and articles open normally\nThe images, logo, and website design appear correctly\nYou are using the public website link, not the AI Assistant, setup page, login page, or dashboard link\nYou can also send the domain to another person and ask them to open it from a different device or internet connection.\nIf the website does not load or any part of it is missing, send the website domain and a screenshot of the issue to the Support Team, who can check its status and technical configuration.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Status, Build & Launch"
  },
@@ -170,7 +170,7 @@
  {
   "category": "Building My Site",
   "question": "My account says the website is live, but the website does not load. What should I do?",
-  "answer": "First, make sure you are opening the correct public website domain, not the AI Assistant, setup page, login page, or dashboard link.\nYou can also refresh the page, clear your browser cache, or open the website in a private or incognito window.\nIf the website still does not load, please provide the website domain and a screenshot of the error message. We will check the website’s activation status, domain connection, and technical configuration to identify and correct the issue.",
+  "answer": "First, make sure you are opening the correct public website domain, not the AI Assistant, setup page, login page, or dashboard link.\nYou can also refresh the page, clear your browser cache, or open the website in a private or incognito window.\nIf the website still does not load, send the website domain and a screenshot of the error message to the Support Team. We will check the website’s activation status, domain connection, and technical configuration to identify and correct the issue.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Status, Build & Launch"
  },
@@ -324,7 +324,7 @@
  {
   "category": "Dashboard & Access",
   "question": "What should I do if I cannot access the dashboard link sent to my email?",
-  "answer": "The link in the email may be expired, incomplete, or blocked by your browser.\nYou can access your dashboard directly by going to:\nhttps://aibusiness-lab.com/\nUse the email address entered during registration as your username. You can then log in using either:\nYour password\nThe phone number connected to your account\nIf you still cannot log in, try opening the website in another browser or a private/incognito window.\nIf the problem continues, send us the error message or a screenshot. We can check the email address, phone number, and login details connected to your account.",
+  "answer": "The link in the email may be expired, incomplete, or blocked by your browser.\nYou can access your dashboard directly by going to:\nhttps://aibusiness-lab.com/\nUse the email address entered during registration as your username. You can then log in using either:\nYour password\nThe phone number connected to your account\nIf you still cannot log in, try opening the website in another browser or a private/incognito window.\nIf the problem continues, send the error message or a screenshot to the Support Team. We can check the email address, phone number, and login details connected to your account.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
@@ -345,7 +345,7 @@
  {
   "category": "Dashboard & Access",
   "question": "Why are my buttons disabled or grayed out?",
-  "answer": "A disabled or grayed-out button usually means that the feature is not currently available on your account.\n\nThis may happen because:\n\nThe feature is already active or was already used\nA required setup step has not been completed\nThe product or feature is still being delivered\nThe option is not included in your current package\nYour account or website information is still being updated\nThere is a temporary browser or technical issue\n\nPlease tell us which button appears grayed out, or send us a screenshot. We will check your account and explain exactly what is preventing the feature from being used.\n\nYou can also try refreshing the AI Assistant or signing in again through:\n\nhttps://aibusiness-lab.com/",
+  "answer": "A disabled or grayed-out button usually means that the feature is not currently available on your account.\n\nThis may happen because:\n\nThe feature is already active or was already used\nA required setup step has not been completed\nThe product or feature is still being delivered\nThe option is not included in your current package\nYour account or website information is still being updated\nThere is a temporary browser or technical issue\n\nTell the Support Team which button appears grayed out, or send a screenshot. We will check your account and explain exactly what is preventing the feature from being used.\n\nYou can also try refreshing the AI Assistant or signing in again through:\n\nhttps://aibusiness-lab.com/",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
@@ -359,21 +359,21 @@
  {
   "category": "Dashboard & Access",
   "question": "Why does my dashboard link open and then immediately close?",
-  "answer": "This usually happens when you are opening an old or temporary login link, or when your browser is blocking the login session.\nPlease go directly to:\nhttps://aibusiness-lab.com/\nThen log in using:\nUsername: the email address used during registration\nLogin method: your password or the phone number connected to your account\nIf the page still closes or redirects, try:\nOpening the link in Chrome or Safari\nUsing a private or incognito window\nClearing your browser’s cache and cookies\nTrying another device or browser\nIf the issue continues, send us a screenshot or screen recording, and we will check your account and login details.",
+  "answer": "This usually happens when you are opening an old or temporary login link, or when your browser is blocking the login session.\nPlease go directly to:\nhttps://aibusiness-lab.com/\nThen log in using:\nUsername: the email address used during registration\nLogin method: your password or the phone number connected to your account\nIf the page still closes or redirects, try:\nOpening the link in Chrome or Safari\nUsing a private or incognito window\nClearing your browser’s cache and cookies\nTrying another device or browser\nIf the issue continues, send a screenshot or screen recording to the Support Team, who will check your account and login details.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
  {
   "category": "Dashboard & Access",
   "question": "Why does my login keep sending me to the password reset page?",
-  "answer": "This usually means that your password is not recognized, has not been set correctly, or the link you are opening is connected to the password-reset process.\nPlease go directly to:\nhttps://aibusiness-lab.com/\nUse your registration email as your username. You can log in using either:\nYour password\nThe phone number connected to your account\nIf you are automatically redirected to the password-reset page again, send us a screenshot of what appears. We can check your account details and reset your password when necessary.",
+  "answer": "This usually means that your password is not recognized, has not been set correctly, or the link you are opening is connected to the password-reset process.\nPlease go directly to:\nhttps://aibusiness-lab.com/\nUse your registration email as your username. You can log in using either:\nYour password\nThe phone number connected to your account\nIf you are automatically redirected to the password-reset page again, send a screenshot of what appears to the Support Team. We can check your account details and reset your password when necessary.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
  {
   "category": "Dashboard & Access",
   "question": "Why is the Boosters section missing from my dashboard?",
-  "answer": "The Boosters section should appear in the left-side menu of your AI Assistant under:\n🚀 Boosters\nThis section displays all Booster options currently available in the system, including both free Boosters and paid Boosters.\nAfter you purchase or activate a Booster, the purchase button will change into a countdown timer. This timer shows how much time remains before the Booster expires.\nThe activation period and total duration depend on the specific type of Booster selected.\nIf the Boosters tab is completely missing from your left-side menu, please send us a screenshot. We can check your account and confirm whether the feature is correctly enabled.",
+  "answer": "The Boosters section should appear in the left-side menu of your AI Assistant under:\n🚀 Boosters\nThis section displays all Booster options currently available in the system, including both free Boosters and paid Boosters.\nAfter you purchase or activate a Booster, the purchase button will change into a countdown timer. This timer shows how much time remains before the Booster expires.\nThe activation period and total duration depend on the specific type of Booster selected.\nIf the Boosters tab is completely missing from your left-side menu, send a screenshot to the Support Team. We can check your account and confirm whether the feature is correctly enabled.",
   "source": "Knowledge_Base",
   "rawCategory": "Dashboard, Login & Access"
  },
@@ -686,7 +686,7 @@
  {
   "category": "Website & Content",
   "question": "Why is contact information missing from my website footer?",
-  "answer": "Contact information should normally appear in your website footer when it has been configured correctly.\nIf the information is missing, it may indicate a technical or configuration issue. We will review your website settings and footer configuration to identify the cause and restore the missing details.\nPlease provide your website domain and, when possible, a screenshot showing the missing information so we can investigate the issue.",
+  "answer": "Contact information should normally appear in your website footer when it has been configured correctly.\nIf the information is missing, it may indicate a technical or configuration issue. We will review your website settings and footer configuration to identify the cause and restore the missing details.\nSend your website domain to the Support Team and, when possible, a screenshot showing the missing information, so the cause can be investigated.",
   "source": "Knowledge_Base",
   "rawCategory": "Website Design, Content & Features"
  },
@@ -777,7 +777,7 @@
  {
   "category": "Traffic & Boosters",
   "question": "What should I do if a Booster or Article Pack I purchased is not showing in my account?",
-  "answer": "Boosters and Article Packs are normally added to your account automatically and should appear within a few minutes after the purchase is completed.\nPlease refresh your account and check again:\nPurchased Boosters should appear in the Boosters section.\nAdditional articles should appear on your website once the Article Pack has been activated.\nIf the product still does not appear after a few minutes, the Support Team will review the purchase and confirm that it was successfully processed and assigned to the correct website.\nPlease provide the email address connected to your account and, when available, the purchase receipt or transaction details.",
+  "answer": "Boosters and Article Packs are normally added to your account automatically and should appear within a few minutes after the purchase is completed.\nPlease refresh your account and check again:\nPurchased Boosters should appear in the Boosters section.\nAdditional articles should appear on your website once the Article Pack has been activated.\nIf the product still does not appear after a few minutes, the Support Team will review the purchase and confirm that it was successfully processed and assigned to the correct website.\nInclude the email address connected to your account and, when available, the purchase receipt or transaction details, when you write to the Support Team.",
   "source": "Knowledge_Base",
   "rawCategory": "Traffic, Boosters & Earnings"
  },
@@ -1057,14 +1057,14 @@
  {
   "category": "Earnings & Payouts",
   "question": "Why did my impressions, clicks, or earnings reset to zero?",
-  "answer": "A zero balance or statistics display does not always mean that your previous data was deleted.\nThis may happen when:\nA new reporting day or month has started\nA different date range or website is selected\nYour dashboard is still synchronizing the latest data\nYou recently logged in from a new browser or device\nThere is a temporary display or connection issue\nPlease refresh your AI Assistant dashboard, then use Check my stats or Daily earnings to confirm the selected reporting period.\nYour historical activity should remain recorded. If the figures continue to show zero, send us a screenshot and tell us when you last saw the previous totals. We will review the account and verify whether the issue is only visual or whether the data requires technical attention.",
+  "answer": "A zero balance or statistics display does not always mean that your previous data was deleted.\nThis may happen when:\nA new reporting day or month has started\nA different date range or website is selected\nYour dashboard is still synchronizing the latest data\nYou recently logged in from a new browser or device\nThere is a temporary display or connection issue\nPlease refresh your AI Assistant dashboard, then use Check my stats or Daily earnings to confirm the selected reporting period.\nYour historical activity should remain recorded. If the figures continue to show zero, send the Support Team a screenshot and say when you last saw the previous totals. We will review the account and verify whether the issue is only visual or whether the data requires technical attention.",
   "source": "Knowledge_Base",
   "rawCategory": "Earnings & Performance"
  },
  {
   "category": "Earnings & Payouts",
   "question": "Why does my balance appear to be decreasing?",
-  "answer": "A lower balance does not always mean that your earnings were lost. The dashboard displays different types of balances, and the amount shown may change when earnings are processed or moved between stages.\nPossible reasons include:\nA withdrawal request was submitted or completed\nEarnings moved from a pending balance to another balance category\nPreliminary activity was adjusted after traffic and advertising data were verified\nA different website, month, or reporting period is being displayed\nThe dashboard is temporarily synchronizing updated information\nA completed withdrawal will reduce your current available balance, but it should still appear in your withdrawal history. Adjustments may also occur when the system reviews impressions, clicks, or other activity before confirming the final amount.\nOpen your AI Assistant dashboard and use:\nCheck billing to review your current balance and withdrawal status\nDaily earnings to review the earnings recorded for each day\nPast withdrawals to view previous withdrawal requests\nIf the decrease is still unclear, send us a screenshot and tell us the previous and current amounts. We will review the account and explain the exact reason for the change.",
+  "answer": "A lower balance does not always mean that your earnings were lost. The dashboard displays different types of balances, and the amount shown may change when earnings are processed or moved between stages.\nPossible reasons include:\nA withdrawal request was submitted or completed\nEarnings moved from a pending balance to another balance category\nPreliminary activity was adjusted after traffic and advertising data were verified\nA different website, month, or reporting period is being displayed\nThe dashboard is temporarily synchronizing updated information\nA completed withdrawal will reduce your current available balance, but it should still appear in your withdrawal history. Adjustments may also occur when the system reviews impressions, clicks, or other activity before confirming the final amount.\nOpen your AI Assistant dashboard and use:\nCheck billing to review your current balance and withdrawal status\nDaily earnings to review the earnings recorded for each day\nPast withdrawals to view previous withdrawal requests\nIf the decrease is still unclear, send the Support Team a screenshot with the previous and current amounts. We will review the account and explain the exact reason for the change.",
   "source": "Knowledge_Base",
   "rawCategory": "Earnings & Performance"
  },
@@ -1120,7 +1120,7 @@
  {
   "category": "Purchases & Billing",
   "question": "How can I get a receipt or invoice for my purchase?",
-  "answer": "Purchase receipts are usually sent directly to the email address used for the payment by the third-party payment processor.\nPlease check your:\nInbox\nSpam or junk folder\nEmails from the payment provider used for the purchase\nOur system does not currently send receipts or invoices automatically.\nIf you cannot locate your receipt, let the Support Team know and we can request a copy for you.\nTo request an invoice, please provide:\nYour full name\nYour account email\nThe product or service purchased\nThe purchase date\nThe amount paid\nAny business or billing details that should appear on the invoice\nThe Support Team will submit the request for processing and update you once the invoice is ready.",
+  "answer": "Purchase receipts are usually sent directly to the email address used for the payment by the third-party payment processor.\nPlease check your:\nInbox\nSpam or junk folder\nEmails from the payment provider used for the purchase\nOur system does not currently send receipts or invoices automatically.\nIf you cannot locate your receipt, let the Support Team know and we can request a copy for you.\nTo request an invoice, include this when you write to the Support Team:\nYour full name\nYour account email\nThe product or service purchased\nThe purchase date\nThe amount paid\nAny business or billing details that should appear on the invoice\nThe Support Team will submit the request for processing and update you once the invoice is ready.",
   "source": "Knowledge_Base",
   "rawCategory": "Purchases, Receipts & Billing"
  },
@@ -1141,7 +1141,7 @@
  {
   "category": "Purchases & Billing",
   "question": "I was charged, but my purchase is not showing in my dashboard. What should I do?",
-  "answer": "You can review your completed purchases directly through the AI Assistant:\nClick the + icon on the left side of the text field.\nOpen the purchases feature.\nReview the products and services connected to your account.\nIf the purchase is still not displayed, please provide the Support Team with:\nYour account email\nThe product you purchased\nThe amount charged\nThe approximate purchase date\nA receipt or screenshot of the transaction, when available\nWe will verify the transaction. If the purchase was completed but is not appearing because of a technical issue, we will report the problem and arrange for the purchase information to be corrected.",
+  "answer": "You can review your completed purchases directly through the AI Assistant:\nClick the + icon on the left side of the text field.\nOpen the purchases feature.\nReview the products and services connected to your account.\nIf the purchase is still not displayed, include this when you write to the Support Team:\nYour account email\nThe product you purchased\nThe amount charged\nThe approximate purchase date\nA receipt or screenshot of the transaction, when available\nWe will verify the transaction. If the purchase was completed but is not appearing because of a technical issue, we will report the problem and arrange for the purchase information to be corrected.",
   "source": "Knowledge_Base",
   "rawCategory": "Purchases, Receipts & Billing"
  },
@@ -1204,21 +1204,21 @@
  {
   "category": "Purchases & Billing",
   "question": "Why am I being asked to make another payment after completing my purchase?",
-  "answer": "Some features in AI Business Lab are connected to optional upgrades or additional services. When you open one of these features, the system may redirect you to a page where you can review or purchase the relevant package.\nAdditional upgrades are optional and are not required for your website to remain active and operational.\nYour standard package already includes the website, its initial content, and the basic tools needed to use the system.\nOptional upgrades may include:\nAdditional articles and content\nTraffic and SEO services\nSocial media setup and management\nA custom branded domain\nAdditional websites\nMore hands-off management options\nIf the page appears unrelated to AI Business Lab, requests payment through an unfamiliar provider, or opens unexpectedly while using a standard feature, do not complete the payment. Send us the page or a screenshot, and we will review the redirect.",
+  "answer": "Some features in AI Business Lab are connected to optional upgrades or additional services. When you open one of these features, the system may redirect you to a page where you can review or purchase the relevant package.\nAdditional upgrades are optional and are not required for your website to remain active and operational.\nYour standard package already includes the website, its initial content, and the basic tools needed to use the system.\nOptional upgrades may include:\nAdditional articles and content\nTraffic and SEO services\nSocial media setup and management\nA custom branded domain\nAdditional websites\nMore hands-off management options\nIf the page appears unrelated to AI Business Lab, requests payment through an unfamiliar provider, or opens unexpectedly while using a standard feature, do not complete the payment. Send the page or a screenshot to the Support Team, who will review the redirect.",
   "source": "Knowledge_Base",
   "rawCategory": "Purchases, Receipts & Billing"
  },
  {
   "category": "Purchases & Billing",
   "question": "Why am I being redirected to pages asking me to make additional purchases?",
-  "answer": "Some features in AI Business Lab are connected to optional upgrades or additional services. When you open one of these features, the system may redirect you to a page where you can review or purchase the relevant package.\nThese purchases are optional. Your existing website can remain active and operational without buying additional upgrades.\nIf the page appears unrelated to AI Business Lab, requests payment through an unfamiliar provider, or opens unexpectedly while using a standard feature, do not complete the payment. Send us the page or a screenshot, and we will review the redirect.",
+  "answer": "Some features in AI Business Lab are connected to optional upgrades or additional services. When you open one of these features, the system may redirect you to a page where you can review or purchase the relevant package.\nThese purchases are optional. Your existing website can remain active and operational without buying additional upgrades.\nIf the page appears unrelated to AI Business Lab, requests payment through an unfamiliar provider, or opens unexpectedly while using a standard feature, do not complete the payment. Send the page or a screenshot to the Support Team, who will review the redirect.",
   "source": "Knowledge_Base",
   "rawCategory": "Purchases, Receipts & Billing"
  },
  {
   "category": "Purchases & Billing",
   "question": "Why is my upgrade not showing after payment?",
-  "answer": "You can review your completed purchases directly through the AI Assistant:\nClick the + icon on the left side of the text field.\nOpen the Purchases feature.\nReview the products and services connected to your account.\nIf the upgrade is still not displayed, please provide:\nYour account email\nThe product or upgrade purchased\nThe amount charged\nThe approximate purchase date\nA receipt or screenshot of the transaction, when available\nWe will verify the transaction. If the purchase was completed but is not appearing because of a technical issue, we will report the problem and arrange for the purchase information to be corrected.",
+  "answer": "You can review your completed purchases directly through the AI Assistant:\nClick the + icon on the left side of the text field.\nOpen the Purchases feature.\nReview the products and services connected to your account.\nIf the upgrade is still not displayed, include this when you write to the Support Team:\nYour account email\nThe product or upgrade purchased\nThe amount charged\nThe approximate purchase date\nA receipt or screenshot of the transaction, when available\nWe will verify the transaction. If the purchase was completed but is not appearing because of a technical issue, we will report the problem and arrange for the purchase information to be corrected.",
   "source": "Knowledge_Base",
   "rawCategory": "Purchases, Receipts & Billing"
  },
@@ -1365,49 +1365,49 @@
  {
   "category": "Refunds",
   "question": "Am I eligible for the advertised money-back guarantee?",
-  "answer": "Yes, as long as your refund request is submitted within 60 days of the original purchase date.\nThis means you have up to 60 days from the date of purchase to change your mind and request a refund.\nAfter the 60-day period has passed, the purchase is no longer eligible for a refund under the money-back guarantee.",
+  "answer": "Yes, as long as your refund request is submitted within 60 days of the original purchase date.\nThis means you have up to 60 days from the date of purchase to change your mind and request a refund.\nAfter the 60-day period has passed, the purchase is no longer eligible for a refund under the money-back guarantee.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "Can I request a refund for all of my purchases and add-ons?",
-  "answer": "Yes. You may request a refund for your original purchase as well as any additional products or add-ons you purchased.\nEach transaction is reviewed separately and must be within the 60-day refund period, calculated from the date of that specific purchase.\nOnce approved, each eligible amount will be refunded through the same payment provider and payment method used for the original transaction. Purchases made more than 60 days before the refund request are not eligible under the standard refund policy.",
+  "answer": "Yes. You may request a refund for your original purchase as well as any additional products or add-ons you purchased.\nEach transaction is reviewed separately and must be within the 60-day refund period, calculated from the date of that specific purchase.\nOnce approved, each eligible amount will be refunded through the same payment provider and payment method used for the original transaction. Purchases made more than 60 days before the refund request are not eligible under the standard refund policy.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "Does the money-back guarantee provide a 100% or 200% refund?",
-  "answer": "The 200% money-back guarantee is not automatic. It applies only when the published eligibility requirements are met.\nTo qualify for the 200% guarantee, the account must meet the applicable conditions, including either:\nNot earning the first $0.01 within the first week through advertising activity shown on the website dashboard; or\nActively promoting the website for 60 days according to our guidance and completing at least three free support calls with a Success Manager.\nIf these requirements are not met, you may still be eligible for a 100% refund under the standard refund policy, but not for the additional 200% guarantee.\nEligibility is reviewed based on the activity and records associated with your account.",
+  "answer": "The 200% money-back guarantee is not automatic. It applies only when the published eligibility requirements are met.\nTo qualify for the 200% guarantee, the account must meet the applicable conditions, including either:\nNot earning the first $0.01 within the first week through advertising activity shown on the website dashboard; or\nActively promoting the website for 60 days according to our guidance and completing at least three free support calls with a Success Manager.\nIf these requirements are not met, you may still be eligible for a 100% refund under the standard refund policy, but not for the additional 200% guarantee.\nEligibility is reviewed based on the activity and records associated with your account.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How can I confirm the amount of my refund?",
-  "answer": "We can review your account and confirm the exact amount included in your refund.\nPlease provide the email address used for the purchase. We will check:\nThe original purchase and any additional products or add-ons\nThe amount paid for each transaction\nWhich transactions were included in the refund request\nWhether each purchase is within the 60-day refund period\nWhether the refund has already been approved or processed\nOnce the review is complete, we will confirm the total refund amount with you.\nIf the refund has already been processed, the amount should also appear in your refund confirmation. Each approved transaction is refunded through the same payment provider and payment method used for that purchase.",
+  "answer": "A refund is calculated per transaction rather than as one lump sum. Your original purchase and each add-on are reviewed separately, and each has to fall inside its own 60-day window.\n\nIf you have already sent a refund request, open **Support Tickets** in the sidebar and reply on that ticket asking for the total. Include the email address used for the purchase.\n\nIf you have not requested one yet, the amount is confirmed as part of the review. To request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nThe review covers which transactions were included, the amount paid for each, whether each is inside its own 60-day window, and whether it has already been approved or processed. Once a refund is processed the amount also appears in the refund confirmation, and each approved transaction is returned through the same payment provider and payment method used for that purchase.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How can I receive the 200% refund as explained in your promotional material?",
-  "answer": "The 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance and completing at least three free support calls with a Success Manager.\n\nIf any earnings were generated in the first week, the first condition is not met. If the requirements are not met you may still be eligible for a 100% refund under the standard refund policy, but not for the additional 200% guarantee.\n\nEligibility is reviewed based on the activity and records associated with your account.",
+  "answer": "The 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance and completing at least three free support calls with a Success Manager.\n\nIf any earnings were generated in the first week, the first condition is not met. If the requirements are not met you may still be eligible for a 100% refund under the standard refund policy, but not for the additional 200% guarantee.\n\nEligibility is reviewed based on the activity and records associated with your account.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How can I request a refund for a product or service I paid for but did not receive?",
-  "answer": "If you paid for a product, service, or add-on that was not delivered or activated, we can review the purchase and help you resolve the issue.\nPlease provide:\nThe email address used for the purchase\nThe name of the product or service you did not receive\nThe purchase date and amount, if available\nWe will check whether the purchase can still be delivered or activated.\nIf you no longer wish to receive it, please confirm that you would like us to begin the refund process, and we will submit the request for you.\nPlease note that refund requests must be submitted within 60 days of the purchase date. Eligible refunds are returned through the same payment provider and payment method used for the original purchase.",
+  "answer": "If you paid for a product, service or add-on that was never delivered or activated, the purchase can be reviewed and either delivered or refunded.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nInclude this in the request:\n- The email address used for the purchase\n- The name of the product or service you did not receive\n- The purchase date and amount, if you have them\n- That the item was never delivered or activated\n\nThe purchase is checked first to see whether it can still be delivered or activated. If you would rather not receive it, say so in the request and it is handled as a refund.\n\nRefund requests must be submitted within **60 days** of the purchase date. Approved refunds are returned through the same payment provider and payment method used for the original purchase.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How can I resolve a refund dispute before it escalates to a chargeback?",
-  "answer": "We always prefer to resolve refund concerns directly and issue the refund as quickly as possible, rather than allowing the matter to continue through a chargeback or payment dispute.\nA chargeback can take several weeks, and in some cases several months, to be resolved by the bank or payment provider. Once a chargeback is opened, the transaction funds are placed under dispute, which means we may be unable to issue a separate direct refund while the chargeback remains active.\nThe fastest option is usually to:\nContact your bank or payment provider and request that the chargeback be withdrawn or cancelled.\nAsk them for confirmation that the dispute has been closed.\nSend us that confirmation so we can verify the status and begin the refund process.\nOnce the chargeback has been officially cancelled, we can process the refund directly. The funds will usually appear through the original payment method within 3–7 business days, and may arrive sooner depending on the payment provider.\nOur goal is always to avoid a lengthy chargeback process and return the funds to you as quickly as possible.",
+  "answer": "We always prefer to resolve refund concerns directly and issue the refund as quickly as possible, rather than allowing the matter to continue through a chargeback or payment dispute.\nA chargeback can take several weeks, and in some cases several months, to be resolved by the bank or payment provider. Once a chargeback is opened, the transaction funds are placed under dispute, which means we may be unable to issue a separate direct refund while the chargeback remains active.\nThe fastest option is usually to:\nContact your bank or payment provider and request that the chargeback be withdrawn or cancelled.\nAsk them for confirmation that the dispute has been closed.\nSend that confirmation through the **Support Center** in the sidebar so the status can be verified and the refund started. If you have not requested a refund yet, press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of that page.\nOnce the chargeback has been officially cancelled, we can process the refund directly. The funds will usually appear through the original payment method within 3–7 business days, and may arrive sooner depending on the payment provider.\nOur goal is always to avoid a lengthy chargeback process and return the funds to you as quickly as possible.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1442,21 +1442,21 @@
  {
   "category": "Refunds",
   "question": "How long does the refund process take?",
-  "answer": "Once your refund request is submitted, the review and approval process usually takes 24–48 hours.\nAfter the refund is approved and processed, it may take an additional 3–7 business days for the funds to appear in your account, depending on the payment provider or financial institution used for the original purchase.\nThe refund will be returned through the same payment method used for the transaction.",
+  "answer": "Once your refund request is submitted, the review and approval process usually takes 24–48 hours.\nAfter the refund is approved and processed, it may take an additional 3–7 business days for the funds to appear in your account, depending on the payment provider or financial institution used for the original purchase.\nThe refund will be returned through the same payment method used for the transaction.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "How long will it take to receive the refund after it has been requested?",
-  "answer": "A refund typically takes 5-10 business days to process once it has been requested.\n\nAfter it has been processed, the funds may take additional time to appear in your account, depending on your bank.",
+  "answer": "A refund typically takes 5-10 business days to process once it has been requested.\n\nAfter it has been processed, the funds may take additional time to appear in your account, depending on your bank.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
  {
   "category": "Refunds",
   "question": "I would like a refund",
-  "answer": "\"Thank you for your request! We have received your refund request and will start the process right away. You will receive an email once the process is complete.\"",
+  "answer": "To request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Describe what you are asking for and submit it.\n\nRefund requests do not go through the article flow. They are submitted directly and tracked from the moment you send them, and they appear under **Support Tickets** in the sidebar with their status.\n\nA request is eligible when it is submitted within **60 days** of the relevant purchase date. Each purchase and add-on is reviewed separately, from its own purchase date. Approved amounts are returned through the same payment provider and payment method used for the original purchase.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1470,7 +1470,7 @@
  {
   "category": "Refunds",
   "question": "What should I do if I believe the service was misrepresented in an advertisement?",
-  "answer": "We take concerns about advertising and purchase expectations seriously.\nWe can review what was presented to you, compare it with the products and services currently active on your account, and clarify any differences.\nPlease provide:\nThe email address used for the purchase\nA brief explanation of what you expected to receive\nWhat appears to be different in your account\nA screenshot or copy of the advertisement, if available\nIf something you purchased is missing, we will first check whether it can be delivered or activated.\nIf you no longer wish to continue, please confirm that you would like us to begin the refund process. Refund requests must be submitted within 60 days of the relevant purchase date.",
+  "answer": "Concerns about what an advertisement promised are taken seriously. What was presented to you can be compared with the products and services actually active on your account, and any difference explained.\n\nIf something you purchased is missing, it is checked first to see whether it can still be delivered or activated.\n\nIf you would rather not continue, to request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.\n\nInclude this in the request:\n- The email address used for the purchase\n- A short explanation of what you expected to receive\n- What appears to be different in your account\n- A screenshot or copy of the advertisement, if you have one\n\nRefund requests must be submitted within **60 days** of the relevant purchase date.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1484,7 +1484,7 @@
  {
   "category": "Refunds",
   "question": "What should I do if my refund was processed but I have not received the funds?",
-  "answer": "Once a refund has been processed, it usually takes 3–7 business days for the funds to appear in your account, depending on your bank or payment provider.\nIf more than 7 business days have passed since the refund was processed, please contact our support team and provide:\nThe email address used for the purchase\nYour support ticket number, if available\nThe refund confirmation or approval date\nThe transaction amount\nOur team will verify that the refund was successfully processed and provide any available confirmation or transaction reference.\nIf the refund is confirmed as completed on our side, you may also need to contact your bank or payment provider, as they are responsible for posting the funds back to your account.",
+  "answer": "Once a refund has been processed it usually takes 3–7 business days for the funds to appear, depending on your bank or payment provider.\n\nIf more than 7 business days have passed, open **Support Tickets** in the sidebar and reply on your refund ticket with:\n- The email address used for the purchase\n- The refund confirmation or approval date\n- The transaction amount\n\nThe team can verify that the refund was processed and give you the confirmation or transaction reference. If it is confirmed as completed on our side, the remaining delay is with your bank or payment provider, who post the funds back to your account.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1498,7 +1498,7 @@
  {
   "category": "Refunds",
   "question": "Where will my refunded funds be returned?",
-  "answer": "Your refund will be returned through the same payment provider and payment method used for the original purchase.\nFor example, if you paid by credit or debit card, the refund will be returned to that same card. If you used another payment provider, the funds will be returned through that provider.\nOnce processed, it may take 3–7 business days for the refund to appear in your account, depending on the payment provider or financial institution.",
+  "answer": "Your refund will be returned through the same payment provider and payment method used for the original purchase.\nFor example, if you paid by credit or debit card, the refund will be returned to that same card. If you used another payment provider, the funds will be returned through that provider.\nOnce processed, it may take 3–7 business days for the refund to appear in your account, depending on the payment provider or financial institution.\n\nTo request a refund, open the **Support Center** in the sidebar and press **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
  },
@@ -1524,28 +1524,28 @@
  {
   "category": "Account & Security",
   "question": "How do I change my phone number?",
-  "answer": "Our support team can update the phone number connected to your account.\nPlease provide:\nYour full name\nThe email address connected to your account\nThe new phone number, including the country code\nOnce we verify that the name and email match the account, we will update your phone number.",
+  "answer": "Our support team can update the phone number connected to your account.\nInclude this when you write to the Support Team:\nYour full name\nThe email address connected to your account\nThe new phone number, including the country code\nOnce we verify that the name and email match the account, we will update your phone number.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Details & Credentials"
  },
  {
   "category": "Account & Security",
   "question": "How do I change the email address connected to my account?",
-  "answer": "The email address connected to your account can be changed through our support team.\nFor security purposes, we first need to verify that you are the account owner. Please provide the following information:\nYour full name\nThe current email address connected to the account\nThe purchase date and amount\nThe payment method or transaction reference, if available\nThe new email address you would like to use\nOnce your details have been verified, we will update the account with your new email address.",
+  "answer": "The email address connected to your account can be changed through our support team.\nFor security purposes, we first need to verify that you are the account owner. Include this when you write to the Support Team:\nYour full name\nThe current email address connected to the account\nThe purchase date and amount\nThe payment method or transaction reference, if available\nThe new email address you would like to use\nOnce your details have been verified, we will update the account with your new email address.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Details & Credentials"
  },
  {
   "category": "Account & Security",
   "question": "How do I correct an email address that was entered incorrectly?",
-  "answer": "If the email address on your account was entered incorrectly, our support team can update it for you.\nFor security purposes, we first need to verify that you are the account owner. Please provide:\nYour full name\nThe incorrect email address currently connected to the account\nThe correct email address you would like to use\nThe purchase date and amount\nOnce your details have been verified, we will correct the email address on your account.",
+  "answer": "If the email address on your account was entered incorrectly, our support team can update it for you.\nFor security purposes, we first need to verify that you are the account owner. Include this when you write to the Support Team:\nYour full name\nThe incorrect email address currently connected to the account\nThe correct email address you would like to use\nThe purchase date and amount\nOnce your details have been verified, we will correct the email address on your account.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Details & Credentials"
  },
  {
   "category": "Account & Security",
   "question": "How do I create or reset my password?",
-  "answer": "Our support team can create or reset the password connected to your account.\nI’ll first check whether a password is already set for your account. If you would like us to change it, please send us the new password you would like to use, and we will update it for you.\nFor your security, please choose a unique password that you do not use for any other account.",
+  "answer": "The Support Team can create or reset the password connected to your account.\n\nAsk through the **Support Center** in the sidebar, using the email address connected to your account. The team verifies that you are the account owner before anything is changed.\n\nNever send a password in a message. One is set for you, and you can change it once you are back in. Choose a password you do not use for any other account.",
   "source": "Knowledge_Base",
   "rawCategory": "Account Details & Credentials"
  },
@@ -1580,7 +1580,7 @@
  {
   "category": "Account & Security",
   "question": "What should I do if I see an antivirus purchase prompt on my website?",
-  "answer": "Your website does not sell antivirus software or require visitors to purchase security products.\nIf the prompt appears after clicking an advertisement or external product link, it may be coming from a third-party website. Do not enter payment information unless you intentionally visited a trusted provider and verified the page.\nIf the prompt appears automatically on your website, or prevents visitors from browsing normally:\nDo not complete the purchase\nClose the prompt or page\nTake a screenshot\nCopy the exact page URL where it appeared\nSend us the screenshot and page address so we can review the redirect or advertisement and take the necessary action. Do not share card details, passwords, or security codes.",
+  "answer": "Your website does not sell antivirus software or require visitors to purchase security products.\nIf the prompt appears after clicking an advertisement or external product link, it may be coming from a third-party website. Do not enter payment information unless you intentionally visited a trusted provider and verified the page.\nIf the prompt appears automatically on your website, or prevents visitors from browsing normally:\nDo not complete the purchase\nClose the prompt or page\nTake a screenshot\nCopy the exact page URL where it appeared\nSend the screenshot and page address to the Support Team so the redirect or advertisement can be reviewed and acted on. Do not share card details, passwords, or security codes.",
   "source": "Knowledge_Base",
   "rawCategory": "Security & Suspicious Redirects"
  },
@@ -1594,7 +1594,7 @@
  {
   "category": "Account & Security",
   "question": "What should I do if my website asks visitors to enter credit card information?",
-  "answer": "Your website is designed to provide product information and comparison content. It does not directly sell products or collect visitors’ payment details.\nIf a visitor clicks a product link or advertisement and is redirected to an external merchant’s checkout page, that merchant may request credit card information to complete a purchase. This is normal and occurs outside your website.\nHowever, if a page on your own website asks visitors to enter credit card details, they should not submit any information. We will review the page immediately to confirm whether the request is legitimate and correct any technical or security issue.\nPlease provide the exact page where this appears and, when possible, a screenshot of the message. Do not send any full card numbers, security codes, passwords, or banking details.",
+  "answer": "Your website is designed to provide product information and comparison content. It does not directly sell products or collect visitors’ payment details.\nIf a visitor clicks a product link or advertisement and is redirected to an external merchant’s checkout page, that merchant may request credit card information to complete a purchase. This is normal and occurs outside your website.\nHowever, if a page on your own website asks visitors to enter credit card details, they should not submit any information. We will review the page immediately to confirm whether the request is legitimate and correct any technical or security issue.\nSend the Support Team the exact page where this appears and, when possible, a screenshot of the message. Do not send any full card numbers, security codes, passwords, or banking details.",
   "source": "Knowledge_Base",
   "rawCategory": "Security & Suspicious Redirects"
  },
