@@ -29,8 +29,11 @@ const EXPECTED = {
     'When will my Success Manager contact me?',
   'How do I request a refund?':
     'How do I request a refund?',
+  // Moved deliberately. The Start Here guide carries the same two
+  // eligibility conditions and also says how to request a refund, so it is
+  // the better landing point for this chip than the conditions alone.
   'How does the 200% refund work?':
-    'Does the money-back guarantee provide a 100% or 200% refund?',
+    'How does the money-back guarantee work, and how do I request a refund?',
 };
 
 let pass = 0, fail = 0;

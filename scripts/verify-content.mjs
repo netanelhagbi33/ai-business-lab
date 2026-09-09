@@ -76,11 +76,11 @@ console.log('\n=== NON-PROMISE DURATIONS KEPT');
    ============================================================ */
 console.log('\n=== STRUCTURE');
 {
-  // 230, not the original 232. Two articles were personal replies to named
-  // individuals rather than articles: one carried a customer's phone number
-  // and email, the other opened "Dear Dean". Both cases are covered by the
-  // general articles that remain.
-  check('230 articles', kb.length, 230);
+  // Back to 232: two personal replies were removed (a customer's phone
+  // number and email; another opening "Dear Dean") and two guides added for
+  // the questions the ticket data shows people ask most — where the
+  // dashboard is, and how the guarantee and refunds work.
+  check('232 articles', kb.length, 232);
   check('every article has category, question and answer',
         kb.filter(x => !x.category || !x.question || !x.answer).length, 0);
 
@@ -143,7 +143,7 @@ console.log('\n=== RICH TEXT (**bold**)');
   // 11 after the voice rewrite. Bold marks the branch headings and the
   // named options in a list — "**Activate your Daily Boost**" — which is
   // what makes a multi-part answer scannable instead of a wall of text.
-  check('the articles that use bold still do', bolded, 14);
+  check('the articles that use bold still do', bolded, 16);
 }
 
 /* ============================================================

@@ -113,14 +113,20 @@ const pageB = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const B = await probe(pageB, REBUILT, 'rebuilt');
 
 console.log('\n=== CONTENT PARITY (rebuilt must equal original)');
-// Two articles were deliberately removed from the rebuild, both from Support
-// and both personal replies to named individuals rather than articles: one
-// carried a customer's phone number and email, the other opened "Dear Dean".
-// Declared here so the count check still guards every other category.
+// Deliberate divergences from the original, declared so the count check
+// still guards every other category rather than being relaxed.
+//
+//   removed: two personal replies published as articles — one carried a
+//            customer's phone number and email, the other opened "Dear Dean".
+//   added:   two guides for the questions the ticket data ranks highest,
+//            surfaced as cards on Start Here.
 const REMOVED_FROM_CATEGORY = { 'Support': 2 };
+const ADDED_TO_CATEGORY = { 'Dashboard & Access': 1, 'Refunds': 1 };
 const expectedCounts = A.catCounts.map(([name, n]) =>
-  [name, String(Number(n) - (REMOVED_FROM_CATEGORY[name] || 0))]);
-check('category counts match, minus the articles removed for privacy',
+  [name, String(Number(n)
+    - (REMOVED_FROM_CATEGORY[name] || 0)
+    + (ADDED_TO_CATEGORY[name] || 0))]);
+check('category counts match, allowing for the declared removals and additions',
       B.catCounts, expectedCounts);
 for (const q of QUERIES) {
   check(`search "${q}" — best match`, B.searches[q].best, A.searches[q].best);
@@ -345,6 +351,65 @@ console.log('\n=== ARRIVING AT THE SUPPORT CENTER ALWAYS LANDS ON THE GRID');
           title: document.getElementById('qaTitle').textContent.trim(),
         })),
         { box: '', title: 'How can we help?' });
+}
+
+
+console.log('\n=== START HERE CARDS THAT OPEN AN ARTICLE');
+{
+  const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  await p.goto(REBUILT);
+  await p.evaluate(() => localStorage.clear());
+  await p.reload();
+  await p.waitForSelector('.learn-grid .learn');
+
+  check('five cards on Start Here',
+        await p.evaluate(() => document.querySelectorAll('.learn-grid .learn').length), 5);
+
+  const CARDS = [
+    ['Where is my dashboard?', 'Dashboard & Access'],
+    ['How does the money-back guarantee work, and how do I request a refund?', 'Refunds'],
+  ];
+
+  for (const [question, category] of CARDS) {
+    await p.goto(REBUILT);
+    await p.waitForSelector('.learn-grid .learn');
+    await p.click(`[data-question="${question}"]`);
+    await p.waitForTimeout(800);
+
+    check(`"${question.slice(0, 40)}…" opens its article`, await p.evaluate(() => ({
+      view: document.querySelector('.view.active').id,
+      grid: getComputedStyle(document.getElementById('topicGrid')).display !== 'none',
+      rows: document.querySelectorAll('#results .qa').length,
+      open: !!document.querySelector('#results .qa.open'),
+    })), { view: 'qa', grid: false, rows: 1, open: true });
+
+    check(`  …and it is the right one`, await p.evaluate(() =>
+      document.querySelector('#results .qa .q span small').nextSibling.textContent.trim()
+      || document.querySelector('#results .qa .q span').textContent.trim()), question);
+
+    check(`  …under ${category}`, await p.evaluate(() =>
+      document.querySelector('#results .qa .q small').textContent), category);
+
+    // The reader must be able to get out to the topic grid.
+    await p.click('.help-back-row [data-action="qa-home"]');
+    await p.waitForTimeout(300);
+    check('  …and the back button still works', await p.evaluate(() =>
+      getComputedStyle(document.getElementById('topicGrid')).display !== 'none'), true);
+  }
+
+  // A card pointing at a question that does not exist must not blank the page.
+  await p.goto(REBUILT);
+  await p.waitForSelector('.learn-grid .learn');
+  await p.evaluate(() => {
+    const b = document.querySelector('.learn[data-action="open-article"]');
+    b.dataset.question = 'This article does not exist';
+    b.click();
+  });
+  await p.waitForTimeout(800);
+  check('a card naming a missing article falls back to the topic grid',
+        await p.evaluate(() =>
+          getComputedStyle(document.getElementById('topicGrid')).display !== 'none'), true);
+  await p.close();
 }
 
 console.log('\n=== SUPPORT CENTER STATES (browse / topic / search)');

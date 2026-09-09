@@ -125,7 +125,7 @@ function currentFiltered() {
    ============================================================ */
 
 function applyState() {
-  const browsing = state === 'browse';
+  const browsing = state === 'browse';   // 'topic', 'search' and 'article' all compact
 
   byId('qaHeader').classList.toggle('compact', !browsing);
   byId('qaCrumb').hidden = browsing;
@@ -166,6 +166,43 @@ export function showTopic(cat) {
 
   applyState();
   renderQA();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/**
+ * Open one named article on its own, with the topic grid hidden.
+ * Used by the Start Here cards, which point at a specific answer rather
+ * than at a topic or a search.
+ */
+export function showArticle(question) {
+  const article = KB.find(x => x.question === question);
+  if (!article) {
+    console.warn('[qa] no article titled "%s"', question);
+    showBrowse();
+    return;
+  }
+
+  state = 'article';
+  activeCat = article.category;
+  byId('qSearch').value = '';
+  byId('smartAnswer').innerHTML = '';
+
+  const meta = catMeta(article.category);
+  byId('qaTitle').innerHTML =
+    `<span class="topic-title-icon" aria-hidden="true">${meta.icon}</span>${esc(article.category)}`;
+  byId('qaSubtitle').textContent = meta.blurb;
+
+  applyState();
+  byId('qaMeta').textContent = '';
+  renderResults([article]);
+  byId('qaMoreWrap').innerHTML = '';
+
+  // Open it — arriving here means the reader already chose this one.
+  const row = byId('results').querySelector('.qa');
+  if (row) {
+    row.classList.add('open');
+    row.querySelector('.q').setAttribute('aria-expanded', 'true');
+  }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -422,6 +459,7 @@ export function initQA() {
   registerActions({
     'qa-home':  () => showBrowse(),
     'qa-topic': el => showTopic(el.dataset.category),
+    'qa-article': el => showArticle(el.dataset.question),
     'qa-ask':   el => { byId('qSearch').value = el.dataset.q; searchKB(); },
     'qa-search': () => searchKB(),
     'qa-more':  () => {

@@ -385,6 +385,11 @@
   "rawCategory": "Dashboard, Login & Access"
  },
  {
+  "category": "Dashboard & Access",
+  "question": "Where is my dashboard?",
+  "answer": "**You are already in it.** The chat screen you are looking at is your dashboard. There is no other page to find and nothing to install.\n\nIt looks like a conversation because that is how you operate it — you type what you want, or pick from the buttons, and the system does it.\n\n**The + icon opens everything**\nClick the **+** to the left of the message box to see every action available to you in one list: visit your website, check your stats, add a payout method, check billing, boost your traffic and view upgrades.\n\nYou can also just type a normal question instead. You do not need to memorise commands.\n\n**Getting back to it**\nSign in at https://aibusiness-lab.com/ from any device — computer, phone or tablet. Everything is in the same place on each of them.\n\nIf you use it often, add it to your phone's home screen: on iPhone open it in Safari, tap Share, then Add to Home Screen. On Android open it in Chrome, tap the three-dot menu, then Add to Home screen."
+ },
+ {
   "category": "Website & Content",
   "question": "Can I add more websites to my account?",
   "answer": "Yes. You can purchase and add additional websites to your existing account through your Success Manager.\nEach additional website can include its own:\nNiche\nTemplate\nDomain\nLogo\nContent\nThere is no limit to the number of websites you can purchase and manage under the same account.\nIf you would like to add another website, we can notify your Success Manager that you are interested.",
@@ -1496,6 +1501,11 @@
   "answer": "Your refund will be returned through the same payment provider and payment method used for the original purchase.\nFor example, if you paid by credit or debit card, the refund will be returned to that same card. If you used another payment provider, the funds will be returned through that provider.\nOnce processed, it may take 3–7 business days for the refund to appear in your account, depending on the payment provider or financial institution.",
   "source": "Knowledge_Base",
   "rawCategory": "Refunds & Cancellations"
+ },
+ {
+  "category": "Refunds",
+  "question": "How does the money-back guarantee work, and how do I request a refund?",
+  "answer": "**Requesting a refund**\nOpen the Support Center and click **Request a Refund** in the \"Looking for a refund?\" box at the bottom of the page. Fill in what you are asking for and submit.\n\nRefund requests do not go through the article flow — they are submitted directly and tracked from the moment you send them. You can also ask through the AI Assistant or open a Support Ticket if you prefer.\n\n**The standard guarantee**\nA refund request is eligible if it is submitted within **60 days** of the original purchase date. Each purchase and add-on is reviewed separately, and each is measured from its own purchase date. Approved amounts are returned the same way you originally paid.\n\n**The 200% guarantee**\nThe 200% guarantee is not automatic. It applies only when the published eligibility requirements are met, which are either:\n\n- Not earning the first $0.01 within the first week, through advertising activity shown on the website dashboard; or\n- Actively promoting the website for 60 days according to our guidance, and completing at least three free support calls with a Success Manager.\n\nIf those requirements are not met you may still be eligible for a 100% refund under the standard policy, but not the additional 200%. Eligibility is reviewed against the activity and records on your account."
  },
  {
   "category": "Account & Security",

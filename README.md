@@ -190,6 +190,26 @@ one has contacted me after my purchase?".
 `[Your Name]`-style template in `kb.json`. **Articles come from real tickets,
 so check this after any content import.**
 
+## Start Here cards can open one article
+
+The three original cards open a guide or a view. Two more open a single
+named article, via `data-action="open-article"` and `data-question`:
+
+| Card | Article |
+|---|---|
+| Where is my dashboard | The chat screen **is** the dashboard |
+| Guarantee and refunds | 100% / 200% terms, and how to request one |
+
+Both answer questions the ticket data ranks near the top. `showArticle()` in
+`js/qa.js` renders that one article, already expanded, with the topic grid
+hidden and the back button intact. A card naming an article that does not
+exist falls back to the grid rather than blanking the page — there is a check
+for that.
+
+The knowledge base loads lazily, so the card records what it wants and the
+view change resolves it after the fetch; otherwise entering the Support
+Center would reset straight back to the grid.
+
 ## An article must not hijack topic search
 
 "Where can I find the instructions or help section?" was rewritten to describe

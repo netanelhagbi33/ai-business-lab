@@ -12,14 +12,24 @@ import { initDelegation, registerActions, byId, loadJSON, renderError } from './
 import { showView, initNav, onViewChange } from './router.js';
 import { setHighlights, setImageSizes, initModal } from './highlights.js';
 import { initJourneys, openGuideStep, onGuideShown } from './journey.js';
-import { initQA, ensureLoaded, showBrowse } from './qa.js';
+import { initQA, ensureLoaded, showBrowse, showArticle } from './qa.js';
 import { initSupport, onSupportShown } from './support.js';
 import { initSpotlight } from './spotlight.js';
 
 /* --- Actions that belong to no single module -------------- */
 registerActions({
   view: el => showView(el.dataset.view),
+
+  // A Start Here card that points at one specific answer. The knowledge
+  // base is lazy, so it has to load before the article can be shown, and
+  // the view switch must not then reset it back to the topic grid.
+  'open-article': el => {
+    pendingArticle = el.dataset.question;
+    showView('qa');
+  },
 });
+
+let pendingArticle = null;
 
 initDelegation();
 initModal();
@@ -39,7 +49,11 @@ onViewChange(id => {
   // back from another view into whatever topic you last opened — which reads
   // as the app having ignored the click. Navigation inside the Support
   // Center never routes through showView, so this cannot reset a drill-down.
-  if (id === 'qa') ensureLoaded().then(showBrowse).catch(() => {});
+  if (id === 'qa') {
+    const wanted = pendingArticle;
+    pendingArticle = null;
+    ensureLoaded().then(() => (wanted ? showArticle(wanted) : showBrowse())).catch(() => {});
+  }
 });
 
 /* --- Data the guides need up front ------------------------ */

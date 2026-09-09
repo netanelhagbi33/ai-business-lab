@@ -87,7 +87,9 @@
 /* --- Learn cards ---------------------------------------- */
 .learn-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* auto-fit rather than a fixed 3: the row grew to five cards and will
+     grow again. Cards reflow instead of being squeezed. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--sp-3);
   margin-top: var(--sp-5);
 }
