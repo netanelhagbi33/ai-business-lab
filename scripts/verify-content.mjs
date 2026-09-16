@@ -542,6 +542,47 @@ console.log('\n=== LISTS ARE WRITTEN AS LISTS');
 }
 
 /* ============================================================
+   The Success Manager is a role, and reads as one.
+
+   The customer is told to expect one, to wait for their call, and
+   to take some requests to them rather than to Support. Two plain
+   words in the middle of a sentence do not carry that.
+
+   Article titles are excluded: they render through esc(), not
+   richText, so asterisks there would appear on screen as
+   asterisks.
+   ============================================================ */
+console.log('\n=== SUCCESS MANAGER READS AS A ROLE');
+{
+  const PHRASE = /\bSuccess Managers?\b/;
+  const unbolded = [];
+  for (const a of kb) {
+    for (const l of a.answer.split('\n')) {
+      // Strip the bold spans; anything left is an occurrence in plain text.
+      if (PHRASE.test(l.replace(/\*\*[^*\n]+\*\*/g, ''))) {
+        unbolded.push(`[${a.category}] ${a.question.slice(0, 38)}`);
+      }
+    }
+  }
+  check('every mention in an answer is emphasised', unbolded, []);
+
+  // Markers come in pairs. A line with two bold spans is four of them and is
+  // fine; an odd count means an opener lost its closer.
+  const odd = [];
+  for (const a of kb) {
+    for (const l of a.answer.split('\n')) {
+      if (((l.match(/\*\*/g) || []).length) % 2 !== 0) {
+        odd.push(`[${a.category}] ${a.question.slice(0, 38)}`);
+      }
+    }
+  }
+  check('every line closes the emphasis it opens', odd, []);
+
+  check('the markup carries it too',
+        /<strong>Success Manager<\/strong>/.test(html), true);
+}
+
+/* ============================================================
    The 200% guarantee states every condition it depends on.
    ============================================================ */
 console.log('\n=== THE 200% GUARANTEE');
