@@ -293,3 +293,37 @@
   .sm-hero h2 { font-size: var(--fs-6); }
   .sm-actions .btn { width: 100%; }
 }
+
+/* ============================================================
+   A Start Here guide.
+
+   Its own view rather than a card inside the Support Center, so
+   the way out goes back to Start Here where the reader came from
+   rather than to the topic grid they never asked for.
+   ============================================================ */
+.guide-body {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--r-3);
+  padding: var(--sp-5);
+  max-width: 74ch;
+}
+
+/* These run to 300 words, so the way out is repeated at the end —
+   a control only at the top is off-screen by the time it is wanted. */
+.guide-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border-subtle);
+  max-width: 74ch;
+}
+.guide-foot .btn { flex: 0 0 auto; }
+
+@media (max-width: 700px) {
+  .guide-body { padding: var(--sp-4); }
+  .guide-foot .btn { width: 100%; }
+}

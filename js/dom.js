@@ -137,7 +137,19 @@ const actions = new Map();
  * the element's dataset.
  */
 export function registerActions(map) {
-  for (const [name, fn] of Object.entries(map)) actions.set(name, fn);
+  for (const [name, fn] of Object.entries(map)) {
+    // Two modules claiming one name used to be silent, and the later
+    // registration simply won. The Start Here topic cards were registered as
+    // "open-guide", which journey.js already uses for a step of the
+    // walkthrough; journey registers after its data loads, so the cards were
+    // wired to a handler that read data-path and data-index, found neither,
+    // and did nothing at all. Nothing in the console, nothing on screen.
+    if (actions.has(name)) {
+      throw new Error(`[dom] the action "${name}" is already registered. `
+                    + 'Two handlers cannot share a name — pick a distinct one.');
+    }
+    actions.set(name, fn);
+  }
 }
 
 function run(el, event) {

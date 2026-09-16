@@ -31,8 +31,8 @@ import fs from 'fs';
 const read = f => fs.readFileSync(f, 'utf8').split('\r\n').join('\n');
 const CSS = ['tokens', 'base', 'layout', 'components', 'views', 'journey', 'qa'];
 const MODULES = ['dom', 'store', 'router', 'highlights', 'spotlight',
-                 'journey', 'support', 'qa', 'main'];
-const DATA = ['steps', 'highlights', 'image-sizes', 'kb', 'categories'];
+                 'journey', 'support', 'qa', 'guides', 'main'];
+const DATA = ['steps', 'highlights', 'image-sizes', 'kb', 'categories', 'guides'];
 const ENTRY = 'main.js';
 
 const out = [];

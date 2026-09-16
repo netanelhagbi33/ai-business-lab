@@ -69,6 +69,23 @@ else chk(imgs.every(i => !i.data), 'screenshots are served as files, not inlined
 chk(imgs.every(i => i.ok), 'every screenshot decoded');
 chk(await p.locator('#liveSteps .action-highlight').count() === 3, 'the three markers rendered');
 
+// --- a Start Here guide, and the way back ----------------
+// The block above leaves the app on the Dashboard guide, where the Start
+// Here cards are in an inactive view and therefore not clickable.
+await p.click('.nav[data-view="home"]');
+await p.waitForSelector('.learn[data-guide="guarantee"]');
+await p.click('.learn[data-guide="guarantee"]');
+await p.waitForSelector('#topic-guide.active .guide-body', { timeout: 20000 }).catch(() => {});
+chk(await p.locator('#topic-guide.active .guide-body').count() === 1, 'a Start Here card opens its guide');
+chk((await p.textContent('#topic-guide h1').catch(() => '')).includes('Guarantee'),
+    'the guide that opened is the one the card named');
+chk((await p.textContent('#topic-guide').catch(() => '')).includes('24-hour Boost'),
+    'the guide carries its own content, not an article');
+await p.click('#topic-guide .help-back-row [data-view="home"]');
+await p.waitForTimeout(300);
+chk(await p.evaluate(() => document.querySelector('.view.active')?.id) === 'home',
+    'the back button returns to Start Here');
+
 // --- Support Center --------------------------------------
 await p.click('.nav[data-view="qa"]');
 await p.waitForSelector('#qSearch');

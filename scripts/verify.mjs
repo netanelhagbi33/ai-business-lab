@@ -360,7 +360,7 @@ console.log('\n=== ARRIVING AT THE SUPPORT CENTER ALWAYS LANDS ON THE GRID');
 }
 
 
-console.log('\n=== START HERE CARDS THAT OPEN AN ARTICLE');
+console.log('\n=== START HERE CARDS THAT OPEN THEIR OWN GUIDE');
 {
   const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   await p.goto(REBUILT);
@@ -371,50 +371,49 @@ console.log('\n=== START HERE CARDS THAT OPEN AN ARTICLE');
   check('ten cards on Start Here',
         await p.evaluate(() => document.querySelectorAll('.learn-grid .learn').length), 10);
 
+  // Every card opens the guide it names, and every guide can be left again.
   const CARDS = [
-    ['Where is my dashboard?', 'Dashboard & Access'],
-    ['How does the money-back guarantee work, and how do I request a refund?', 'Refunds'],
+    ['dashboard', 'Where is my dashboard'],
+    ['guarantee', 'Guarantee and refunds'],
+    ['package',   'What did I buy'],
+    ['niche',     'Changing your niche'],
+    ['design',    'Colours, theme and logo'],
+    ['login',     'How to log in'],
+    ['websites',  'Additional website'],
   ];
 
-  for (const [question, category] of CARDS) {
-    await p.goto(REBUILT);
-    await p.waitForSelector('.learn-grid .learn');
-    await p.click(`[data-question="${question}"]`);
-    await p.waitForTimeout(800);
-
-    check(`"${question.slice(0, 40)}…" opens its article`, await p.evaluate(() => ({
+  for (const [id, title] of CARDS) {
+    await p.click(`.learn[data-guide="${id}"]`);
+    await p.waitForSelector('#topic-guide.active .guide-body', { timeout: 10000 })
+      .catch(() => {});
+    check(`"${title}" opens its own guide`, await p.evaluate(() => ({
       view: document.querySelector('.view.active').id,
-      grid: getComputedStyle(document.getElementById('topicGrid')).display !== 'none',
-      rows: document.querySelectorAll('#results .qa').length,
-      open: !!document.querySelector('#results .qa.open'),
-    })), { view: 'qa', grid: false, rows: 1, open: true });
+      title: document.querySelector('#topic-guide h1')?.textContent.trim() || '',
+      body: (document.querySelector('.guide-body')?.textContent || '').length > 400,
+      backs: document.querySelectorAll('#topic-guide [data-view="home"]').length,
+    })), { view: 'topic-guide', title, body: true, backs: 2 });
 
-    check(`  …and it is the right one`, await p.evaluate(() =>
-      document.querySelector('#results .qa .q span small').nextSibling.textContent.trim()
-      || document.querySelector('#results .qa .q span').textContent.trim()), question);
-
-    check(`  …under ${category}`, await p.evaluate(() =>
-      document.querySelector('#results .qa .q small').textContent), category);
-
-    // The reader must be able to get out to the topic grid.
-    await p.click('.help-back-row [data-action="qa-home"]');
-    await p.waitForTimeout(300);
-    check('  …and the back button still works', await p.evaluate(() =>
-      getComputedStyle(document.getElementById('topicGrid')).display !== 'none'), true);
+    await p.click('#topic-guide .help-back-row [data-view="home"]');
+    await p.waitForTimeout(200);
+    check(`  …and the back button returns to Start Here`,
+          await p.evaluate(() => document.querySelector('.view.active').id), 'home');
   }
 
-  // A card pointing at a question that does not exist must not blank the page.
+  // The guides are read from their own file, so a card naming one that is
+  // not there must say so rather than leaving the reader on a blank page.
   await p.goto(REBUILT);
   await p.waitForSelector('.learn-grid .learn');
   await p.evaluate(() => {
-    const b = document.querySelector('.learn[data-action="open-article"]');
-    b.dataset.question = 'This article does not exist';
+    const b = document.querySelector('.learn[data-action="open-topic-guide"]');
+    b.dataset.guide = 'no-such-guide';
     b.click();
   });
   await p.waitForTimeout(800);
-  check('a card naming a missing article falls back to the topic grid',
-        await p.evaluate(() =>
-          getComputedStyle(document.getElementById('topicGrid')).display !== 'none'), true);
+  check('a card naming a missing guide shows an error, not a blank page',
+        await p.evaluate(() => {
+          const el = document.getElementById('guideBody');
+          return !!el && el.textContent.trim().length > 0;
+        }), true);
   await p.close();
 }
 

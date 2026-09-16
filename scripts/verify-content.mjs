@@ -283,41 +283,27 @@ console.log('\n=== NO ANSWER ASSUMES THE READER\'S CHOICES');
 
 
 /* ============================================================
-   Every Start Here card must point at an article that exists.
+   Start Here cards.
 
-   The cards name their target by exact question text. Rewording
-   or removing an article silently breaks the card — the reader
-   lands on the topic grid instead of the answer, with no error
-   anywhere. This catches it in a second, without a browser.
+   The seven topic cards used to name a knowledge-base article by
+   its exact question text, which meant rewording that article
+   silently broke the card. They now open a guide of their own,
+   and the check that they point at something real lives with the
+   guides above.
+
+   What is left to guard is the old wiring not creeping back: a
+   card carrying data-question would be pointing at an article
+   again, and open-article is no longer registered by anything.
    ============================================================ */
 console.log('\n=== START HERE CARD TARGETS');
 {
-  const decode = s => s.replace(/&amp;/g, '&').replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-  const targets = [...html.matchAll(/data-question="([^"]+)"/g)].map(m => decode(m[1]));
+  const byQuestion = [...html.matchAll(/data-question="([^"]+)"/g)].map(m => m[1]);
+  check('no card points at an article by its title', byQuestion, []);
+  check('the retired open-article action is gone from the markup',
+        /data-action="open-article"/.test(html), false);
 
-  check('cards point at articles', targets.length > 0, true);
-
-  const missing = targets.filter(q => !kb.some(x => x.question === q));
-  check('every card target exists in kb.json', missing, []);
-
-  // A card promising an answer that is really a different topic is the
-  // same failure, just slower to notice.
-  const CARD_SECTION = {
-    'Where is my dashboard?': 'Dashboard & Access',
-    'How does the money-back guarantee work, and how do I request a refund?': 'Refunds',
-    'What are the program details, packages, and pricing?': 'Getting Started',
-    'How do I change the niche or product category of my website?': 'Website & Content',
-    'Can I change the design after my website is live?': 'Website & Content',
-    'Why can’t I log in to my dashboard?': 'Dashboard & Access',
-    'How many websites are included in my purchase?': 'Website & Content',
-  };
-  const wrong = targets
-    .filter(q => CARD_SECTION[q])
-    .filter(q => kb.find(x => x.question === q).category !== CARD_SECTION[q]);
-  check('each card lands in its expected section', wrong, []);
-
-  console.log(`      ${targets.length} cards checked`);
+  const cards = [...html.matchAll(/data-guide="([^"]+)"/g)].map(m => m[1]);
+  check('seven topic cards', cards.length, 7);
 }
 
 console.log('\n=== NO SEARCH HIJACKING');
@@ -580,6 +566,65 @@ console.log('\n=== SUCCESS MANAGER READS AS A ROLE');
 
   check('the markup carries it too',
         /<strong>Success Manager<\/strong>/.test(html), true);
+}
+
+/* ============================================================
+   The Start Here guides.
+
+   Seven cards open one of these instead of a Support Center
+   article. They are kept out of kb.json on purpose: a guide that
+   covers a whole topic matches every search about that topic and
+   would outrank the specific article the search was looking for.
+
+   They are customer-facing text, so every rule the knowledge base
+   is held to applies to them as well.
+   ============================================================ */
+console.log('\n=== START HERE GUIDES');
+{
+  const guides = JSON.parse(fs.readFileSync('data/guides.json', 'utf8'));
+  const { renderArticle } = await import('../js/dom.js');
+  const all = JSON.stringify(guides);
+
+  check('seven guides', guides.length, 7);
+  check('every id is distinct', new Set(guides.map(g => g.id)).size, guides.length);
+  check('none is missing a field',
+        guides.filter(g => !(g.id && g.icon && g.title && g.blurb && g.body)).length, 0);
+
+  // A card that names a guide which is not there leaves the reader nowhere.
+  const wanted = [...html.matchAll(/data-guide="([^"]+)"/g)].map(m => m[1]);
+  check('every card points at a guide that exists',
+        wanted.filter(id => !guides.some(g => g.id === id)), []);
+  check('every guide is reachable from a card',
+        guides.filter(g => !wanted.includes(g.id)).map(g => g.id), []);
+
+  // They are kept out of the knowledge base, which is what stops them
+  // outranking the articles they were written from.
+  check('no guide has been copied into the knowledge base',
+        guides.filter(g => kb.some(a => a.answer === g.body)).map(g => g.id), []);
+
+  const rendered = guides.map(g => renderArticle(g.body)).join('');
+  check('no ** survives rendering', (rendered.match(/\*\*/g) || []).length, 0);
+  check('no bullet is left as a paragraph', /<p>[-•*] /.test(rendered), false);
+  check('every emphasis marker is paired',
+        guides.filter(g => ((g.body.match(/\*\*/g) || []).length) % 2 !== 0).map(g => g.id), []);
+
+  // The same content rules as the knowledge base.
+  check('no stale 60-day rule', /\b60[\s-]days?\b/.test(all), false);
+  check('the ticket threshold stays unpublished', /\b(two|2) articles\b/i.test(all), false);
+  check('no guide tells the reader to open a ticket',
+        /\bopen a (support )?ticket\b/i.test(all), false);
+  check('no contact-time promise', /24\s*[–—-]\s*72/.test(all), false);
+  check('no personal data',
+        /@(gmail|yahoo)\.com|\b\d{3}-\d{3}-\d{4}\b/.test(all), false);
+  check('Success Manager is emphasised throughout',
+        guides.filter(g => /\bSuccess Managers?\b/.test(g.body.replace(/\*\*[^*\n]+\*\*/g, '')))
+              .map(g => g.id), []);
+
+  // Each guide names the articles it was written from, so a source that is
+  // renamed or removed shows up here rather than rotting quietly.
+  const orphan = guides.flatMap(g =>
+    (g.sources || []).filter(s => !kb.some(a => a.question === s)).map(s => `${g.id}: ${s}`));
+  check('every named source article still exists', orphan, []);
 }
 
 /* ============================================================

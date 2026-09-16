@@ -149,50 +149,43 @@
                Both answer questions the ticket data shows people ask most:
                people are inside the dashboard and do not recognise it, and
                they do not know how the guarantee or a refund request works. -->
-          <button class="learn" type="button" data-action="open-article"
-                  data-question="Where is my dashboard?">
+          <button class="learn" type="button" data-action="open-topic-guide" data-guide="dashboard">
             <div class="bubble" aria-hidden="true">🧩</div>
             <div><strong>Where is my dashboard</strong><small>The chat screen you are on is your dashboard — here is how to use it.</small></div>
             <span class="learn-arrow" aria-hidden="true">›</span>
           </button>
 
-          <button class="learn" type="button" data-action="open-article"
-                  data-question="How does the money-back guarantee work, and how do I request a refund?">
+          <button class="learn" type="button" data-action="open-topic-guide" data-guide="guarantee">
             <div class="bubble" aria-hidden="true">🛡️</div>
             <div><strong>Guarantee and refunds</strong><small>How the 100% and 200% guarantees work, and how to request a refund.</small></div>
             <span class="learn-arrow" aria-hidden="true">›</span>
           </button>
 
-          <button class="learn" type="button" data-action="open-article"
-                  data-question="What are the program details, packages, and pricing?">
+          <button class="learn" type="button" data-action="open-topic-guide" data-guide="package">
             <div class="bubble" aria-hidden="true">📦</div>
             <div><strong>What did I buy</strong><small>What the initial package includes, and what the Accelerator adds.</small></div>
             <span class="learn-arrow" aria-hidden="true">›</span>
           </button>
 
-          <button class="learn" type="button" data-action="open-article"
-                  data-question="How do I change the niche or product category of my website?">
+          <button class="learn" type="button" data-action="open-topic-guide" data-guide="niche">
             <div class="bubble" aria-hidden="true">🎯</div>
             <div><strong>Changing your niche</strong><small>Picked the wrong topic? What can be changed, and when.</small></div>
             <span class="learn-arrow" aria-hidden="true">›</span>
           </button>
 
-          <button class="learn" type="button" data-action="open-article"
-                  data-question="Can I change the design after my website is live?">
+          <button class="learn" type="button" data-action="open-topic-guide" data-guide="design">
             <div class="bubble" aria-hidden="true">🎨</div>
             <div><strong>Colours, theme and logo</strong><small>Too dark, wrong style, not your brand — all of it can change.</small></div>
             <span class="learn-arrow" aria-hidden="true">›</span>
           </button>
 
-          <button class="learn" type="button" data-action="open-article"
-                  data-question="Why can’t I log in to my dashboard?">
+          <button class="learn" type="button" data-action="open-topic-guide" data-guide="login">
             <div class="bubble" aria-hidden="true">🔑</div>
             <div><strong>How to log in</strong><small>No password set, no email arrived, or the link keeps looping.</small></div>
             <span class="learn-arrow" aria-hidden="true">›</span>
           </button>
 
-          <button class="learn" type="button" data-action="open-article"
-                  data-question="How many websites are included in my purchase?">
+          <button class="learn" type="button" data-action="open-topic-guide" data-guide="websites">
             <div class="bubble" aria-hidden="true">🗂️</div>
             <div><strong>Additional website</strong><small>What one purchase covers, and how to add another.</small></div>
             <span class="learn-arrow" aria-hidden="true">›</span>
@@ -402,6 +395,14 @@
             <button class="btn red" type="button" data-action="open-refund">Request a Refund</button>
           </div>
         </div>
+      </section>
+
+      <!-- ---------- A Start Here guide ----------
+           Filled by js/guides.js from data/guides.json. Kept out of the
+           Support Center so a whole-topic overview cannot outrank the
+           specific article a search was actually looking for. -->
+      <section id="topic-guide" class="view" aria-label="Guide">
+        <div id="guideBody"></div>
       </section>
 
       <!-- ---------- Support Tickets ---------- -->
