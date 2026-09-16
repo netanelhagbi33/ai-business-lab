@@ -44,7 +44,7 @@ console.log('=== NO CONTACT-TIME PROMISES');
   // line is a contact deadline that has crept back in.
   const NON_PROMISE = [
     /Continue activating your Daily Boost every 24 hours/gi,
-    /Actively promoting the website for 90 days/gi,
+    /promot(?:ing|ed) the website for 90 days/gi,
     /three free support calls/gi,
     /every 24 hours/gi,
   ];
@@ -62,12 +62,17 @@ console.log('=== NO CONTACT-TIME PROMISES');
    ============================================================ */
 console.log('\n=== NON-PROMISE DURATIONS KEPT');
 {
-  for (const phrase of [
-    'every 24 hours',                             // Daily Boost cycle
-    'Actively promoting the website for 90 days', // guarantee condition
-    'three free support calls',                   // guarantee condition
+  // Matched loosely on purpose. What has to survive is the condition, not one
+  // phrasing of it. An exact string here failed the first time the sentence
+  // was reworded from "Actively promoting…" to "You actively promoted…" on
+  // its way into a bullet — a correction, reported as a regression.
+  for (const [name, re] of [
+    ['the Daily Boost cycle',       /every 24 hours/i],
+    ['the 90-day promotion period', /promot(?:ing|ed) the website for 90 days/i],
+    ['the three support calls',     /three free support calls/i],
+    ['the Boost activation rule',   /24-hour Boost must have been activated at least once/i],
   ]) {
-    check(`kept: "${phrase}"`, everything.includes(phrase), true);
+    check(`kept: ${name}`, re.test(everything), true);
   }
 }
 
@@ -476,6 +481,80 @@ console.log('\n=== A REQUEST FOR DETAILS NAMES ITS DESTINATION');
     check(`kept the warning: "${warning}"`,
           kb.some(a => a.answer.includes(warning)), true);
   }
+}
+
+/* ============================================================
+   A list is written as a list.
+
+   67 blocks introduced a list with a colon and then wrote the
+   items as bare lines. renderArticle gives each line its own <p>,
+   so a four-point checklist read as four unrelated sentences and
+   nothing showed that they belonged together — or that there were
+   four of them.
+
+   The renderer cannot infer this: a bare line after a colon is
+   genuinely either a list item or the paragraph the colon
+   introduces. The source has to say which.
+   ============================================================ */
+console.log('\n=== LISTS ARE WRITTEN AS LISTS');
+{
+  // Matches scripts/fix-lists.mjs. A run of these after a colon is a list
+  // that lost its markers.
+  const RESUMES = /^(If|Once|After|When|Please note|You can also|We will|We can|There (is|are)|As a result|The Support Team)\b/;
+  const isItem = l =>
+    l.length <= 130 && !/^[-•*]\s|^\d+[.)]\s/.test(l) && !l.endsWith(':')
+    && !/[.!?]\s+\S/.test(l) && !RESUMES.test(l);
+
+  const unmarked = [];
+  for (const a of kb) {
+    for (const block of a.answer.split(/\n\s*\n/)) {
+      const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+      for (let i = 0; i < lines.length - 2; i++) {
+        if (!lines[i].endsWith(':')) continue;
+        let k = i + 1, n = 0;
+        while (k < lines.length && isItem(lines[k])) { n++; k++; }
+        if (n >= 3) unmarked.push(`[${a.category}] ${a.question.slice(0, 40)}`);
+      }
+    }
+  }
+  check('no colon is followed by an unmarked list', unmarked, []);
+
+  // "…shown on the website dashboard; or" — an item that stops mid-sentence
+  // reads as unfinished, which is how this was spotted.
+  const dangling = [];
+  for (const a of kb) {
+    for (const l of a.answer.split('\n').map(s => s.trim())) {
+      if (/^[-•*]\s/.test(l) && /\b(or|and)$/.test(l)) {
+        dangling.push(`[${a.category}] ${a.question.slice(0, 36)}`);
+      }
+    }
+  }
+  check('no list item ends on a dangling "or" or "and"', dangling, []);
+
+  // Two answers opened mid-word — "ou can open the withdrawal section…".
+  const lowerStart = kb.filter(a => /^[a-z]/.test(a.answer.trim()))
+                       .map(a => `[${a.category}] ${a.question.slice(0, 40)}`);
+  check('no answer opens with a lowercase letter', lowerStart, []);
+
+  const lists = kb.reduce((n, a) =>
+    n + a.answer.split('\n').filter(l => /^\s*(-|\d+\.)\s/.test(l)).length, 0);
+  console.log(`      ${lists} list items across the knowledge base`);
+}
+
+/* ============================================================
+   The 200% guarantee states every condition it depends on.
+   ============================================================ */
+console.log('\n=== THE 200% GUARANTEE');
+{
+  const g200 = kb.filter(a => /200%/.test(a.answer) && /eligibility requirements/i.test(a.answer));
+  check('three articles describe it', g200.length, 3);
+  check('every one states the Boost requirement',
+        g200.filter(a => /free 24-hour Boost must have been activated at least once/.test(a.answer)).length,
+        g200.length);
+  check('every one states the 90-day promotion condition',
+        g200.filter(a => /promoted the website for 90 days/.test(a.answer)).length, g200.length);
+  check('every one states the three support calls',
+        g200.filter(a => /three free support calls/.test(a.answer)).length, g200.length);
 }
 
 console.log('\n=== UNFILLED PLACEHOLDERS (reported, not enforced)');
